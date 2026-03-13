@@ -6,11 +6,11 @@ import json
 import os
 import traceback
 
-BOT_TOKEN = "8189801715:AAEEupF_wChLaj6eidoLjmp_T3-2w1CmoH8"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 DATA_FILE = "attendance_data.json"
 
-
 TIMEZONE = ZoneInfo("Asia/Kuala_Lumpur")
+
 
 def now():
     return datetime.now(TIMEZONE)
@@ -56,7 +56,8 @@ def save(data):
 
 
 def uid(update: Update) -> str:
-    return str(update.effective_user.id)
+    # 多群隔离：群ID_用户ID
+    return f"{update.effective_chat.id}_{update.effective_user.id}"
 
 
 def uname(update: Update) -> str:
@@ -65,14 +66,10 @@ def uname(update: Update) -> str:
 
 
 def ensure_user_record(data: dict, user_id: str, name: str) -> dict:
-    """
-    兼容旧数据，缺什么字段就补什么字段
-    """
     if user_id not in data or not isinstance(data[user_id], dict):
         data[user_id] = {}
 
     record = data[user_id]
-
     record["name"] = name
     record["in"] = record.get("in")
     record["out"] = record.get("out")
@@ -80,7 +77,6 @@ def ensure_user_record(data: dict, user_id: str, name: str) -> dict:
     record["outwork_total"] = int(record.get("outwork_total", 0) or 0)
     record["eat_start"] = record.get("eat_start")
     record["eat_total"] = int(record.get("eat_total", 0) or 0)
-
     return record
 
 
@@ -88,15 +84,11 @@ async def send_reply(update: Update, text: str):
     await update.message.reply_text(text)
 
 
-# =====================
-# 上班 /in
-# =====================
 async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
     name = uname(update)
 
-    # 上班时开新班次
     data[user_id] = {
         "name": name,
         "in": full(),
@@ -104,16 +96,13 @@ async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "outwork_start": None,
         "outwork_total": 0,
         "eat_start": None,
-        "eat_total": 0
+        "eat_total": 0,
     }
 
     save(data)
     await send_reply(update, f"{name} 上班 {full()}")
 
 
-# =====================
-# 下班 /out
-# =====================
 async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
@@ -134,14 +123,12 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     outwork_seconds = int(record.get("outwork_total", 0) or 0)
     eat_seconds = int(record.get("eat_total", 0) or 0)
 
-    # 如果下班时还处于外出中，自动结算到当前时刻
     if record.get("outwork_start"):
         extra = diff(record["outwork_start"], current_time)
         outwork_seconds += extra
         record["outwork_total"] = outwork_seconds
         record["outwork_start"] = None
 
-    # 如果下班时还处于吃饭中，自动结算到当前时刻
     if record.get("eat_start"):
         extra = diff(record["eat_start"], current_time)
         eat_seconds += extra
@@ -165,9 +152,6 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, msg)
 
 
-# =====================
-# 外出 /outwork
-# =====================
 async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
@@ -189,13 +173,9 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     record["outwork_start"] = full()
     save(data)
-
     await send_reply(update, f"{name} 外出 {full()}")
 
 
-# =====================
-# 外出回来 /back
-# =====================
 async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
@@ -219,9 +199,6 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, f"{name} 回来 {full()}（外出 {sec_to_str(seconds)}）")
 
 
-# =====================
-# 吃饭 /eat
-# =====================
 async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
@@ -243,13 +220,9 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     record["eat_start"] = full()
     save(data)
-
     await send_reply(update, f"{name} 吃饭 {full()}")
 
 
-# =====================
-# 吃饭回来 /eatback
-# =====================
 async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
@@ -273,16 +246,13 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, f"{name} 吃饭回 {full()}（吃饭 {sec_to_str(seconds)}）")
 
 
-# =====================
-# 当前状态 /today
-# =====================
 async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = load()
     user_id = uid(update)
     name = uname(update)
 
     if user_id not in data:
-        await update.message.reply_text("无当前班次记录")
+        await send_reply(update, "无当前班次记录")
         return
 
     record = ensure_user_record(data, user_id, name)
@@ -304,7 +274,7 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"当前外出状态：{outwork_status}\n"
         f"当前吃饭状态：{eat_status}"
     )
-    await update.message.reply_text(msg)
+    await send_reply(update, msg)
 
 
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
@@ -313,6 +283,9 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
 
 
 def main():
+    if not BOT_TOKEN:
+        raise ValueError("BOT_TOKEN not set")
+
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("in", in_cmd))
