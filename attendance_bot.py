@@ -33,6 +33,7 @@ def sec_to_str(sec: int) -> str:
 
 def diff(start_str: str, end_dt: datetime) -> int:
     start_dt = datetime.strptime(start_str, "%Y-%m-%d %H:%M:%S")
+    start_dt = start_dt.replace(tzinfo=TIMEZONE)
     seconds = int((end_dt - start_dt).total_seconds())
     return max(seconds, 0)
 
