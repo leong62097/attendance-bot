@@ -482,9 +482,20 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, handover_to, remark = parse_command_args(context)
+
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
+        return
+
+    if not remark:
+        await send_reply(
+            update,
+            "❌ 外出必须填写备注\n"
+            "格式：\n"
+            "/outwork 名字 | 备注\n"
+            "/outwork 名字 临时代接人 | 备注"
+        )
         return
 
     if handover_to and handover_to == name:
@@ -535,11 +546,13 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply += f"\n当前工作已临时交接给：{handover_to}"
     if remark:
         reply += f"\n备注：{remark}"
+
     await send_reply(update, reply)
 
 
 async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
+
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
@@ -550,58 +563,47 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     key = key_by_name(chat_id, name)
     record = data.get(key)
 
-    if not record or not isinstance(record, dict) or not record.get("in") or not is_record_current(record, now()):
-        await send_reply(
-            update,
-            f"{name}当前不在外出中\n"
-            f"无法进行返回打卡\n"
-            f"如需外出，请先使用 /outwork {name}"
-        )
-        return
-
-    record = ensure_record(data, key, name)
-
-    if record.get("out"):
-        await send_reply(update, off_msg(name, record["out"]))
-        return
-
-    if not record.get("outwork_start"):
-        if record.get("eat_start"):
-            await send_reply(update, eat_msg(name, record["eat_start"], record.get("handover_to"), record.get("remark")))
-            return
-
-        await send_reply(
-            update,
-            f"{name}当前不在外出中\n"
-            f"无法进行返回打卡\n"
-            f"如需外出，请先使用 /outwork {name}"
-        )
+    if not record or not record.get("outwork_start"):
+        await send_reply(update, f"{name}当前不在外出中")
         return
 
     current_time = now()
-    seconds = diff(record["outwork_start"], current_time)
-    handover_to = record.get("handover_to")
 
-    record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
+    seconds = diff(record["outwork_start"], current_time)
+    remark_text = (record.get("remark") or "").lower()
+
+    record["outwork_total"] += seconds
     record["outwork_start"] = None
-    record["handover_to"] = None
-    record["remark"] = None
+
     save(data)
 
     reply = (
         f"{name} 外出回来 {full(current_time)}\n"
         f"本次外出 {sec_to_str(seconds)}"
     )
-    if handover_to:
-        reply += "\n已恢复本人岗位"
+
+    if any(x in remark_text for x in ["厕所", "上厕所", "洗手间", "wc"]) and seconds > 15 * 60:
+        reply += "\n⚠️ 警告：本次厕所外出超过15分钟"
+
     await send_reply(update, reply)
 
 
 async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, handover_to, remark = parse_command_args(context)
+
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
+        return
+
+    if remark:
+        await send_reply(
+            update,
+            "❌ 吃饭无需填写备注\n"
+            "格式：\n"
+            "/eat 名字\n"
+            "/eat 名字 临时代接人"
+        )
         return
 
     if handover_to and handover_to == name:
@@ -644,19 +646,19 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     record["eat_start"] = full()
     record["handover_to"] = handover_to
-    record["remark"] = remark
+    record["remark"] = None
     save(data)
 
     reply = f"{name} 吃饭 {record['eat_start']}"
     if handover_to:
         reply += f"\n当前工作已临时交接给：{handover_to}"
-    if remark:
-        reply += f"\n备注：{remark}"
+
     await send_reply(update, reply)
 
 
 async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
+
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
@@ -667,50 +669,27 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     key = key_by_name(chat_id, name)
     record = data.get(key)
 
-    if not record or not isinstance(record, dict) or not record.get("in") or not is_record_current(record, now()):
-        await send_reply(
-            update,
-            f"{name}当前不在吃饭中\n"
-            f"无法进行返回打卡\n"
-            f"如需吃饭，请先使用 /eat {name}"
-        )
-        return
-
-    record = ensure_record(data, key, name)
-
-    if record.get("out"):
-        await send_reply(update, off_msg(name, record["out"]))
-        return
-
-    if not record.get("eat_start"):
-        if record.get("outwork_start"):
-            await send_reply(update, outwork_msg(name, record["outwork_start"], record.get("handover_to"), record.get("remark")))
-            return
-
-        await send_reply(
-            update,
-            f"{name}当前不在吃饭中\n"
-            f"无法进行返回打卡\n"
-            f"如需吃饭，请先使用 /eat {name}"
-        )
+    if not record or not record.get("eat_start"):
+        await send_reply(update, f"{name}当前不在吃饭中")
         return
 
     current_time = now()
-    seconds = diff(record["eat_start"], current_time)
-    handover_to = record.get("handover_to")
 
-    record["eat_total"] = int(record.get("eat_total", 0) or 0) + seconds
+    seconds = diff(record["eat_start"], current_time)
+
+    record["eat_total"] += seconds
     record["eat_start"] = None
-    record["handover_to"] = None
-    record["remark"] = None
+
     save(data)
 
     reply = (
         f"{name} 吃饭回 {full(current_time)}\n"
         f"本次吃饭 {sec_to_str(seconds)}"
     )
-    if handover_to:
-        reply += "\n已恢复本人岗位"
+
+    if seconds > 20 * 60:
+        reply += "\n⚠️ 警告：吃饭超过20分钟"
+
     await send_reply(update, reply)
 
 
@@ -855,15 +834,11 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "打卡命令说明\n\n"
         "/in 名字  上班\n"
         "/out 名字  下班\n"
-        "/outwork 名字  外出\n"
-        "/outwork 名字 临时代接人  外出并临时交接\n"
-        "/outwork 名字 | 备注\n"
-        "/outwork 名字 临时代接人 | 备注\n"
+        "/outwork 名字 | 备注  外出\n"
+        "/outwork 名字 临时代接人 | 备注  外出并临时交接\n"
         "/back 名字  外出回来\n"
         "/eat 名字  吃饭\n"
         "/eat 名字 临时代接人  吃饭并临时交接\n"
-        "/eat 名字 | 备注\n"
-        "/eat 名字 临时代接人 | 备注\n"
         "/eatback 名字  吃饭回\n"
         "/today 名字  查看当前班次\n"
         "/todayall  查看全部人员状态\n"
@@ -871,10 +846,11 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/web  查看 Web 面板地址\n\n"
         "示例：\n"
         "/in 小鑫\n"
-        "/in 小小\n"
-        "/outwork 小鑫 小小 | 上厕所\n"
+        "/outwork 小鑫 | wc\n"
+        "/outwork 小鑫 小小 | 拿快递\n"
         "/back 小鑫\n"
-        "/eat 小鑫 小小 | 吃饭\n"
+        "/eat 小鑫\n"
+        "/eat 小鑫 小小\n"
         "/eatback 小鑫\n"
         "/today 小鑫\n"
         "/todayall\n"
@@ -1038,3 +1014,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
