@@ -7,7 +7,6 @@ import os
 import traceback
 
 BOT_TOKEN = "8189801715:AAEEupF_wChLaj6eidoLjmp_T3-2w1CmoH8"
-CHANNEL_ID = -1003797649910
 DATA_FILE = "attendance_data.json"
 
 
@@ -85,8 +84,8 @@ def ensure_user_record(data: dict, user_id: str, name: str) -> dict:
     return record
 
 
-async def send_channel(context: ContextTypes.DEFAULT_TYPE, text: str):
-    await context.bot.send_message(chat_id=CHANNEL_ID, text=text)
+async def send_reply(update: Update, text: str):
+    await update.message.reply_text(text)
 
 
 # =====================
@@ -109,7 +108,7 @@ async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     }
 
     save(data)
-    await send_channel(context, f"{name} 上班 {full()}")
+    await send_reply(update, f"{name} 上班 {full()}")
 
 
 # =====================
@@ -121,13 +120,13 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = uname(update)
 
     if user_id not in data:
-        await send_channel(context, f"{name} 下班 {full()}（未找到上班记录）")
+        await send_reply(update, f"{name} 下班 {full()}（未找到上班记录）")
         return
 
     record = ensure_user_record(data, user_id, name)
 
     if not record.get("in"):
-        await send_channel(context, f"{name} 下班 {full()}（未找到上班记录）")
+        await send_reply(update, f"{name} 下班 {full()}（未找到上班记录）")
         return
 
     current_time = now()
@@ -163,7 +162,7 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"吃饭 {sec_to_str(eat_seconds)}\n"
         f"净工时 {sec_to_str(net_seconds)}"
     )
-    await send_channel(context, msg)
+    await send_reply(update, msg)
 
 
 # =====================
@@ -175,23 +174,23 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = uname(update)
 
     if user_id not in data:
-        await send_channel(context, f"{name} 外出 {full()}（未上班）")
+        await send_reply(update, f"{name} 外出 {full()}（未上班）")
         return
 
     record = ensure_user_record(data, user_id, name)
 
     if not record.get("in"):
-        await send_channel(context, f"{name} 外出 {full()}（未上班）")
+        await send_reply(update, f"{name} 外出 {full()}（未上班）")
         return
 
     if record.get("outwork_start"):
-        await send_channel(context, f"{name} 外出 {full()}（已有未结束的外出记录）")
+        await send_reply(update, f"{name} 外出 {full()}（已有未结束的外出记录）")
         return
 
     record["outwork_start"] = full()
     save(data)
 
-    await send_channel(context, f"{name} 外出 {full()}")
+    await send_reply(update, f"{name} 外出 {full()}")
 
 
 # =====================
@@ -203,13 +202,13 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = uname(update)
 
     if user_id not in data:
-        await send_channel(context, f"{name} 回来 {full()}（未上班）")
+        await send_reply(update, f"{name} 回来 {full()}（未上班）")
         return
 
     record = ensure_user_record(data, user_id, name)
 
     if not record.get("outwork_start"):
-        await send_channel(context, f"{name} 回来 {full()}（未找到外出记录）")
+        await send_reply(update, f"{name} 回来 {full()}（未找到外出记录）")
         return
 
     seconds = diff(record["outwork_start"], now())
@@ -217,7 +216,7 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["outwork_start"] = None
     save(data)
 
-    await send_channel(context, f"{name} 回来 {full()}（外出 {sec_to_str(seconds)}）")
+    await send_reply(update, f"{name} 回来 {full()}（外出 {sec_to_str(seconds)}）")
 
 
 # =====================
@@ -229,23 +228,23 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = uname(update)
 
     if user_id not in data:
-        await send_channel(context, f"{name} 吃饭 {full()}（未上班）")
+        await send_reply(update, f"{name} 吃饭 {full()}（未上班）")
         return
 
     record = ensure_user_record(data, user_id, name)
 
     if not record.get("in"):
-        await send_channel(context, f"{name} 吃饭 {full()}（未上班）")
+        await send_reply(update, f"{name} 吃饭 {full()}（未上班）")
         return
 
     if record.get("eat_start"):
-        await send_channel(context, f"{name} 吃饭 {full()}（已有未结束的吃饭记录）")
+        await send_reply(update, f"{name} 吃饭 {full()}（已有未结束的吃饭记录）")
         return
 
     record["eat_start"] = full()
     save(data)
 
-    await send_channel(context, f"{name} 吃饭 {full()}")
+    await send_reply(update, f"{name} 吃饭 {full()}")
 
 
 # =====================
@@ -257,13 +256,13 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = uname(update)
 
     if user_id not in data:
-        await send_channel(context, f"{name} 吃饭回 {full()}（未上班）")
+        await send_reply(update, f"{name} 吃饭回 {full()}（未上班）")
         return
 
     record = ensure_user_record(data, user_id, name)
 
     if not record.get("eat_start"):
-        await send_channel(context, f"{name} 吃饭回 {full()}（未找到吃饭记录）")
+        await send_reply(update, f"{name} 吃饭回 {full()}（未找到吃饭记录）")
         return
 
     seconds = diff(record["eat_start"], now())
@@ -271,7 +270,7 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["eat_start"] = None
     save(data)
 
-    await send_channel(context, f"{name} 吃饭回 {full()}（吃饭 {sec_to_str(seconds)}）")
+    await send_reply(update, f"{name} 吃饭回 {full()}（吃饭 {sec_to_str(seconds)}）")
 
 
 # =====================
