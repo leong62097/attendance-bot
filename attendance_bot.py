@@ -1,6 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import json
 import os
 import traceback
@@ -10,8 +11,10 @@ CHANNEL_ID = -1003797649910
 DATA_FILE = "attendance_data.json"
 
 
+TIMEZONE = ZoneInfo("Asia/Kuala_Lumpur")
+
 def now():
-    return datetime.now()
+    return datetime.now(TIMEZONE)
 
 
 def full(dt=None):
