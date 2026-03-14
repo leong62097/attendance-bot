@@ -1255,7 +1255,6 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/report 白班\n"
         "/reportall\n"
         "/export"
-        "/help"
     )
     await send_reply(update, reply)
 
