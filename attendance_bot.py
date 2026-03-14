@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from telegram.constants import ChatAction
-from datetime import datetime
+from datetime import datetime, time
 from zoneinfo import ZoneInfo
 from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment
@@ -11,9 +11,16 @@ import html
 import json
 import os
 import traceback
+import base64
+import urllib.request
+import urllib.error
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-DATA_FILE = "attendance_data.json"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_REPO = os.getenv("GITHUB_REPO", "leong62097/attendance-bot")
+GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
+DATA_FILE = os.getenv("DATA_FILE_PATH", "attendance_data.json")
+HISTORY_FILE = os.getenv("HISTORY_FILE_PATH", "attendance_history.json")
 TIMEZONE = ZoneInfo("Asia/Kuala_Lumpur")
 
 # Web 面板配置
@@ -23,6 +30,12 @@ BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
 # 如要限制管理员命令，可填 Telegram 用户ID，例如：{123456789}
 # 目前留空 = 不限制
 ADMIN_IDS = set()
+
+DAY_SHIFT_START = time(6, 0, 0)
+DAY_SHIFT_END = time(17, 59, 59)
+TOILET_KEYWORDS = ["厕所", "上厕所", "洗手间", "wc"]
+TOILET_OVERTIME_SECONDS = 15 * 60
+EAT_OVERTIME_SECONDS = 20 * 60
 
 STAFF_NAMES = [
     "小鑫", "阿强", "小财", "二狗", "青柚", "小崔", "逍遥", "余果", "阿良", "小凡",
@@ -87,21 +100,97 @@ def diff(start_str: str, end_dt: datetime) -> int:
     return max(seconds, 0)
 
 
+def github_api_url(path: str) -> str:
+    return f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
+
+
+def github_headers() -> dict:
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "attendance-bot"
+    }
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+    return headers
+
+
+def github_get_file(path: str):
+    url = github_api_url(path) + f"?ref={GITHUB_BRANCH}"
+    req = urllib.request.Request(url, headers=github_headers(), method="GET")
+
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            content = data.get("content", "")
+            sha = data.get("sha")
+            if content:
+                text = base64.b64decode(content).decode("utf-8")
+            else:
+                text = ""
+            return text, sha
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return None, None
+        raise
+    except Exception:
+        raise
+
+
+def github_put_file(path: str, text: str, sha: str | None = None):
+    url = github_api_url(path)
+
+    payload = {
+        "message": f"update {path}",
+        "content": base64.b64encode(text.encode("utf-8")).decode("utf-8"),
+        "branch": GITHUB_BRANCH
+    }
+    if sha:
+        payload["sha"] = sha
+
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=body,
+        headers={**github_headers(), "Content-Type": "application/json"},
+        method="PUT"
+    )
+
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
 def load():
-    if not os.path.exists(DATA_FILE):
+    text, _ = github_get_file(DATA_FILE)
+    if not text:
         return {}
     try:
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data if isinstance(data, dict) else {}
+        data = json.loads(text)
+        return data if isinstance(data, dict) else {}
     except Exception:
         return {}
 
 
 def save(data):
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    old_text, sha = github_get_file(DATA_FILE)
+    text = json.dumps(data, ensure_ascii=False, indent=2)
+    github_put_file(DATA_FILE, text, sha=sha)
 
+
+def load_history():
+    text, _ = github_get_file(HISTORY_FILE)
+    if not text:
+        return []
+    try:
+        data = json.loads(text)
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
+def save_history(rows: list):
+    old_text, sha = github_get_file(HISTORY_FILE)
+    text = json.dumps(rows, ensure_ascii=False, indent=2)
+    github_put_file(HISTORY_FILE, text, sha=sha)
 
 def is_admin(update: Update) -> bool:
     if not ADMIN_IDS:
@@ -129,6 +218,26 @@ def validate_name(name: str) -> tuple[bool, str]:
     return True, ""
 
 
+def determine_shift_type(dt: datetime) -> str:
+    t = dt.time()
+    if DAY_SHIFT_START <= t <= DAY_SHIFT_END:
+        return "白班"
+    return "夜班"
+
+
+def normalize_shift_input(text: str | None) -> str | None:
+    if not text:
+        return None
+    text = text.strip()
+    if text == "转":
+        return "转班"
+    return None
+
+
+def get_shift_date(dt: datetime) -> str:
+    return dt.strftime("%Y-%m-%d")
+
+
 def ensure_record(data: dict, key: str, name: str) -> dict:
     if key not in data or not isinstance(data[key], dict):
         data[key] = {}
@@ -139,28 +248,65 @@ def ensure_record(data: dict, key: str, name: str) -> dict:
     record["out"] = record.get("out")
     record["outwork_start"] = record.get("outwork_start")
     record["outwork_total"] = int(record.get("outwork_total", 0) or 0)
+    record["outwork_count"] = int(record.get("outwork_count", 0) or 0)
     record["eat_start"] = record.get("eat_start")
     record["eat_total"] = int(record.get("eat_total", 0) or 0)
+    record["eat_count"] = int(record.get("eat_count", 0) or 0)
     record["handover_to"] = record.get("handover_to")
     record["remark"] = record.get("remark")
+    record["shift_type"] = record.get("shift_type")
+    record["shift_date"] = record.get("shift_date")
+    record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0)
+    record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0)
     return record
 
 
-def reset_for_new_shift(record: dict, name: str, current: str):
+def reset_for_new_shift(record: dict, name: str, current: str, shift_type: str, shift_date: str):
     record["name"] = name
     record["in"] = current
     record["out"] = None
     record["outwork_start"] = None
     record["outwork_total"] = 0
+    record["outwork_count"] = 0
     record["eat_start"] = None
     record["eat_total"] = 0
+    record["eat_count"] = 0
     record["handover_to"] = None
     record["remark"] = None
+    record["shift_type"] = shift_type
+    record["shift_date"] = shift_date
+    record["toilet_overtime"] = 0
+    record["eat_overtime"] = 0
 
 
 def clear_temp_fields(record: dict):
     record["handover_to"] = None
     record["remark"] = None
+
+
+def is_toilet_remark(text: str | None) -> bool:
+    remark = (text or "").lower()
+    return any(k in remark for k in TOILET_KEYWORDS)
+
+
+def append_history(chat_id: int, record: dict, out_time: str, net_seconds: int):
+    history = load_history()
+    history.append({
+        "chat_id": chat_id,
+        "name": record.get("name") or "",
+        "shift_type": record.get("shift_type") or "",
+        "shift_date": record.get("shift_date") or "",
+        "in": record.get("in") or "",
+        "out": out_time,
+        "outwork_total": int(record.get("outwork_total", 0) or 0),
+        "eat_total": int(record.get("eat_total", 0) or 0),
+        "net_seconds": int(net_seconds or 0),
+        "outwork_count": int(record.get("outwork_count", 0) or 0),
+        "eat_count": int(record.get("eat_count", 0) or 0),
+        "toilet_overtime": int(record.get("toilet_overtime", 0) or 0),
+        "eat_overtime": int(record.get("eat_overtime", 0) or 0),
+    })
+    save_history(history)
 
 
 async def send_reply(update: Update, text: str):
@@ -169,21 +315,6 @@ async def send_reply(update: Update, text: str):
 
 
 def parse_command_args(context: ContextTypes.DEFAULT_TYPE):
-    """
-    新格式（不使用 |）
-
-    /in 小鑫
-    /today 小鑫
-    /out 小鑫
-    /back 小鑫
-    /eatback 小鑫
-
-    /outwork 小鑫 wc
-    /outwork 小鑫 小明 拿快递
-
-    /eat 小鑫
-    /eat 小鑫 小明
-    """
     args = context.args
     if not args:
         return None, None, None
@@ -224,11 +355,9 @@ def is_record_current(record: dict, current_time: datetime) -> bool:
     if not in_dt:
         return False
 
-    # 未下班 = 当前班次
     if not out_dt:
         return True
 
-    # 只要上班或下班日期是今天，就视为今天相关记录
     today = current_time.date()
     return in_dt.date() == today or out_dt.date() == today
 
@@ -335,6 +464,7 @@ def get_todayall_rows(chat_id: int):
                 "out_time": "",
                 "handover_to": "",
                 "remark": "",
+                "shift_type": "",
                 "net_seconds": 0,
                 "outwork_seconds": 0,
                 "eat_seconds": 0,
@@ -370,6 +500,7 @@ def get_todayall_rows(chat_id: int):
             "out_time": record.get("out") or "",
             "handover_to": handover_to,
             "remark": remark,
+            "shift_type": record.get("shift_type") or "",
             "net_seconds": totals["net_seconds"],
             "outwork_seconds": totals["outwork_seconds"],
             "eat_seconds": totals["eat_seconds"],
@@ -406,7 +537,24 @@ def is_handover_target_available(chat_id: int, data: dict, handover_to: str) -> 
 
 
 async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    name, _, _ = parse_command_args(context)
+    args = context.args
+    if not args:
+        await send_reply(update, "❌ 格式错误\n格式：\n/in 名字\n/in 名字 转")
+        return
+
+    name = args[0].strip()
+    shift_override = None
+
+    if len(args) >= 2:
+        shift_override = normalize_shift_input(args[1])
+        if not shift_override:
+            await send_reply(update, "❌ 上班仅支持：\n/in 名字\n/in 名字 转")
+            return
+
+    if len(args) > 2:
+        await send_reply(update, "❌ 上班仅支持：\n/in 名字\n/in 名字 转")
+        return
+
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
@@ -429,11 +577,16 @@ async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await send_reply(update, working_msg(name, record["in"]))
                 return
 
-    current = full()
+    current_dt = now()
+    current = full(current_dt)
+    shift_type = shift_override or determine_shift_type(current_dt)
+    shift_date = get_shift_date(current_dt)
+
     data[key] = {}
-    reset_for_new_shift(data[key], name, current)
+    reset_for_new_shift(data[key], name, current, shift_type, shift_date)
     save(data)
-    await send_reply(update, f"{name} 上班 {current}")
+
+    await send_reply(update, f"{name} 上班 {current}\n班次：{shift_type}")
 
 
 async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -472,29 +625,42 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         extra_out = diff(record["outwork_start"], current_time)
         outwork_seconds += extra_out
         record["outwork_total"] = outwork_seconds
+
+        if is_toilet_remark(record.get("remark")) and extra_out > TOILET_OVERTIME_SECONDS:
+            record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0) + 1
+
         record["outwork_start"] = None
 
     if record.get("eat_start"):
         extra_eat = diff(record["eat_start"], current_time)
         eat_seconds += extra_eat
         record["eat_total"] = eat_seconds
+
+        if extra_eat > EAT_OVERTIME_SECONDS:
+            record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0) + 1
+
         record["eat_start"] = None
 
     net_seconds = total_seconds - outwork_seconds - eat_seconds
     if net_seconds < 0:
         net_seconds = 0
 
-    record["out"] = full(current_time)
-    record["handover_to"] = None
-    record["remark"] = None
+    out_text = full(current_time)
+    record["out"] = out_text
+    clear_temp_fields(record)
+
+    append_history(chat_id, record, out_text, net_seconds)
     save(data)
 
     msg = (
         f"{name} 下班 {record['out']}\n"
+        f"班次：{record.get('shift_type') or '未设置'}\n"
         f"总工时 {sec_to_str(total_seconds)}\n"
-        f"外出 {sec_to_str(outwork_seconds)}\n"
-        f"吃饭 {sec_to_str(eat_seconds)}\n"
-        f"净工时 {sec_to_str(net_seconds)}"
+        f"外出 {sec_to_str(outwork_seconds)}（{int(record.get('outwork_count', 0) or 0)}次）\n"
+        f"吃饭 {sec_to_str(eat_seconds)}（{int(record.get('eat_count', 0) or 0)}次）\n"
+        f"净工时 {sec_to_str(net_seconds)}\n"
+        f"厕所超时 {int(record.get('toilet_overtime', 0) or 0)}次\n"
+        f"吃饭超时 {int(record.get('eat_overtime', 0) or 0)}次"
     )
     await send_reply(update, msg)
 
@@ -558,6 +724,7 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["outwork_start"] = full()
     record["handover_to"] = handover_to
     record["remark"] = remark
+    record["outwork_count"] = int(record.get("outwork_count", 0) or 0) + 1
     save(data)
 
     reply = f"{name} 外出 {record['outwork_start']}"
@@ -587,14 +754,17 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     current_time = now()
-
     seconds = diff(record["outwork_start"], current_time)
-    remark_text = (record.get("remark") or "").lower()
+    remark_text = record.get("remark") or ""
 
-    record["outwork_total"] += seconds
+    record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
     record["outwork_start"] = None
-    clear_temp_fields(record)
 
+    overtime_hit = is_toilet_remark(remark_text) and seconds > TOILET_OVERTIME_SECONDS
+    if overtime_hit:
+        record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0) + 1
+
+    clear_temp_fields(record)
     save(data)
 
     reply = (
@@ -602,7 +772,7 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"本次外出 {sec_to_str(seconds)}"
     )
 
-    if any(x in remark_text for x in ["厕所", "上厕所", "洗手间", "wc"]) and seconds > 15 * 60:
+    if overtime_hit:
         reply += "\n⚠️ 警告：本次厕所外出超过15分钟"
 
     await send_reply(update, reply)
@@ -680,6 +850,7 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["eat_start"] = full()
     record["handover_to"] = handover_to
     record["remark"] = None
+    record["eat_count"] = int(record.get("eat_count", 0) or 0) + 1
     save(data)
 
     reply = f"{name} 吃饭 {record['eat_start']}"
@@ -707,13 +878,16 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     current_time = now()
-
     seconds = diff(record["eat_start"], current_time)
 
-    record["eat_total"] += seconds
+    record["eat_total"] = int(record.get("eat_total", 0) or 0) + seconds
     record["eat_start"] = None
-    clear_temp_fields(record)
 
+    overtime_hit = seconds > EAT_OVERTIME_SECONDS
+    if overtime_hit:
+        record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0) + 1
+
+    clear_temp_fields(record)
     save(data)
 
     reply = (
@@ -721,7 +895,7 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"本次吃饭 {sec_to_str(seconds)}"
     )
 
-    if seconds > 20 * 60:
+    if overtime_hit:
         reply += "\n⚠️ 警告：吃饭超过20分钟"
 
     await send_reply(update, reply)
@@ -763,6 +937,8 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply = (
         f"{name} 当前班次\n"
         f"当前状态：{status}\n"
+        f"班次：{record.get('shift_type') or '未设置'}\n"
+        f"班次日期：{record.get('shift_date') or '未设置'}\n"
         f"上班时间：{record.get('in') or '无'}\n"
         f"下班时间：{record.get('out') or '未下班'}\n"
     )
@@ -774,8 +950,10 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply += f"备注：{record.get('remark')}\n"
 
     reply += (
-        f"累计外出：{sec_to_str(totals['outwork_seconds'])}\n"
-        f"累计吃饭：{sec_to_str(totals['eat_seconds'])}\n"
+        f"累计外出：{sec_to_str(totals['outwork_seconds'])}（{int(record.get('outwork_count', 0) or 0)}次）\n"
+        f"累计吃饭：{sec_to_str(totals['eat_seconds'])}（{int(record.get('eat_count', 0) or 0)}次）\n"
+        f"厕所超时：{int(record.get('toilet_overtime', 0) or 0)}次\n"
+        f"吃饭超时：{int(record.get('eat_overtime', 0) or 0)}次\n"
         f"当前净工时：{sec_to_str(totals['net_seconds'])}"
     )
     await send_reply(update, reply)
@@ -791,6 +969,8 @@ async def todayall_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lines = ["全部人员当前状态\n"]
     for row in rows:
         line = f"{row['name']} {row['status']}"
+        if row["shift_type"]:
+            line += f"（{row['shift_type']}）"
         if row["status"] != "未打卡":
             line += f" | 净工时：{sec_to_short(row['net_seconds'])}"
         if row["status"] in ("外出中", "吃饭中") and row["handover_to"]:
@@ -800,6 +980,104 @@ async def todayall_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         lines.append(line)
 
     await send_reply(update, "\n".join(lines))
+
+
+def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[str]:
+    history = load_history()
+    rows = [
+        row for row in history
+        if isinstance(row, dict)
+        and str(row.get("chat_id")) == str(chat_id)
+        and row.get("shift_date") == shift_date
+        and row.get("shift_type") == shift_type
+    ]
+
+    if shift_type == "白班":
+        range_text = f"{shift_date} 06:00 - {shift_date} 17:59"
+    elif shift_type == "夜班":
+        range_text = f"{shift_date} 18:00 - 次日 05:59"
+    else:
+        range_text = f"{shift_date} 转班"
+
+    lines = [
+        f"{shift_date} {shift_type}日报",
+        f"统计区间：{range_text}",
+        f"完结班次：{len(rows)}",
+        ""
+    ]
+
+    if not rows:
+        lines.append("暂无已下班记录")
+        return lines
+
+    total_net = sum(int(r.get("net_seconds", 0) or 0) for r in rows)
+    total_outwork = sum(int(r.get("outwork_total", 0) or 0) for r in rows)
+    total_eat = sum(int(r.get("eat_total", 0) or 0) for r in rows)
+    total_outwork_count = sum(int(r.get("outwork_count", 0) or 0) for r in rows)
+    total_eat_count = sum(int(r.get("eat_count", 0) or 0) for r in rows)
+    total_toilet_overtime = sum(int(r.get("toilet_overtime", 0) or 0) for r in rows)
+    total_eat_overtime = sum(int(r.get("eat_overtime", 0) or 0) for r in rows)
+
+    lines.extend([
+        f"净工时合计：{sec_to_str(total_net)}",
+        f"外出合计：{sec_to_str(total_outwork)}（{total_outwork_count}次）",
+        f"吃饭合计：{sec_to_str(total_eat)}（{total_eat_count}次）",
+        f"厕所超时：{total_toilet_overtime}次",
+        f"吃饭超时：{total_eat_overtime}次",
+        "",
+        "人员明细："
+    ])
+
+    rows.sort(key=lambda x: x.get("in") or "")
+    for r in rows:
+        lines.append(
+            f"{r.get('name', '')} "
+            f"{r.get('in', '')[11:16]}→{r.get('out', '')[11:16]} "
+            f"净{sec_to_short(int(r.get('net_seconds', 0) or 0))} "
+            f"| 外出{int(r.get('outwork_count', 0) or 0)}次 "
+            f"| 吃饭{int(r.get('eat_count', 0) or 0)}次 "
+            f"| 厕所超时{int(r.get('toilet_overtime', 0) or 0)}次 "
+            f"| 吃饭超时{int(r.get('eat_overtime', 0) or 0)}次"
+        )
+
+    return lines
+
+
+async def report_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await require_admin(update):
+        return
+
+    args = context.args
+    if len(args) != 1 or args[0] not in ("白班", "夜班", "转班"):
+        await send_reply(
+            update,
+            "❌ 格式错误\n"
+            "格式：\n"
+            "/report 白班\n"
+            "/report 夜班\n"
+            "/report 转班"
+        )
+        return
+
+    shift_type = args[0]
+    shift_date = get_shift_date(now())
+    chat_id = update.effective_chat.id
+    lines = build_report_lines(chat_id, shift_date, shift_type)
+    await send_reply(update, "\n".join(lines))
+
+
+async def reportall_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not await require_admin(update):
+        return
+
+    shift_date = get_shift_date(now())
+    chat_id = update.effective_chat.id
+
+    parts = []
+    for shift_type in ("白班", "夜班", "转班"):
+        parts.append("\n".join(build_report_lines(chat_id, shift_date, shift_type)))
+
+    await send_reply(update, "\n\n".join(parts))
 
 
 async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -816,7 +1094,7 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ws = wb.active
     ws.title = "考勤状态"
 
-    headers = ["姓名", "状态", "上班时间", "下班时间", "临时代接", "备注", "净工时", "累计外出", "累计吃饭"]
+    headers = ["姓名", "班次", "状态", "上班时间", "下班时间", "临时代接", "备注", "净工时", "累计外出", "累计吃饭"]
     ws.append(headers)
 
     for col in range(1, len(headers) + 1):
@@ -827,6 +1105,7 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for row in rows:
         ws.append([
             row["name"],
+            row["shift_type"],
             row["status"],
             row["in_time"],
             row["out_time"],
@@ -838,8 +1117,8 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ])
 
     widths = {
-        "A": 12, "B": 12, "C": 22, "D": 22, "E": 14,
-        "F": 20, "G": 16, "H": 16, "I": 16
+        "A": 12, "B": 10, "C": 12, "D": 22, "E": 22, "F": 14,
+        "G": 20, "H": 16, "I": 16, "J": 16
     }
     for col, width in widths.items():
         ws.column_dimensions[col].width = width
@@ -866,7 +1145,8 @@ async def web_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply = (
         "打卡命令说明\n\n"
-        "/in 名字  上班\n"
+        "/in 名字  上班（自动识别白/夜班）\n"
+        "/in 名字 转  转班上班\n"
         "/out 名字  下班\n"
         "/outwork 名字 备注  外出\n"
         "/outwork 名字 临时代接人 备注  外出并临时交接\n"
@@ -876,18 +1156,29 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/eatback 名字  吃饭回\n"
         "/today 名字  查看当前班次\n"
         "/todayall  查看全部人员状态\n"
+        "/report 白班  查看当天白班日报\n"
+        "/report 夜班  查看当天夜班日报\n"
+        "/report 转班  查看当天转班日报\n"
+        "/reportall  查看当天全部班次日报\n"
         "/export  导出 Excel\n"
         "/web  查看 Web 面板地址\n\n"
+        "白夜班规则：\n"
+        "06:00–17:59 = 白班\n"
+        "18:00–05:59 = 夜班\n"
+        "转班必须手动写：/in 名字 转\n\n"
         "示例：\n"
         "/in 小鑫\n"
+        "/in 小鑫 转\n"
         "/outwork 小鑫 wc\n"
-        "/outwork 小鑫 小小 拿快递\n"
+        "/outwork 小鑫 小明 拿快递\n"
         "/back 小鑫\n"
         "/eat 小鑫\n"
         "/eat 小鑫 小小\n"
         "/eatback 小鑫\n"
         "/today 小鑫\n"
         "/todayall\n"
+        "/report 白班\n"
+        "/reportall\n"
         "/export"
     )
     await send_reply(update, reply)
@@ -914,6 +1205,7 @@ def build_web_html():
                 html_rows.append(
                     "<tr>"
                     f"<td>{html.escape(row['name'])}</td>"
+                    f"<td>{html.escape(row['shift_type'])}</td>"
                     f"<td>{html.escape(row['status'])}</td>"
                     f"<td>{html.escape(row['in_time'])}</td>"
                     f"<td>{html.escape(row['out_time'])}</td>"
@@ -931,6 +1223,7 @@ def build_web_html():
                 <thead>
                     <tr>
                         <th>姓名</th>
+                        <th>班次</th>
                         <th>状态</th>
                         <th>上班时间</th>
                         <th>下班时间</th>
@@ -1022,7 +1315,6 @@ def main():
     if not BOT_TOKEN:
         raise ValueError("BOT_TOKEN not set")
 
-    # 启动 Web 面板
     web_thread = Thread(target=run_web, daemon=True)
     web_thread.start()
 
@@ -1036,6 +1328,8 @@ def main():
     app.add_handler(CommandHandler("eatback", eatback_cmd))
     app.add_handler(CommandHandler("today", today_cmd))
     app.add_handler(CommandHandler("todayall", todayall_cmd))
+    app.add_handler(CommandHandler("report", report_cmd))
+    app.add_handler(CommandHandler("reportall", reportall_cmd))
     app.add_handler(CommandHandler("export", export_cmd))
     app.add_handler(CommandHandler("web", web_cmd))
     app.add_handler(CommandHandler("help", help_cmd))
