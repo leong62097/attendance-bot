@@ -1,0 +1,17 @@
+[
+  {
+    "chat_id": -1003624527407,
+    "name": "小鑫",
+    "shift_type": "白班",
+    "shift_date": "2026-03-14",
+    "in": "2026-03-14 13:02:10",
+    "out": "2026-03-14 13:03:16",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 66,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
+  }
+]
