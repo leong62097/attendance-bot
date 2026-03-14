@@ -20,7 +20,7 @@ GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
 DATA_FILE = os.getenv("DATA_FILE_PATH", "attendance_data.json")
 HISTORY_FILE = os.getenv("HISTORY_FILE_PATH", "attendance_history.json")
 TIMEZONE = ZoneInfo("Asia/Kuala_Lumpur")
-
+BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
 
 # 如要限制管理员命令，可填 Telegram 用户ID，例如：{123456789}
 # 目前留空 = 不限制
@@ -31,7 +31,7 @@ DAY_SHIFT_END = time(17, 59, 59)
 TOILET_KEYWORDS = ["厕所", "上厕所", "洗手间", "wc"]
 TOILET_OVERTIME_SECONDS = 15 * 60
 EAT_OVERTIME_SECONDS = 20 * 60
-REMINDER_TASKS = {}
+REMINDER_CHECK_INTERVAL = 30
 
 STAFF_NAMES = [
     "小鑫", "阿强", "小财", "二狗", "青柚", "小崔", "逍遥", "余果", "阿良", "小凡",
@@ -165,7 +165,7 @@ def load():
 
 
 def save(data):
-    old_text, sha = github_get_file(DATA_FILE)
+    _, sha = github_get_file(DATA_FILE)
     text = json.dumps(data, ensure_ascii=False, indent=2)
     github_put_file(DATA_FILE, text, sha=sha)
 
@@ -182,9 +182,10 @@ def load_history():
 
 
 def save_history(rows: list):
-    old_text, sha = github_get_file(HISTORY_FILE)
+    _, sha = github_get_file(HISTORY_FILE)
     text = json.dumps(rows, ensure_ascii=False, indent=2)
     github_put_file(HISTORY_FILE, text, sha=sha)
+
 
 def is_admin(update: Update) -> bool:
     if not ADMIN_IDS:
@@ -255,6 +256,8 @@ def ensure_record(data: dict, key: str, name: str) -> dict:
     record["shift_date"] = record.get("shift_date")
     record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0)
     record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0)
+    record["toilet_reminded"] = bool(record.get("toilet_reminded", False))
+    record["eat_reminded"] = bool(record.get("eat_reminded", False))
     return record
 
 
@@ -274,11 +277,20 @@ def reset_for_new_shift(record: dict, name: str, current: str, shift_type: str, 
     record["shift_date"] = shift_date
     record["toilet_overtime"] = 0
     record["eat_overtime"] = 0
+    record["toilet_reminded"] = False
+    record["eat_reminded"] = False
 
 
 def clear_temp_fields(record: dict):
     record["handover_to"] = None
     record["remark"] = None
+
+
+def clear_active_flags(record: dict):
+    record["outwork_start"] = None
+    record["eat_start"] = None
+    record["toilet_reminded"] = False
+    record["eat_reminded"] = False
 
 
 def is_toilet_remark(text: str | None) -> bool:
@@ -304,64 +316,6 @@ def append_history(chat_id: int, record: dict, out_time: str, net_seconds: int):
         "eat_overtime": int(record.get("eat_overtime", 0) or 0),
     })
     save_history(history)
-
-
-def reminder_key(chat_id: int, name: str, kind: str) -> str:
-    return f"{chat_id}:{name}:{kind}"
-
-
-def cancel_reminder(chat_id: int, name: str, kind: str):
-    key = reminder_key(chat_id, name, kind)
-    task = REMINDER_TASKS.pop(key, None)
-    if task and not task.done():
-        task.cancel()
-
-
-def schedule_reminder(application, chat_id: int, name: str, kind: str, start_text: str, seconds: int):
-    key = reminder_key(chat_id, name, kind)
-    cancel_reminder(chat_id, name, kind)
-
-    async def _job():
-        try:
-            await asyncio.sleep(seconds)
-
-            data = load()
-            record_key = key_by_name(chat_id, name)
-            record = data.get(record_key)
-
-            if not record or not isinstance(record, dict):
-                return
-            if not is_record_current(record, now()):
-                return
-
-            if kind == "toilet":
-                if record.get("outwork_start") != start_text:
-                    return
-                if not is_toilet_remark(record.get("remark")):
-                    return
-
-                await application.bot.send_message(
-                    chat_id=chat_id,
-                    text=f"⚠️ 提醒：{name} 厕所外出已超过15分钟，请尽快确认"
-                )
-
-            elif kind == "eat":
-                if record.get("eat_start") != start_text:
-                    return
-
-                await application.bot.send_message(
-                    chat_id=chat_id,
-                    text=f"⚠️ 提醒：{name} 吃饭已超过20分钟，请尽快确认"
-                )
-
-        except asyncio.CancelledError:
-            return
-        except Exception:
-            traceback.print_exc()
-        finally:
-            REMINDER_TASKS.pop(key, None)
-
-    REMINDER_TASKS[key] = asyncio.create_task(_job())
 
 
 async def send_reply(update: Update, text: str):
@@ -591,6 +545,77 @@ def is_handover_target_available(chat_id: int, data: dict, handover_to: str) -> 
     return True, ""
 
 
+async def reminder_loop(application):
+    while True:
+        try:
+            data = load()
+            current_time = now()
+            changed = False
+
+            for key, raw_record in list(data.items()):
+                if not isinstance(raw_record, dict):
+                    continue
+
+                record = ensure_record(data, key, raw_record.get("name") or "")
+
+                if not is_record_current(record, current_time):
+                    continue
+
+                name = record.get("name") or ""
+                chat_id = None
+
+                try:
+                    chat_id = int(str(key).split("_", 1)[0])
+                except Exception:
+                    continue
+
+                if record.get("outwork_start") and is_toilet_remark(record.get("remark")):
+                    passed = diff(record["outwork_start"], current_time)
+                    if passed >= TOILET_OVERTIME_SECONDS and not record.get("toilet_reminded", False):
+                        await application.bot.send_message(
+                            chat_id=chat_id,
+                            text=f"⚠️ 提醒：{name} 厕所外出已超过15分钟，请尽快确认"
+                        )
+                        record["toilet_reminded"] = True
+                        changed = True
+
+                if record.get("eat_start"):
+                    passed = diff(record["eat_start"], current_time)
+                    if passed >= EAT_OVERTIME_SECONDS and not record.get("eat_reminded", False):
+                        await application.bot.send_message(
+                            chat_id=chat_id,
+                            text=f"⚠️ 提醒：{name} 吃饭已超过20分钟，请尽快确认"
+                        )
+                        record["eat_reminded"] = True
+                        changed = True
+
+            if changed:
+                save(data)
+
+        except asyncio.CancelledError:
+            break
+        except Exception:
+            print("自动提醒循环异常：")
+            traceback.print_exc()
+
+        await asyncio.sleep(REMINDER_CHECK_INTERVAL)
+
+
+async def post_init(application):
+    application.bot_data["reminder_loop_task"] = asyncio.create_task(reminder_loop(application))
+    print("自动提醒循环已启动")
+
+
+async def post_shutdown(application):
+    task = application.bot_data.get("reminder_loop_task")
+    if task:
+        task.cancel()
+        try:
+            await task
+        except asyncio.CancelledError:
+            pass
+
+
 async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     args = context.args
     if not args:
@@ -685,6 +710,7 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0) + 1
 
         record["outwork_start"] = None
+        record["toilet_reminded"] = False
 
     if record.get("eat_start"):
         extra_eat = diff(record["eat_start"], current_time)
@@ -695,6 +721,7 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0) + 1
 
         record["eat_start"] = None
+        record["eat_reminded"] = False
 
     net_seconds = total_seconds - outwork_seconds - eat_seconds
     if net_seconds < 0:
@@ -706,8 +733,6 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     append_history(chat_id, record, out_text, net_seconds)
     save(data)
-    cancel_reminder(chat_id, name, "toilet")
-    cancel_reminder(chat_id, name, "eat")
 
     msg = (
         f"{name} 下班 {record['out']}\n"
@@ -782,17 +807,8 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["handover_to"] = handover_to
     record["remark"] = remark
     record["outwork_count"] = int(record.get("outwork_count", 0) or 0) + 1
+    record["toilet_reminded"] = False
     save(data)
-
-    if is_toilet_remark(remark):
-        schedule_reminder(
-            context.application,
-            chat_id,
-            name,
-            "toilet",
-            record["outwork_start"],
-            TOILET_OVERTIME_SECONDS
-        )
 
     reply = f"{name} 外出 {record['outwork_start']}"
     if handover_to:
@@ -820,12 +836,15 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, f"{name}当前不在外出中")
         return
 
+    record = ensure_record(data, key, name)
+
     current_time = now()
     seconds = diff(record["outwork_start"], current_time)
     remark_text = record.get("remark") or ""
 
     record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
     record["outwork_start"] = None
+    record["toilet_reminded"] = False
 
     overtime_hit = is_toilet_remark(remark_text) and seconds > TOILET_OVERTIME_SECONDS
     if overtime_hit:
@@ -833,7 +852,6 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     clear_temp_fields(record)
     save(data)
-    cancel_reminder(chat_id, name, "toilet")
 
     reply = (
         f"{name} 外出回来 {full(current_time)}\n"
@@ -919,16 +937,8 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["handover_to"] = handover_to
     record["remark"] = None
     record["eat_count"] = int(record.get("eat_count", 0) or 0) + 1
+    record["eat_reminded"] = False
     save(data)
-
-    schedule_reminder(
-        context.application,
-        chat_id,
-        name,
-        "eat",
-        record["eat_start"],
-        EAT_OVERTIME_SECONDS
-    )
 
     reply = f"{name} 吃饭 {record['eat_start']}"
     if handover_to:
@@ -954,11 +964,14 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, f"{name}当前不在吃饭中")
         return
 
+    record = ensure_record(data, key, name)
+
     current_time = now()
     seconds = diff(record["eat_start"], current_time)
 
     record["eat_total"] = int(record.get("eat_total", 0) or 0) + seconds
     record["eat_start"] = None
+    record["eat_reminded"] = False
 
     overtime_hit = seconds > EAT_OVERTIME_SECONDS
     if overtime_hit:
@@ -966,7 +979,6 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     clear_temp_fields(record)
     save(data)
-    cancel_reminder(chat_id, name, "eat")
 
     reply = (
         f"{name} 吃饭回 {full(current_time)}\n"
@@ -1248,7 +1260,7 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/outwork 小鑫 小明 拿快递\n"
         "/back 小鑫\n"
         "/eat 小鑫\n"
-        "/eat 小鑫 小小\n"
+        "/eat 小鑫 小明\n"
         "/eatback 小鑫\n"
         "/today 小鑫\n"
         "/todayall\n"
@@ -1257,7 +1269,6 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/export"
     )
     await send_reply(update, reply)
-
 
 
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
@@ -1269,8 +1280,13 @@ def main():
     if not BOT_TOKEN:
         raise ValueError("BOT_TOKEN not set")
 
-
-    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    app = (
+        ApplicationBuilder()
+        .token(BOT_TOKEN)
+        .post_init(post_init)
+        .post_shutdown(post_shutdown)
+        .build()
+    )
 
     app.add_handler(CommandHandler("in", in_cmd))
     app.add_handler(CommandHandler("out", out_cmd))
