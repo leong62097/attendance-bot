@@ -286,13 +286,6 @@ def clear_temp_fields(record: dict):
     record["remark"] = None
 
 
-def clear_active_flags(record: dict):
-    record["outwork_start"] = None
-    record["eat_start"] = None
-    record["toilet_reminded"] = False
-    record["eat_reminded"] = False
-
-
 def is_toilet_remark(text: str | None) -> bool:
     remark = (text or "").lower()
     return any(k in remark for k in TOILET_KEYWORDS)
@@ -542,7 +535,38 @@ def is_handover_target_available(chat_id: int, data: dict, handover_to: str) -> 
             return False, f"❌ 临时代接人 {handover_to} 当前班次已结束，无法交接"
         return False, f"❌ 临时代接人 {handover_to} 当前状态异常，无法交接"
 
+    # 新增：代接人如果正在替别人代岗，也不能再被交接
+    covering, covering_msg = is_covering_for_others(chat_id, data, handover_to)
+    if covering:
+        return False, f"❌ 临时代接人 {handover_to} 当前正在代接他人工作，无法再次交接"
+
     return True, ""
+
+
+def is_covering_for_others(chat_id: int, data: dict, name: str) -> tuple[bool, str]:
+    current_time = now()
+
+    for other_name in STAFF_NAMES:
+        if other_name == name:
+            continue
+
+        other_key = key_by_name(chat_id, other_name)
+        other_record = data.get(other_key)
+
+        if not other_record or not isinstance(other_record, dict):
+            continue
+
+        if not is_record_current(other_record, current_time):
+            continue
+
+        status = get_status(other_record)
+        if status not in ("outwork", "eat"):
+            continue
+
+        if other_record.get("handover_to") == name:
+            return True, f"❌ {name} 当前正在代接 {other_name} 的工作，暂时不能外出、吃饭或下班"
+
+    return False, ""
 
 
 async def reminder_loop(application):
@@ -562,7 +586,6 @@ async def reminder_loop(application):
                     continue
 
                 name = record.get("name") or ""
-                chat_id = None
 
                 try:
                     chat_id = int(str(key).split("_", 1)[0])
@@ -696,6 +719,11 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, off_msg(name, record["out"]))
         return
 
+    covering, covering_msg = is_covering_for_others(chat_id, data, name)
+    if covering:
+        await send_reply(update, covering_msg)
+        return
+
     current_time = now()
     total_seconds = diff(record["in"], current_time)
     outwork_seconds = int(record.get("outwork_total", 0) or 0)
@@ -795,6 +823,11 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if record.get("eat_start"):
         await send_reply(update, eat_msg(name, record["eat_start"], record.get("handover_to"), record.get("remark")))
+        return
+
+    covering, covering_msg = is_covering_for_others(chat_id, data, name)
+    if covering:
+        await send_reply(update, covering_msg)
         return
 
     if handover_to:
@@ -925,6 +958,11 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if record.get("outwork_start"):
         await send_reply(update, outwork_msg(name, record["outwork_start"], record.get("handover_to"), record.get("remark")))
+        return
+
+    covering, covering_msg = is_covering_for_others(chat_id, data, name)
+    if covering:
+        await send_reply(update, covering_msg)
         return
 
     if handover_to:
