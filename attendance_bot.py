@@ -174,16 +174,17 @@ def parse_command_args(context: ContextTypes.DEFAULT_TYPE):
 
     /in 小鑫
     /today 小鑫
+    /out 小鑫
+    /back 小鑫
+    /eatback 小鑫
 
     /outwork 小鑫 wc
-    /outwork 小鑫 小明 wc
+    /outwork 小鑫 小明 拿快递
 
     /eat 小鑫
     /eat 小鑫 小明
     """
-
     args = context.args
-
     if not args:
         return None, None, None
 
@@ -191,25 +192,18 @@ def parse_command_args(context: ContextTypes.DEFAULT_TYPE):
     handover_to = None
     remark = None
 
-    # 1个参数
-    # /eat 小鑫
     if len(args) == 1:
-        name = args[0]
-
-    # 2个参数
-    # /outwork 小鑫 wc
+        name = args[0].strip()
     elif len(args) == 2:
-        name = args[0]
-        remark = args[1]
-
-    # 3个或以上
-    # /outwork 小鑫 小明 拿快递
-    elif len(args) >= 3:
-        name = args[0]
-        handover_to = args[1]
-        remark = " ".join(args[2:])
+        name = args[0].strip()
+        remark = args[1].strip()
+    else:
+        name = args[0].strip()
+        handover_to = args[1].strip()
+        remark = " ".join(args[2:]).strip() or None
 
     return name, handover_to, remark
+
 
 def get_status(record: dict) -> str:
     if not record.get("in"):
@@ -597,7 +591,7 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     seconds = diff(record["outwork_start"], current_time)
     remark_text = (record.get("remark") or "").lower()
 
-    record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
+    record["outwork_total"] += seconds
     record["outwork_start"] = None
     clear_temp_fields(record)
 
@@ -703,7 +697,7 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     seconds = diff(record["eat_start"], current_time)
 
-    record["eat_total"] = int(record.get("eat_total", 0) or 0) + seconds
+    record["eat_total"] += seconds
     record["eat_start"] = None
     clear_temp_fields(record)
 
@@ -861,8 +855,8 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "打卡命令说明\n\n"
         "/in 名字  上班\n"
         "/out 名字  下班\n"
-        "/outwork 名字 备注  外出\n"
-        "/outwork 名字 临时代接人 备注  外出并临时交接\n"
+        "/outwork 名字 | 备注  外出\n"
+        "/outwork 名字 临时代接人 | 备注  外出并临时交接\n"
         "/back 名字  外出回来\n"
         "/eat 名字  吃饭\n"
         "/eat 名字 临时代接人  吃饭并临时交接\n"
@@ -873,8 +867,8 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/web  查看 Web 面板地址\n\n"
         "示例：\n"
         "/in 小鑫\n"
-        "/outwork 小鑫 wc\n"
-        "/outwork 小鑫 小小 拿快递\n"
+        "/outwork 小鑫 | wc\n"
+        "/outwork 小鑫 小小 | 拿快递\n"
         "/back 小鑫\n"
         "/eat 小鑫\n"
         "/eat 小鑫 小小\n"
