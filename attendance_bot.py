@@ -5,9 +5,6 @@ from datetime import datetime, time
 from zoneinfo import ZoneInfo
 from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment
-from flask import Flask
-from threading import Thread
-import html
 import json
 import os
 import traceback
@@ -24,9 +21,6 @@ DATA_FILE = os.getenv("DATA_FILE_PATH", "attendance_data.json")
 HISTORY_FILE = os.getenv("HISTORY_FILE_PATH", "attendance_history.json")
 TIMEZONE = ZoneInfo("Asia/Kuala_Lumpur")
 
-# Web 面板配置
-PORT = int(os.getenv("PORT", "10000"))
-BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
 
 # 如要限制管理员命令，可填 Telegram 用户ID，例如：{123456789}
 # 目前留空 = 不限制
@@ -53,8 +47,6 @@ STAFF_NAMES = [
     "小白", "月亮", "金金", "贵天", "通邦", "何江", "土豆", "玲玲", "杰克", "黑狼"
 ]
 STAFF_SET = set(STAFF_NAMES)
-
-web_app = Flask(__name__)
 
 
 def now():
@@ -1220,8 +1212,6 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             caption="考勤导出完成"
         )
 
-
-async def web_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if BASE_URL:
         await send_reply(update, f"Web 面板地址：{BASE_URL}/")
     else:
@@ -1246,8 +1236,7 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/report 夜班  查看当天夜班日报\n"
         "/report 转班  查看当天转班日报\n"
         "/reportall  查看当天全部班次日报\n"
-        "/export  导出 Excel\n"
-        "/web  查看 Web 面板地址\n\n"
+        "/export  导出 Excel\n\n"
         "白夜班规则：\n"
         "06:00–17:59 = 白班\n"
         "18:00–05:59 = 夜班\n"
@@ -1266,130 +1255,10 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/report 白班\n"
         "/reportall\n"
         "/export"
+        "/help"
     )
     await send_reply(update, reply)
 
-
-def build_web_html():
-    data = load()
-    current_time = now()
-
-    chat_ids = sorted({
-        int(k.split("_", 1)[0])
-        for k in data.keys()
-        if "_" in k and k.split("_", 1)[0].lstrip("-").isdigit()
-    })
-
-    if not chat_ids:
-        body = "<p>暂无数据</p>"
-    else:
-        sections = []
-        for chat_id in chat_ids:
-            rows = get_todayall_rows(chat_id)
-            html_rows = []
-            for row in rows:
-                html_rows.append(
-                    "<tr>"
-                    f"<td>{html.escape(row['name'])}</td>"
-                    f"<td>{html.escape(row['shift_type'])}</td>"
-                    f"<td>{html.escape(row['status'])}</td>"
-                    f"<td>{html.escape(row['in_time'])}</td>"
-                    f"<td>{html.escape(row['out_time'])}</td>"
-                    f"<td>{html.escape(row['handover_to'])}</td>"
-                    f"<td>{html.escape(row['remark'])}</td>"
-                    f"<td>{html.escape(sec_to_short(row['net_seconds']))}</td>"
-                    f"<td>{html.escape(sec_to_short(row['outwork_seconds']))}</td>"
-                    f"<td>{html.escape(sec_to_short(row['eat_seconds']))}</td>"
-                    "</tr>"
-                )
-
-            section = f"""
-            <h2>群组：{chat_id}</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>姓名</th>
-                        <th>班次</th>
-                        <th>状态</th>
-                        <th>上班时间</th>
-                        <th>下班时间</th>
-                        <th>临时代接</th>
-                        <th>备注</th>
-                        <th>净工时</th>
-                        <th>累计外出</th>
-                        <th>累计吃饭</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {''.join(html_rows)}
-                </tbody>
-            </table>
-            """
-            sections.append(section)
-
-        body = "".join(sections)
-
-    return f"""
-    <!doctype html>
-    <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <title>考勤面板</title>
-        <style>
-            body {{
-                font-family: Arial, "Microsoft YaHei", sans-serif;
-                background: #f7f7f7;
-                color: #222;
-                padding: 20px;
-            }}
-            h1, h2 {{
-                margin: 0 0 16px 0;
-            }}
-            .time {{
-                margin-bottom: 20px;
-                color: #666;
-            }}
-            table {{
-                width: 100%;
-                border-collapse: collapse;
-                background: #fff;
-                margin-bottom: 28px;
-            }}
-            th, td {{
-                border: 1px solid #ddd;
-                padding: 8px 10px;
-                text-align: left;
-                font-size: 14px;
-            }}
-            th {{
-                background: #f0f0f0;
-            }}
-            tr:nth-child(even) {{
-                background: #fafafa;
-            }}
-        </style>
-    </head>
-    <body>
-        <h1>考勤 Web 面板</h1>
-        <div class="time">当前时间：{html.escape(full(current_time))}</div>
-        {body}
-    </body>
-    </html>
-    """
-
-
-@web_app.route("/")
-def web_index():
-    return build_web_html()
-
-
-@web_app.route("/health")
-def health():
-    return "ok"
-
-
-def run_web():
-    web_app.run(host="0.0.0.0", port=PORT)
 
 
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
@@ -1401,8 +1270,6 @@ def main():
     if not BOT_TOKEN:
         raise ValueError("BOT_TOKEN not set")
 
-    web_thread = Thread(target=run_web, daemon=True)
-    web_thread.start()
 
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
@@ -1417,7 +1284,6 @@ def main():
     app.add_handler(CommandHandler("report", report_cmd))
     app.add_handler(CommandHandler("reportall", reportall_cmd))
     app.add_handler(CommandHandler("export", export_cmd))
-    app.add_handler(CommandHandler("web", web_cmd))
     app.add_handler(CommandHandler("help", help_cmd))
 
     app.add_error_handler(error_handler)
