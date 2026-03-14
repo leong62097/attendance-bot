@@ -792,15 +792,15 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["outwork_count"] = int(record.get("outwork_count", 0) or 0) + 1
     save(data)
 
-if is_toilet_remark(remark):
-    schedule_reminder(
-        context.application,
-        chat_id,
-        name,
-        "toilet",
-        record["outwork_start"],
-        TOILET_OVERTIME_SECONDS
-    )
+    if is_toilet_remark(remark):
+        schedule_reminder(
+            context.application,
+            chat_id,
+            name,
+            "toilet",
+            record["outwork_start"],
+            TOILET_OVERTIME_SECONDS
+        )
 
     reply = f"{name} 外出 {record['outwork_start']}"
     if handover_to:
@@ -929,8 +929,8 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     record["eat_count"] = int(record.get("eat_count", 0) or 0) + 1
     save(data)
 
-   schedule_reminder(
-       context.application,
+    schedule_reminder(
+        context.application,
         chat_id,
         name,
         "eat",
