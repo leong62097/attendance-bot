@@ -158,6 +158,11 @@ def reset_for_new_shift(record: dict, name: str, current: str):
     record["remark"] = None
 
 
+def clear_temp_fields(record: dict):
+    record["handover_to"] = None
+    record["remark"] = None
+
+
 async def send_reply(update: Update, text: str):
     if update.message:
         await update.message.reply_text(text)
@@ -344,13 +349,23 @@ def get_todayall_rows(chat_id: int):
             "none": "未打卡"
         }
 
+        status_text = status_map.get(status_key, "未知")
+        handover_to = record.get("handover_to") or ""
+        remark = record.get("remark") or ""
+
+        if status_text not in ("外出中", "吃饭中"):
+            handover_to = ""
+
+        if status_text != "外出中":
+            remark = ""
+
         rows.append({
             "name": name,
-            "status": status_map.get(status_key, "未知"),
+            "status": status_text,
             "in_time": record.get("in") or "",
             "out_time": record.get("out") or "",
-            "handover_to": record.get("handover_to") or "",
-            "remark": record.get("remark") or "",
+            "handover_to": handover_to,
+            "remark": remark,
             "net_seconds": totals["net_seconds"],
             "outwork_seconds": totals["outwork_seconds"],
             "eat_seconds": totals["eat_seconds"],
@@ -572,8 +587,9 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     seconds = diff(record["outwork_start"], current_time)
     remark_text = (record.get("remark") or "").lower()
 
-    record["outwork_total"] += seconds
+    record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
     record["outwork_start"] = None
+    clear_temp_fields(record)
 
     save(data)
 
@@ -677,8 +693,9 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     seconds = diff(record["eat_start"], current_time)
 
-    record["eat_total"] += seconds
+    record["eat_total"] = int(record.get("eat_total", 0) or 0) + seconds
     record["eat_start"] = None
+    clear_temp_fields(record)
 
     save(data)
 
@@ -759,9 +776,9 @@ async def todayall_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         line = f"{row['name']} {row['status']}"
         if row["status"] != "未打卡":
             line += f" | 净工时：{sec_to_short(row['net_seconds'])}"
-        if row["handover_to"]:
+        if row["status"] in ("外出中", "吃饭中") and row["handover_to"]:
             line += f" | 临时代接：{row['handover_to']}"
-        if row["remark"]:
+        if row["status"] == "外出中" and row["remark"]:
             line += f" | 备注：{row['remark']}"
         lines.append(line)
 
