@@ -14,7 +14,9 @@
     "shift_type": "白班",
     "shift_date": "2026-03-14",
     "toilet_overtime": 1,
-    "eat_overtime": 0
+    "eat_overtime": 0,
+    "toilet_reminded": false,
+    "eat_reminded": false
   },
   "-1003808754649_小鑫": {
     "name": "小鑫",
@@ -31,7 +33,9 @@
     "shift_type": "白班",
     "shift_date": "2026-03-14",
     "toilet_overtime": 0,
-    "eat_overtime": 0
+    "eat_overtime": 0,
+    "toilet_reminded": true,
+    "eat_reminded": false
   },
   "-1003808754649_小明": {
     "name": "小明",
@@ -48,7 +52,9 @@
     "shift_type": "白班",
     "shift_date": "2026-03-14",
     "toilet_overtime": 0,
-    "eat_overtime": 0
+    "eat_overtime": 0,
+    "toilet_reminded": false,
+    "eat_reminded": false
   },
   "-1003624527407_小明": {
     "name": "小明",
@@ -65,6 +71,8 @@
     "shift_type": "白班",
     "shift_date": "2026-03-14",
     "toilet_overtime": 0,
-    "eat_overtime": 0
+    "eat_overtime": 0,
+    "toilet_reminded": false,
+    "eat_reminded": false
   }
 }
