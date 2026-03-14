@@ -609,14 +609,22 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    name, handover_to, remark = parse_command_args(context)
+    args = context.args
 
-    valid, msg = validate_name(name)
-    if not valid:
-        await send_reply(update, msg)
+    if not args:
+        await send_reply(
+            update,
+            "❌ 格式错误\n"
+            "格式：\n"
+            "/eat 名字\n"
+            "/eat 名字 临时代接人"
+        )
         return
 
-    if remark:
+    name = args[0].strip()
+    handover_to = args[1].strip() if len(args) >= 2 else None
+
+    if len(args) > 2:
         await send_reply(
             update,
             "❌ 吃饭无需填写备注\n"
@@ -624,6 +632,11 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "/eat 名字\n"
             "/eat 名字 临时代接人"
         )
+        return
+
+    valid, msg = validate_name(name)
+    if not valid:
+        await send_reply(update, msg)
         return
 
     if handover_to and handover_to == name:
