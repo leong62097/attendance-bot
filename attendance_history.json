@@ -223,5 +223,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "杨浩",
+    "shift_type": "白班",
+    "shift_date": "2026-03-14",
+    "in": "2026-03-14 17:21:13",
+    "out": "2026-03-14 20:02:30",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 9677,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
