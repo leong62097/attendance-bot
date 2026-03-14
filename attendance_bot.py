@@ -170,36 +170,46 @@ async def send_reply(update: Update, text: str):
 
 def parse_command_args(context: ContextTypes.DEFAULT_TYPE):
     """
-    支持：
+    新格式（不使用 |）
+
     /in 小鑫
     /today 小鑫
-    /outwork 小鑫
-    /outwork 小鑫 小小
-    /outwork 小鑫 | 上厕所
-    /outwork 小鑫 小小 | 上厕所
-    /eat 小鑫 小小 | 吃饭
+
+    /outwork 小鑫 wc
+    /outwork 小鑫 小明 wc
+
+    /eat 小鑫
+    /eat 小鑫 小明
     """
-    raw = " ".join(context.args).strip()
-    if not raw:
+
+    args = context.args
+
+    if not args:
         return None, None, None
 
+    name = None
+    handover_to = None
     remark = None
-    left = raw
 
-    if "|" in raw:
-        left, remark = raw.split("|", 1)
-        left = left.strip()
-        remark = remark.strip() or None
+    # 1个参数
+    # /eat 小鑫
+    if len(args) == 1:
+        name = args[0]
 
-    parts = left.split()
-    if not parts:
-        return None, None, remark
+    # 2个参数
+    # /outwork 小鑫 wc
+    elif len(args) == 2:
+        name = args[0]
+        remark = args[1]
 
-    name = parts[0].strip() if len(parts) >= 1 else None
-    handover_to = parts[1].strip() if len(parts) >= 2 else None
+    # 3个或以上
+    # /outwork 小鑫 小明 拿快递
+    elif len(args) >= 3:
+        name = args[0]
+        handover_to = args[1]
+        remark = " ".join(args[2:])
 
     return name, handover_to, remark
-
 
 def get_status(record: dict) -> str:
     if not record.get("in"):
