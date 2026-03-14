@@ -512,8 +512,8 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             update,
             "❌ 外出必须填写备注\n"
             "格式：\n"
-            "/outwork 名字 | 备注\n"
-            "/outwork 名字 临时代接人 | 备注"
+            "/outwork 名字 备注\n"
+            "/outwork 名字 临时代接人 备注"
         )
         return
 
@@ -754,10 +754,10 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"下班时间：{record.get('out') or '未下班'}\n"
     )
 
-    if record.get("handover_to") and not record.get("out"):
+    if status in ("外出中", "吃饭中") and record.get("handover_to"):
         reply += f"临时代接：{record.get('handover_to')}\n"
 
-    if record.get("remark") and not record.get("out"):
+    if status == "外出中" and record.get("remark"):
         reply += f"备注：{record.get('remark')}\n"
 
     reply += (
@@ -855,8 +855,8 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "打卡命令说明\n\n"
         "/in 名字  上班\n"
         "/out 名字  下班\n"
-        "/outwork 名字 | 备注  外出\n"
-        "/outwork 名字 临时代接人 | 备注  外出并临时交接\n"
+        "/outwork 名字 备注  外出\n"
+        "/outwork 名字 临时代接人 备注  外出并临时交接\n"
         "/back 名字  外出回来\n"
         "/eat 名字  吃饭\n"
         "/eat 名字 临时代接人  吃饭并临时交接\n"
@@ -867,8 +867,8 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/web  查看 Web 面板地址\n\n"
         "示例：\n"
         "/in 小鑫\n"
-        "/outwork 小鑫 | wc\n"
-        "/outwork 小鑫 小小 | 拿快递\n"
+        "/outwork 小鑫 wc\n"
+        "/outwork 小鑫 小小 拿快递\n"
         "/back 小鑫\n"
         "/eat 小鑫\n"
         "/eat 小鑫 小小\n"
@@ -1035,4 +1035,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
