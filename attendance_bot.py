@@ -28,8 +28,9 @@ ADMIN_IDS = set()
 
 DAY_SHIFT_START = time(6, 0, 0)
 DAY_SHIFT_END = time(17, 59, 59)
-TOILET_KEYWORDS = ["厕所", "上厕所", "洗手间", "wc"]
-TOILET_OVERTIME_SECONDS = 15 * 60
+
+# 外出与吃饭超时规则
+OUTWORK_OVERTIME_SECONDS = 15 * 60
 EAT_OVERTIME_SECONDS = 20 * 60
 REMINDER_CHECK_INTERVAL = 30
 
@@ -254,6 +255,7 @@ def ensure_record(data: dict, key: str, name: str) -> dict:
     record["remark"] = record.get("remark")
     record["shift_type"] = record.get("shift_type")
     record["shift_date"] = record.get("shift_date")
+    # 保留旧字段名，避免旧数据失效；实际含义改为“外出超时”
     record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0)
     record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0)
     record["toilet_reminded"] = bool(record.get("toilet_reminded", False))
@@ -284,11 +286,6 @@ def reset_for_new_shift(record: dict, name: str, current: str, shift_type: str, 
 def clear_temp_fields(record: dict):
     record["handover_to"] = None
     record["remark"] = None
-
-
-def is_toilet_remark(text: str | None) -> bool:
-    remark = (text or "").lower()
-    return any(k in remark for k in TOILET_KEYWORDS)
 
 
 def append_history(chat_id: int, record: dict, out_time: str, net_seconds: int):
@@ -535,7 +532,7 @@ def is_handover_target_available(chat_id: int, data: dict, handover_to: str) -> 
             return False, f"❌ 临时代接人 {handover_to} 当前班次已结束，无法交接"
         return False, f"❌ 临时代接人 {handover_to} 当前状态异常，无法交接"
 
-    # 新增：代接人如果正在替别人代岗，也不能再被交接
+    # 代接人如果正在替别人代岗，也不能再被交接
     covering, covering_msg = is_covering_for_others(chat_id, data, handover_to)
     if covering:
         return False, f"❌ 临时代接人 {handover_to} 当前正在代接他人工作，无法再次交接"
@@ -592,12 +589,13 @@ async def reminder_loop(application):
                 except Exception:
                     continue
 
-                if record.get("outwork_start") and is_toilet_remark(record.get("remark")):
+                # 只要是外出，一律超过15分钟提醒
+                if record.get("outwork_start"):
                     passed = diff(record["outwork_start"], current_time)
-                    if passed >= TOILET_OVERTIME_SECONDS and not record.get("toilet_reminded", False):
+                    if passed >= OUTWORK_OVERTIME_SECONDS and not record.get("toilet_reminded", False):
                         await application.bot.send_message(
                             chat_id=chat_id,
-                            text=f"⚠️ 提醒：{name} 厕所外出已超过15分钟，请尽快确认"
+                            text=f"⚠️ 提醒：{name} 外出已超过15分钟，请尽快确认"
                         )
                         record["toilet_reminded"] = True
                         changed = True
@@ -734,7 +732,8 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         outwork_seconds += extra_out
         record["outwork_total"] = outwork_seconds
 
-        if is_toilet_remark(record.get("remark")) and extra_out > TOILET_OVERTIME_SECONDS:
+        # 不再看备注，只要外出超过15分钟就算超时
+        if extra_out > OUTWORK_OVERTIME_SECONDS:
             record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0) + 1
 
         record["outwork_start"] = None
@@ -769,7 +768,7 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"外出 {sec_to_str(outwork_seconds)}（{int(record.get('outwork_count', 0) or 0)}次）\n"
         f"吃饭 {sec_to_str(eat_seconds)}（{int(record.get('eat_count', 0) or 0)}次）\n"
         f"净工时 {sec_to_str(net_seconds)}\n"
-        f"厕所超时 {int(record.get('toilet_overtime', 0) or 0)}次\n"
+        f"外出超时 {int(record.get('toilet_overtime', 0) or 0)}次\n"
         f"吃饭超时 {int(record.get('eat_overtime', 0) or 0)}次"
     )
     await send_reply(update, msg)
@@ -781,16 +780,6 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     valid, msg = validate_name(name)
     if not valid:
         await send_reply(update, msg)
-        return
-
-    if not remark:
-        await send_reply(
-            update,
-            "❌ 外出必须填写备注\n"
-            "格式：\n"
-            "/outwork 名字 备注\n"
-            "/outwork 名字 临时代接人 备注"
-        )
         return
 
     if handover_to and handover_to == name:
@@ -873,13 +862,13 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     current_time = now()
     seconds = diff(record["outwork_start"], current_time)
-    remark_text = record.get("remark") or ""
 
     record["outwork_total"] = int(record.get("outwork_total", 0) or 0) + seconds
     record["outwork_start"] = None
     record["toilet_reminded"] = False
 
-    overtime_hit = is_toilet_remark(remark_text) and seconds > TOILET_OVERTIME_SECONDS
+    # 不再看备注，只要外出超过15分钟就算超时
+    overtime_hit = seconds > OUTWORK_OVERTIME_SECONDS
     if overtime_hit:
         record["toilet_overtime"] = int(record.get("toilet_overtime", 0) or 0) + 1
 
@@ -892,7 +881,7 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     if overtime_hit:
-        reply += "\n⚠️ 警告：本次厕所外出超过15分钟"
+        reply += "\n⚠️ 警告：本次外出超过15分钟"
 
     await send_reply(update, reply)
 
@@ -1080,7 +1069,7 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply += (
         f"累计外出：{sec_to_str(totals['outwork_seconds'])}（{int(record.get('outwork_count', 0) or 0)}次）\n"
         f"累计吃饭：{sec_to_str(totals['eat_seconds'])}（{int(record.get('eat_count', 0) or 0)}次）\n"
-        f"厕所超时：{int(record.get('toilet_overtime', 0) or 0)}次\n"
+        f"外出超时：{int(record.get('toilet_overtime', 0) or 0)}次\n"
         f"吃饭超时：{int(record.get('eat_overtime', 0) or 0)}次\n"
         f"当前净工时：{sec_to_str(totals['net_seconds'])}"
     )
@@ -1143,14 +1132,14 @@ def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[s
     total_eat = sum(int(r.get("eat_total", 0) or 0) for r in rows)
     total_outwork_count = sum(int(r.get("outwork_count", 0) or 0) for r in rows)
     total_eat_count = sum(int(r.get("eat_count", 0) or 0) for r in rows)
-    total_toilet_overtime = sum(int(r.get("toilet_overtime", 0) or 0) for r in rows)
+    total_outwork_overtime = sum(int(r.get("toilet_overtime", 0) or 0) for r in rows)
     total_eat_overtime = sum(int(r.get("eat_overtime", 0) or 0) for r in rows)
 
     lines.extend([
         f"净工时合计：{sec_to_str(total_net)}",
         f"外出合计：{sec_to_str(total_outwork)}（{total_outwork_count}次）",
         f"吃饭合计：{sec_to_str(total_eat)}（{total_eat_count}次）",
-        f"厕所超时：{total_toilet_overtime}次",
+        f"外出超时：{total_outwork_overtime}次",
         f"吃饭超时：{total_eat_overtime}次",
         "",
         "人员明细："
@@ -1164,7 +1153,7 @@ def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[s
             f"净{sec_to_short(int(r.get('net_seconds', 0) or 0))} "
             f"| 外出{int(r.get('outwork_count', 0) or 0)}次 "
             f"| 吃饭{int(r.get('eat_count', 0) or 0)}次 "
-            f"| 厕所超时{int(r.get('toilet_overtime', 0) or 0)}次 "
+            f"| 外出超时{int(r.get('toilet_overtime', 0) or 0)}次 "
             f"| 吃饭超时{int(r.get('eat_overtime', 0) or 0)}次"
         )
 
@@ -1274,6 +1263,7 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/in 名字  上班（自动识别白/夜班）\n"
         "/in 名字 转  转班上班\n"
         "/out 名字  下班\n"
+        "/outwork 名字  外出\n"
         "/outwork 名字 备注  外出\n"
         "/outwork 名字 临时代接人 备注  外出并临时交接\n"
         "/back 名字  外出回来\n"
@@ -1291,10 +1281,14 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "06:00–17:59 = 白班\n"
         "18:00–05:59 = 夜班\n"
         "转班必须手动写：/in 名字 转\n\n"
+        "超时规则：\n"
+        "外出超过15分钟 = 提醒/警告\n"
+        "吃饭超过20分钟 = 提醒/警告\n\n"
         "示例：\n"
         "/in 小鑫\n"
         "/in 小鑫 转\n"
-        "/outwork 小鑫 wc\n"
+        "/outwork 小鑫\n"
+        "/outwork 小鑫 拿快递\n"
         "/outwork 小鑫 小明 拿快递\n"
         "/back 小鑫\n"
         "/eat 小鑫\n"
