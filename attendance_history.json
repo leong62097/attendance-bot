@@ -1633,5 +1633,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小布",
+    "shift_type": "白班",
+    "shift_date": "2026-03-15",
+    "in": "2026-03-15 08:01:16",
+    "out": "2026-03-15 20:02:15",
+    "outwork_total": 1733,
+    "eat_total": 1073,
+    "net_seconds": 40453,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
