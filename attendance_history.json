@@ -2428,5 +2428,20 @@
     "eat_count": 1,
     "toilet_overtime": 4,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "杰邓",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-15",
+    "in": "2026-03-15 20:00:06",
+    "out": "2026-03-16 14:00:06",
+    "outwork_total": 5393,
+    "eat_total": 3500,
+    "net_seconds": 55907,
+    "outwork_count": 1,
+    "eat_count": 3,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
