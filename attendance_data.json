@@ -1279,17 +1279,17 @@
     "outwork_start": null,
     "outwork_total": 13021,
     "outwork_count": 6,
-    "eat_start": "2026-03-16 12:47:13",
-    "eat_total": 3698,
+    "eat_start": null,
+    "eat_total": 4930,
     "eat_count": 4,
-    "handover_to": "阿煌",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-03-14",
     "toilet_overtime": 2,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_黑狼": {
     "name": "黑狼",
