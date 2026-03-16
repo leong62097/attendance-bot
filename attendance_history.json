@@ -2593,5 +2593,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "沈三",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-15",
+    "in": "2026-03-15 20:01:54",
+    "out": "2026-03-16 14:02:47",
+    "outwork_total": 5167,
+    "eat_total": 1093,
+    "net_seconds": 58593,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
