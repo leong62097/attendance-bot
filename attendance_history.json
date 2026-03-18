@@ -5608,5 +5608,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "阿伟",
+    "shift_type": "白班",
+    "shift_date": "2026-03-18",
+    "in": "2026-03-18 07:57:08",
+    "out": "2026-03-18 19:22:51",
+    "outwork_total": 0,
+    "eat_total": 1279,
+    "net_seconds": 39864,
+    "outwork_count": 0,
+    "eat_count": 3,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
