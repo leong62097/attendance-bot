@@ -471,7 +471,7 @@
     "shift_date": "2026-03-18",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_明惠": {
@@ -832,7 +832,7 @@
     "shift_date": "2026-03-18",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_官成": {
@@ -1839,7 +1839,7 @@
     "shift_date": "2026-03-18",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_大和": {
