@@ -7153,5 +7153,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "大风",
+    "shift_type": "白班",
+    "shift_date": "2026-03-19",
+    "in": "2026-03-19 08:14:30",
+    "out": "2026-03-19 20:13:39",
+    "outwork_total": 1348,
+    "eat_total": 0,
+    "net_seconds": 41801,
+    "outwork_count": 3,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
