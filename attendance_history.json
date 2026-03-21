@@ -8863,5 +8863,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "大和",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-20",
+    "in": "2026-03-20 20:08:29",
+    "out": "2026-03-21 08:05:35",
+    "outwork_total": 5080,
+    "eat_total": 0,
+    "net_seconds": 37946,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
