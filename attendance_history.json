@@ -10363,5 +10363,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "珠珠",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-21",
+    "in": "2026-03-21 20:05:42",
+    "out": "2026-03-22 08:15:10",
+    "outwork_total": 5797,
+    "eat_total": 2394,
+    "net_seconds": 35577,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
