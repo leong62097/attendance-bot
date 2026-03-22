@@ -472,7 +472,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1001819319968_明惠": {
     "name": "明惠",
