@@ -2039,17 +2039,17 @@
     "outwork_start": null,
     "outwork_total": 6363,
     "outwork_count": 2,
-    "eat_start": "2026-03-24 07:13:04",
-    "eat_total": 1256,
+    "eat_start": null,
+    "eat_total": 2483,
     "eat_count": 2,
-    "handover_to": "米儿",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-03-23",
     "toilet_overtime": 1,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_娜婷": {
     "name": "娜婷",
