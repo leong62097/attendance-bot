@@ -12703,5 +12703,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "唐勋",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-23",
+    "in": "2026-03-23 20:07:04",
+    "out": "2026-03-24 08:05:26",
+    "outwork_total": 5230,
+    "eat_total": 0,
+    "net_seconds": 37872,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
