@@ -16333,5 +16333,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小柳",
+    "shift_type": "白班",
+    "shift_date": "2026-03-26",
+    "in": "2026-03-26 08:06:35",
+    "out": "2026-03-26 20:16:38",
+    "outwork_total": 893,
+    "eat_total": 944,
+    "net_seconds": 41966,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
