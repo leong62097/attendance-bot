@@ -16573,5 +16573,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "子龙",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-26",
+    "in": "2026-03-26 20:22:58",
+    "out": "2026-03-27 08:03:21",
+    "outwork_total": 5469,
+    "eat_total": 1055,
+    "net_seconds": 35499,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
