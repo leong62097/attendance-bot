@@ -281,7 +281,7 @@
     "shift_date": "2026-03-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_卢雨": {
@@ -585,7 +585,7 @@
     "shift_date": "2026-03-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_小媛": {
@@ -908,7 +908,7 @@
     "shift_date": "2026-03-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_月亮": {
@@ -1934,7 +1934,7 @@
     "shift_date": "2026-03-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_卢卡": {
