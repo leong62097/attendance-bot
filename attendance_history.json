@@ -19858,5 +19858,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "浩哲",
+    "shift_type": "白班",
+    "shift_date": "2026-03-29",
+    "in": "2026-03-29 08:06:29",
+    "out": "2026-03-29 20:04:29",
+    "outwork_total": 1998,
+    "eat_total": 845,
+    "net_seconds": 40237,
+    "outwork_count": 3,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
