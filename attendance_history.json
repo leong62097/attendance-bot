@@ -20908,5 +20908,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 2
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "阿旺",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-29",
+    "in": "2026-03-29 20:09:43",
+    "out": "2026-03-30 08:17:34",
+    "outwork_total": 5073,
+    "eat_total": 0,
+    "net_seconds": 38598,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
