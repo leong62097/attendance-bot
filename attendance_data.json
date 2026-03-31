@@ -424,17 +424,17 @@
     "outwork_start": null,
     "outwork_total": 5290,
     "outwork_count": 1,
-    "eat_start": "2026-04-01 07:08:59",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1262,
     "eat_count": 1,
     "handover_to": null,
     "remark": null,
     "shift_type": "转班",
     "shift_date": "2026-03-31",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_阿凯": {
     "name": "阿凯",
