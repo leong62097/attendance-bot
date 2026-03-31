@@ -22543,5 +22543,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "啊宏",
+    "shift_type": "白班",
+    "shift_date": "2026-03-31",
+    "in": "2026-03-31 08:00:08",
+    "out": "2026-03-31 20:02:23",
+    "outwork_total": 997,
+    "eat_total": 2245,
+    "net_seconds": 40093,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
