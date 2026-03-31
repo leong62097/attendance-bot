@@ -22123,5 +22123,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "路易斯",
+    "shift_type": "夜班",
+    "shift_date": "2026-03-30",
+    "in": "2026-03-30 20:06:35",
+    "out": "2026-03-31 08:07:49",
+    "outwork_total": 5383,
+    "eat_total": 2296,
+    "net_seconds": 35595,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
