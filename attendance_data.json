@@ -1659,17 +1659,17 @@
     "outwork_start": null,
     "outwork_total": 5392,
     "outwork_count": 1,
-    "eat_start": "2026-04-03 06:03:22",
-    "eat_total": 1184,
+    "eat_start": null,
+    "eat_total": 2435,
     "eat_count": 2,
     "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-04-02",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_鸡仔": {
     "name": "鸡仔",
