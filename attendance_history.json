@@ -27148,5 +27148,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "荆川",
+    "shift_type": "白班",
+    "shift_date": "2026-04-03",
+    "in": "2026-04-03 08:11:04",
+    "out": "2026-04-03 20:12:10",
+    "outwork_total": 1757,
+    "eat_total": 0,
+    "net_seconds": 41509,
+    "outwork_count": 2,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
