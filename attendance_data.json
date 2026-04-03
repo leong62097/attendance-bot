@@ -1067,8 +1067,8 @@
     "name": "小康",
     "in": "2026-04-03 20:01:18",
     "out": null,
-    "outwork_start": "2026-04-04 03:11:31",
-    "outwork_total": 0,
+    "outwork_start": null,
+    "outwork_total": 4931,
     "outwork_count": 1,
     "eat_start": null,
     "eat_total": 861,
@@ -1077,9 +1077,9 @@
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-04-03",
-    "toilet_overtime": 0,
+    "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001819319968_小西": {
