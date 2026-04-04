@@ -2153,17 +2153,17 @@
     "outwork_start": null,
     "outwork_total": 3540,
     "outwork_count": 5,
-    "eat_start": "2026-04-04 18:41:31",
-    "eat_total": 1211,
+    "eat_start": null,
+    "eat_total": 2452,
     "eat_count": 2,
-    "handover_to": "黄丽",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-04",
     "toilet_overtime": 1,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1003624527407_小草": {
     "name": "小草",
