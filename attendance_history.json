@@ -27433,5 +27433,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "淑婧",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-03",
+    "in": "2026-04-03 20:44:36",
+    "out": "2026-04-04 08:01:58",
+    "outwork_total": 4591,
+    "eat_total": 1063,
+    "net_seconds": 34988,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
