@@ -1830,17 +1830,17 @@
     "outwork_start": null,
     "outwork_total": 930,
     "outwork_count": 2,
-    "eat_start": "2026-04-05 18:25:03",
-    "eat_total": 915,
+    "eat_start": null,
+    "eat_total": 2858,
     "eat_count": 2,
-    "handover_to": "小草",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-05",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_大和": {
     "name": "大和",
