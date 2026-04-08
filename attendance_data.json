@@ -2229,17 +2229,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-04-08 21:12:37",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1259,
     "eat_count": 1,
-    "handover_to": "阿良",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-04-08",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_胜利": {
     "name": "胜利",
