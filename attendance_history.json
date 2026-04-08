@@ -33853,5 +33853,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "丽莎",
+    "shift_type": "白班",
+    "shift_date": "2026-04-08",
+    "in": "2026-04-08 08:02:12",
+    "out": "2026-04-08 20:07:27",
+    "outwork_total": 0,
+    "eat_total": 959,
+    "net_seconds": 42556,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
