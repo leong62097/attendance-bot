@@ -33598,5 +33598,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "林希",
+    "shift_type": "白班",
+    "shift_date": "2026-04-08",
+    "in": "2026-04-08 07:54:13",
+    "out": "2026-04-08 20:02:51",
+    "outwork_total": 0,
+    "eat_total": 1986,
+    "net_seconds": 41732,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
