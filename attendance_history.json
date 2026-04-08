@@ -33928,5 +33928,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "珠珠",
+    "shift_type": "白班",
+    "shift_date": "2026-04-08",
+    "in": "2026-04-08 08:11:10",
+    "out": "2026-04-08 20:10:24",
+    "outwork_total": 0,
+    "eat_total": 2417,
+    "net_seconds": 40737,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 2
   }
 ]
