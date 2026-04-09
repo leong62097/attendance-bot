@@ -34318,5 +34318,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "通邦",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-08",
+    "in": "2026-04-08 20:06:53",
+    "out": "2026-04-09 08:02:51",
+    "outwork_total": 6158,
+    "eat_total": 2128,
+    "net_seconds": 34672,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
