@@ -667,7 +667,7 @@
   "-1001801871581_杰克": {
     "name": "杰克",
     "in": "2026-04-08 20:00:26",
-    "out": "2026-04-09 08:06:10",
+    "out": null,
     "outwork_start": null,
     "outwork_total": 5297,
     "outwork_count": 1,
@@ -1446,7 +1446,7 @@
   "-1001801871581_小杨": {
     "name": "小杨",
     "in": "2026-04-08 20:17:32",
-    "out": null,
+    "out": "2026-04-09 08:06:14",
     "outwork_start": null,
     "outwork_total": 6193,
     "outwork_count": 2,
