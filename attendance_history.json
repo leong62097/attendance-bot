@@ -35983,5 +35983,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小杨",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-09",
+    "in": "2026-04-09 20:08:02",
+    "out": "2026-04-10 08:09:43",
+    "outwork_total": 5293,
+    "eat_total": 2201,
+    "net_seconds": 35807,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
