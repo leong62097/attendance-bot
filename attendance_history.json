@@ -40303,5 +40303,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小玫",
+    "shift_type": "白班",
+    "shift_date": "2026-04-13",
+    "in": "2026-04-13 08:05:20",
+    "out": "2026-04-13 20:03:15",
+    "outwork_total": 860,
+    "eat_total": 2237,
+    "net_seconds": 39978,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
