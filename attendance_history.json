@@ -40033,5 +40033,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1003808754649,
+    "name": "小崔",
+    "shift_type": "白班",
+    "shift_date": "2026-03-14",
+    "in": "2026-03-14 16:31:41",
+    "out": "2026-04-13 14:06:52",
+    "outwork_total": 1048,
+    "eat_total": 0,
+    "net_seconds": 2582263,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
