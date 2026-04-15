@@ -43123,5 +43123,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "米儿",
+    "shift_type": "白班",
+    "shift_date": "2026-04-15",
+    "in": "2026-04-15 08:16:03",
+    "out": "2026-04-15 20:16:20",
+    "outwork_total": 713,
+    "eat_total": 2001,
+    "net_seconds": 40503,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
