@@ -1241,17 +1241,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-04-19 11:22:51",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1282,
     "eat_count": 1,
-    "handover_to": "金金",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-19",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_白鹿": {
     "name": "白鹿",
