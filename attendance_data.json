@@ -595,17 +595,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-04-21 01:52:36",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1243,
     "eat_count": 1,
-    "handover_to": "小马",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-04-20",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_杰伦": {
     "name": "杰伦",
