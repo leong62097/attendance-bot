@@ -3973,5 +3973,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "胜利",
+    "shift_type": "白班",
+    "shift_date": "2026-04-20",
+    "in": "2026-04-20 07:47:09",
+    "out": "2026-04-20 19:52:34",
+    "outwork_total": 0,
+    "eat_total": 2031,
+    "net_seconds": 41494,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
