@@ -3433,5 +3433,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "不留",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-19",
+    "in": "2026-04-19 20:02:59",
+    "out": "2026-04-20 08:02:02",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 43143,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
