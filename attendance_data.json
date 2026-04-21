@@ -1222,17 +1222,17 @@
     "outwork_start": null,
     "outwork_total": 454,
     "outwork_count": 1,
-    "eat_start": "2026-04-21 10:36:02",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1239,
     "eat_count": 1,
-    "handover_to": "小宁",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-21",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_西西": {
     "name": "西西",
