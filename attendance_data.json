@@ -2049,7 +2049,7 @@
     "toilet_overtime": 1,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_娜婷": {
     "name": "娜婷",
