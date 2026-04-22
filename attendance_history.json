@@ -6403,5 +6403,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "靖茹",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-21",
+    "in": "2026-04-21 20:01:46",
+    "out": "2026-04-22 08:15:12",
+    "outwork_total": 5388,
+    "eat_total": 0,
+    "net_seconds": 38618,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
