@@ -414,7 +414,7 @@
     "shift_date": "2026-04-23",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_土豆": {
@@ -661,7 +661,7 @@
     "shift_date": "2026-04-23",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_杰克": {
