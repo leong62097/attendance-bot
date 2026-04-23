@@ -1127,17 +1127,17 @@
     "outwork_start": null,
     "outwork_total": 528,
     "outwork_count": 1,
-    "eat_start": "2026-04-23 16:04:08",
-    "eat_total": 2472,
+    "eat_start": null,
+    "eat_total": 3708,
     "eat_count": 3,
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-23",
     "toilet_overtime": 0,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_可可": {
     "name": "可可",
