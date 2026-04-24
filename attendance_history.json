@@ -8668,5 +8668,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小媛",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-23",
+    "in": "2026-04-23 20:02:28",
+    "out": "2026-04-24 08:05:21",
+    "outwork_total": 5503,
+    "eat_total": 0,
+    "net_seconds": 37870,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
