@@ -9298,5 +9298,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "通邦",
+    "shift_type": "白班",
+    "shift_date": "2026-04-24",
+    "in": "2026-04-24 08:16:42",
+    "out": "2026-04-24 20:03:02",
+    "outwork_total": 1068,
+    "eat_total": 840,
+    "net_seconds": 40472,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
