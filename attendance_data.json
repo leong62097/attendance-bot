@@ -1089,17 +1089,17 @@
     "outwork_start": null,
     "outwork_total": 480,
     "outwork_count": 1,
-    "eat_start": "2026-04-24 18:01:29",
-    "eat_total": 1045,
+    "eat_start": null,
+    "eat_total": 2263,
     "eat_count": 2,
-    "handover_to": "阿煌",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-04-24",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_小成": {
     "name": "小成",
