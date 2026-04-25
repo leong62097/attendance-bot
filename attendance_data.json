@@ -624,7 +624,7 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_欧迪": {
     "name": "欧迪",
