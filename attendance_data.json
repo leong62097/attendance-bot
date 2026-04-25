@@ -623,7 +623,7 @@
     "shift_date": "2026-04-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_欧迪": {
@@ -908,7 +908,7 @@
     "shift_date": "2026-04-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_月亮": {
@@ -1896,7 +1896,7 @@
     "shift_date": "2026-04-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_颖杰": {
@@ -2143,7 +2143,7 @@
     "shift_date": "2026-04-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_小平": {
