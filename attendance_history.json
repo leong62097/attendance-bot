@@ -11218,5 +11218,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "佳佳",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-25",
+    "in": "2026-04-25 19:59:01",
+    "out": "2026-04-26 08:02:54",
+    "outwork_total": 5603,
+    "eat_total": 0,
+    "net_seconds": 37830,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
