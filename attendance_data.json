@@ -1769,9 +1769,9 @@
   "-5120947919_瑞安": {
     "name": "瑞安",
     "in": "2026-04-30 20:04:26",
-    "out": null,
-    "outwork_start": "2026-05-01 13:55:52",
-    "outwork_total": 5193,
+    "out": "2026-05-01 13:56:24",
+    "outwork_start": null,
+    "outwork_total": 5225,
     "outwork_count": 2,
     "eat_start": null,
     "eat_total": 0,
