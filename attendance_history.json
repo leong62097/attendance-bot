@@ -17848,5 +17848,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "宁宁",
+    "shift_type": "夜班",
+    "shift_date": "2026-04-30",
+    "in": "2026-04-30 20:16:20",
+    "out": "2026-05-01 14:02:42",
+    "outwork_total": 9076,
+    "eat_total": 1687,
+    "net_seconds": 53219,
+    "outwork_count": 5,
+    "eat_count": 2,
+    "toilet_overtime": 2,
+    "eat_overtime": 0
   }
 ]
