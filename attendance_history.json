@@ -17818,5 +17818,20 @@
     "eat_count": 1,
     "toilet_overtime": 2,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "小雪",
+    "shift_type": "转班",
+    "shift_date": "2026-04-30",
+    "in": "2026-04-30 19:58:08",
+    "out": "2026-05-01 14:00:54",
+    "outwork_total": 5224,
+    "eat_total": 1104,
+    "net_seconds": 58638,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
