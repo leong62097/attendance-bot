@@ -22573,5 +22573,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "杰克",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-04",
+    "in": "2026-05-04 20:00:10",
+    "out": "2026-05-05 08:04:36",
+    "outwork_total": 7474,
+    "eat_total": 2214,
+    "net_seconds": 33778,
+    "outwork_count": 4,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
