@@ -420,21 +420,21 @@
   "-1001801871581_土豆": {
     "name": "土豆",
     "in": "2026-05-11 08:25:30",
-    "out": null,
+    "out": "2026-05-11 20:29:15",
     "outwork_start": null,
     "outwork_total": 701,
     "outwork_count": 1,
-    "eat_start": "2026-05-11 19:36:33",
-    "eat_total": 1142,
+    "eat_start": null,
+    "eat_total": 4304,
     "eat_count": 2,
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-05-11",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_阿凯": {
     "name": "阿凯",
