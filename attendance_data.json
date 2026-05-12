@@ -1561,8 +1561,8 @@
     "name": "通邦",
     "in": "2026-05-11 20:01:15",
     "out": null,
-    "outwork_start": "2026-05-12 08:32:56",
-    "outwork_total": 5517,
+    "outwork_start": null,
+    "outwork_total": 6932,
     "outwork_count": 3,
     "eat_start": null,
     "eat_total": 1115,
@@ -1571,9 +1571,9 @@
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-05-11",
-    "toilet_overtime": 1,
+    "toilet_overtime": 2,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001801871581_贵天": {
