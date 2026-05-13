@@ -32788,5 +32788,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "阿森",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-12",
+    "in": "2026-05-12 20:03:07",
+    "out": "2026-05-13 08:08:24",
+    "outwork_total": 5188,
+    "eat_total": 1917,
+    "net_seconds": 36412,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
