@@ -32413,5 +32413,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "路路",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-12",
+    "in": "2026-05-12 20:05:42",
+    "out": "2026-05-13 08:00:10",
+    "outwork_total": 5315,
+    "eat_total": 0,
+    "net_seconds": 37553,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
