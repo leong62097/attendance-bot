@@ -1060,7 +1060,7 @@
     "shift_date": "2026-05-14",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_小康": {
@@ -1269,7 +1269,7 @@
     "shift_date": "2026-05-14",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_胡萝卜": {
@@ -1409,14 +1409,14 @@
     "name": "里卡",
     "in": "2026-05-14 20:01:45",
     "out": null,
-    "outwork_start": "2026-05-15 04:47:04",
+    "outwork_start": null,
     "outwork_total": 0,
-    "outwork_count": 1,
+    "outwork_count": 0,
     "eat_start": null,
     "eat_total": 1155,
     "eat_count": 1,
-    "handover_to": "金兰",
-    "remark": "休息",
+    "handover_to": null,
+    "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-05-14",
     "toilet_overtime": 0,
@@ -1459,7 +1459,7 @@
     "shift_date": "2026-05-14",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_小陶": {
