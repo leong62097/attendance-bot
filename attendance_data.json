@@ -1079,7 +1079,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_小西": {
@@ -1117,7 +1117,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_关智": {
@@ -1174,7 +1174,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_玲玲": {
@@ -1288,7 +1288,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_黑狼": {
@@ -1345,7 +1345,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_小宁": {
@@ -1668,7 +1668,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_鸡仔": {
@@ -2276,7 +2276,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_淑婧": {
@@ -2314,7 +2314,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_小贞": {
@@ -2447,7 +2447,7 @@
     "shift_date": "2026-05-15",
     "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   }
 }
