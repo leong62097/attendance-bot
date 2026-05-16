@@ -36073,5 +36073,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "关智",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-15",
+    "in": "2026-05-15 20:14:48",
+    "out": "2026-05-16 13:51:34",
+    "outwork_total": 7398,
+    "eat_total": 2436,
+    "net_seconds": 53572,
+    "outwork_count": 5,
+    "eat_count": 3,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
