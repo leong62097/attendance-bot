@@ -38563,5 +38563,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "阿良",
+    "shift_type": "白班",
+    "shift_date": "2026-05-18",
+    "in": "2026-05-18 08:00:31",
+    "out": "2026-05-18 19:54:24",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 42833,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
