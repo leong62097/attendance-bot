@@ -38518,5 +38518,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "土豆",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-17",
+    "in": "2026-05-17 20:17:59",
+    "out": "2026-05-18 08:20:15",
+    "outwork_total": 5973,
+    "eat_total": 2307,
+    "net_seconds": 35056,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
