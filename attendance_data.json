@@ -1332,21 +1332,21 @@
   "-1001801871581_麦子": {
     "name": "麦子",
     "in": "2026-05-19 08:00:49",
-    "out": null,
+    "out": "2026-05-19 20:08:44",
     "outwork_start": null,
     "outwork_total": 1097,
     "outwork_count": 2,
-    "eat_start": "2026-05-19 18:50:38",
-    "eat_total": 1229,
+    "eat_start": null,
+    "eat_total": 5915,
     "eat_count": 2,
-    "handover_to": "玲玲",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-05-19",
     "toilet_overtime": 0,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_小宁": {
     "name": "小宁",
