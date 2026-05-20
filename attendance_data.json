@@ -861,17 +861,17 @@
     "outwork_start": null,
     "outwork_total": 5470,
     "outwork_count": 1,
-    "eat_start": "2026-05-21 07:25:04",
-    "eat_total": 1141,
+    "eat_start": null,
+    "eat_total": 2425,
     "eat_count": 2,
-    "handover_to": "路易斯",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-05-20",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_不留": {
     "name": "不留",
