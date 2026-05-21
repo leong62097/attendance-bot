@@ -41473,5 +41473,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "卢卡",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-20",
+    "in": "2026-05-20 20:00:20",
+    "out": "2026-05-21 08:00:41",
+    "outwork_total": 5331,
+    "eat_total": 0,
+    "net_seconds": 37890,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
