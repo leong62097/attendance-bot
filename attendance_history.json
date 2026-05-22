@@ -43858,5 +43858,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "白鹿",
+    "shift_type": "白班",
+    "shift_date": "2026-05-22",
+    "in": "2026-05-22 08:42:48",
+    "out": "2026-05-22 20:21:29",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 41921,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
