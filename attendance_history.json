@@ -28,5 +28,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "雪美",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-22",
+    "in": "2026-05-22 20:17:01",
+    "out": "2026-05-23 08:12:59",
+    "outwork_total": 4817,
+    "eat_total": 1765,
+    "net_seconds": 36376,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
