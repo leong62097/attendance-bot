@@ -5248,5 +5248,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "七月",
+    "shift_type": "白班",
+    "shift_date": "2026-05-27",
+    "in": "2026-05-27 07:55:46",
+    "out": "2026-05-27 20:03:01",
+    "outwork_total": 0,
+    "eat_total": 1121,
+    "net_seconds": 42514,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
