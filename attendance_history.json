@@ -8863,5 +8863,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "金兰",
+    "shift_type": "白班",
+    "shift_date": "2026-05-30",
+    "in": "2026-05-30 08:04:39",
+    "out": "2026-05-30 20:00:53",
+    "outwork_total": 1495,
+    "eat_total": 2141,
+    "net_seconds": 39338,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
