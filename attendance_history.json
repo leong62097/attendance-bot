@@ -8233,5 +8233,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "梦瑶",
+    "shift_type": "夜班",
+    "shift_date": "2026-05-29",
+    "in": "2026-05-29 19:58:35",
+    "out": "2026-05-30 08:01:46",
+    "outwork_total": 5343,
+    "eat_total": 1143,
+    "net_seconds": 36905,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
