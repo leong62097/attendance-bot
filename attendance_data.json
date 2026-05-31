@@ -709,17 +709,17 @@
     "outwork_start": null,
     "outwork_total": 6666,
     "outwork_count": 4,
-    "eat_start": "2026-06-01 06:30:25",
-    "eat_total": 879,
+    "eat_start": null,
+    "eat_total": 2193,
     "eat_count": 2,
-    "handover_to": "小白",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-05-31",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_小迈": {
     "name": "小迈",
