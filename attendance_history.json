@@ -10393,5 +10393,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小康",
+    "shift_type": "白班",
+    "shift_date": "2026-05-31",
+    "in": "2026-05-31 08:19:48",
+    "out": "2026-05-31 20:09:01",
+    "outwork_total": 0,
+    "eat_total": 1772,
+    "net_seconds": 40781,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
