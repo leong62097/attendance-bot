@@ -11788,5 +11788,20 @@
     "eat_count": 3,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "怼怼",
+    "shift_type": "白班",
+    "shift_date": "2026-06-01",
+    "in": "2026-06-01 14:05:15",
+    "out": "2026-06-02 08:06:13",
+    "outwork_total": 6831,
+    "eat_total": 2246,
+    "net_seconds": 55781,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
