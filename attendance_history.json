@@ -14443,5 +14443,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "小成",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-03",
+    "in": "2026-06-03 20:00:37",
+    "out": "2026-06-04 08:09:42",
+    "outwork_total": 5231,
+    "eat_total": 2057,
+    "net_seconds": 36457,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
