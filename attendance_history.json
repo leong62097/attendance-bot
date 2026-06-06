@@ -17083,5 +17083,20 @@
     "eat_count": 0,
     "toilet_overtime": 4,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小鹿",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-05",
+    "in": "2026-06-05 20:22:12",
+    "out": "2026-06-06 08:19:00",
+    "outwork_total": 5414,
+    "eat_total": 0,
+    "net_seconds": 37594,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
