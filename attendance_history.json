@@ -21943,5 +21943,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "金兰",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-09",
+    "in": "2026-06-09 20:05:32",
+    "out": "2026-06-10 08:05:43",
+    "outwork_total": 4682,
+    "eat_total": 1157,
+    "net_seconds": 37372,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
