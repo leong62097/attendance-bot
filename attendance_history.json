@@ -26083,5 +26083,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "欧迪",
+    "shift_type": "白班",
+    "shift_date": "2026-06-13",
+    "in": "2026-06-13 07:50:35",
+    "out": "2026-06-13 19:50:58",
+    "outwork_total": 2674,
+    "eat_total": 2216,
+    "net_seconds": 38333,
+    "outwork_count": 4,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
