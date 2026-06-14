@@ -27058,5 +27058,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "逍遥",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-13",
+    "in": "2026-06-13 20:01:23",
+    "out": "2026-06-14 08:07:35",
+    "outwork_total": 1735,
+    "eat_total": 0,
+    "net_seconds": 41837,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
