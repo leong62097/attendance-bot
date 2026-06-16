@@ -1678,17 +1678,17 @@
     "outwork_start": null,
     "outwork_total": 5297,
     "outwork_count": 1,
-    "eat_start": null,
-    "eat_total": 2024,
+    "eat_start": "2026-06-16 08:01:53",
+    "eat_total": 805,
     "eat_count": 2,
-    "handover_to": null,
+    "handover_to": "阿宝",
     "remark": null,
     "shift_type": "转班",
     "shift_date": "2026-06-15",
     "toilet_overtime": 1,
-    "eat_overtime": 1,
+    "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_柠柠": {
     "name": "柠柠",
