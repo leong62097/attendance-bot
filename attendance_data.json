@@ -1161,21 +1161,21 @@
   "-1001819319968_金兰": {
     "name": "金兰",
     "in": "2026-06-17 08:03:26",
-    "out": null,
+    "out": "2026-06-17 10:52:32",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-06-17 09:27:33",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 5099,
     "eat_count": 1,
-    "handover_to": "里卡",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-06-17",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_玲玲": {
     "name": "玲玲",
