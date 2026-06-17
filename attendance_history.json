@@ -30223,5 +30223,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "玉玉",
+    "shift_type": "转班",
+    "shift_date": "2026-06-16",
+    "in": "2026-06-16 14:00:12",
+    "out": "2026-06-17 08:01:02",
+    "outwork_total": 6690,
+    "eat_total": 1233,
+    "net_seconds": 56927,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 2,
+    "eat_overtime": 1
   }
 ]
