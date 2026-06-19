@@ -1199,7 +1199,7 @@
   "-1001819319968_安妮": {
     "name": "安妮",
     "in": "2026-06-19 08:10:05",
-    "out": "2026-06-19 20:03:37",
+    "out": null,
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -1294,7 +1294,7 @@
   "-1001801871581_黑狼": {
     "name": "黑狼",
     "in": "2026-06-18 07:59:52",
-    "out": null,
+    "out": "2026-06-19 20:03:41",
     "outwork_start": null,
     "outwork_total": 2570,
     "outwork_count": 3,
