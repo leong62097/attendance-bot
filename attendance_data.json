@@ -1275,7 +1275,7 @@
   "-1001819319968_胡萝卜": {
     "name": "胡萝卜",
     "in": "2026-06-21 08:29:38",
-    "out": "2026-06-21 20:04:52",
+    "out": null,
     "outwork_start": null,
     "outwork_total": 1326,
     "outwork_count": 2,
@@ -2225,7 +2225,7 @@
   "-1001819319968_萌神": {
     "name": "萌神",
     "in": "2026-06-20 07:58:16",
-    "out": null,
+    "out": "2026-06-21 20:04:56",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
