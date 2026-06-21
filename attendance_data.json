@@ -439,7 +439,7 @@
   "-1001819319968_阿凯": {
     "name": "阿凯",
     "in": "2026-06-20 20:00:02",
-    "out": null,
+    "out": "2026-06-21 08:00:01",
     "outwork_start": null,
     "outwork_total": 5321,
     "outwork_count": 1,
@@ -1882,8 +1882,8 @@
   },
   "-5120947919_小雪": {
     "name": "小雪",
-    "in": "2026-06-21 07:59:59",
-    "out": null,
+    "in": "2026-06-19 08:03:07",
+    "out": "2026-06-19 20:00:25",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -1893,7 +1893,7 @@
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
-    "shift_date": "2026-06-21",
+    "shift_date": "2026-06-19",
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
