@@ -36343,5 +36343,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "大球",
+    "shift_type": "白班",
+    "shift_date": "2026-06-21",
+    "in": "2026-06-21 07:58:09",
+    "out": "2026-06-21 20:13:50",
+    "outwork_total": 724,
+    "eat_total": 753,
+    "net_seconds": 42664,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
