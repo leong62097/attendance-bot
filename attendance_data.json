@@ -652,17 +652,17 @@
     "outwork_start": null,
     "outwork_total": 8149,
     "outwork_count": 4,
-    "eat_start": "2026-06-23 07:00:26",
-    "eat_total": 2753,
+    "eat_start": null,
+    "eat_total": 4030,
     "eat_count": 3,
-    "handover_to": "丽莎",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-06-21",
     "toilet_overtime": 1,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_杰克": {
     "name": "杰克",
