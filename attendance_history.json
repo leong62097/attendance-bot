@@ -36823,5 +36823,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "明惠",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-21",
+    "in": "2026-06-21 19:58:49",
+    "out": "2026-06-22 08:06:40",
+    "outwork_total": 12929,
+    "eat_total": 0,
+    "net_seconds": 30742,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
