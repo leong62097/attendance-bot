@@ -41023,5 +41023,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "杰克",
+    "shift_type": "白班",
+    "shift_date": "2026-06-25",
+    "in": "2026-06-25 07:59:33",
+    "out": "2026-06-25 20:01:49",
+    "outwork_total": 760,
+    "eat_total": 2292,
+    "net_seconds": 40284,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
