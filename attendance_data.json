@@ -1374,17 +1374,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-06-27 13:47:01",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1277,
     "eat_count": 1,
-    "handover_to": "玲玲",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-06-27",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_实惠": {
     "name": "实惠",
