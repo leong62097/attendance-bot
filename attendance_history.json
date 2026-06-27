@@ -42838,5 +42838,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "颖杰",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-26",
+    "in": "2026-06-26 19:57:31",
+    "out": "2026-06-27 08:00:26",
+    "outwork_total": 5040,
+    "eat_total": 0,
+    "net_seconds": 38335,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
