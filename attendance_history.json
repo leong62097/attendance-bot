@@ -44143,5 +44143,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小草",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-27",
+    "in": "2026-06-27 20:03:12",
+    "out": "2026-06-28 08:01:13",
+    "outwork_total": 5789,
+    "eat_total": 2020,
+    "net_seconds": 35272,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 1
   }
 ]
