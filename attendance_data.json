@@ -357,7 +357,7 @@
     "shift_date": "2026-06-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_七月": {
@@ -547,7 +547,7 @@
     "shift_date": "2026-06-28",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_怀宝": {
@@ -661,7 +661,7 @@
     "shift_date": "2026-06-28",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_杰克": {
@@ -839,14 +839,14 @@
     "name": "官成",
     "in": "2026-06-28 20:04:09",
     "out": null,
-    "outwork_start": null,
-    "outwork_total": 903,
+    "outwork_start": "2026-06-29 03:06:54",
+    "outwork_total": 287,
     "outwork_count": 2,
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "handover_to": null,
-    "remark": null,
+    "handover_to": "倪倪",
+    "remark": "厕所",
     "shift_type": "夜班",
     "shift_date": "2026-06-28",
     "toilet_overtime": 0,
@@ -946,7 +946,7 @@
     "shift_date": "2026-06-29",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_阿良": {
