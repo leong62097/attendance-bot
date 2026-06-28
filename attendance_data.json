@@ -2077,17 +2077,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-06-28 10:26:05",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1666,
     "eat_count": 1,
-    "handover_to": "秀妍",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-06-28",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1003808754649_小马": {
     "name": "小马",
