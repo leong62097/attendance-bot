@@ -1243,5 +1243,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "怀宝",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-27",
+    "in": "2026-06-27 20:04:26",
+    "out": "2026-06-29 08:08:19",
+    "outwork_total": 11911,
+    "eat_total": 3417,
+    "net_seconds": 114505,
+    "outwork_count": 4,
+    "eat_count": 3,
+    "toilet_overtime": 2,
+    "eat_overtime": 0
   }
 ]
