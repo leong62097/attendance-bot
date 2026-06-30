@@ -2473,5 +2473,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "李顺",
+    "shift_type": "夜班",
+    "shift_date": "2026-06-29",
+    "in": "2026-06-29 20:01:41",
+    "out": "2026-06-30 08:09:19",
+    "outwork_total": 6036,
+    "eat_total": 0,
+    "net_seconds": 37622,
+    "outwork_count": 2,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
