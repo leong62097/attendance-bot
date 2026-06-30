@@ -1407,8 +1407,8 @@
   },
   "-1001819319968_里卡": {
     "name": "里卡",
-    "in": "2026-06-30 08:00:11",
-    "out": null,
+    "in": "2026-06-17 08:01:08",
+    "out": "2026-06-17 20:02:13",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -1418,7 +1418,7 @@
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
-    "shift_date": "2026-06-30",
+    "shift_date": "2026-06-17",
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
@@ -2149,7 +2149,7 @@
   "-1001819319968_小平": {
     "name": "小平",
     "in": "2026-06-29 20:02:03",
-    "out": null,
+    "out": "2026-06-30 08:00:14",
     "outwork_start": null,
     "outwork_total": 7104,
     "outwork_count": 4,
