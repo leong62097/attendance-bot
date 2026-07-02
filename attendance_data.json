@@ -1117,7 +1117,7 @@
     "shift_date": "2026-06-29",
     "toilet_overtime": 0,
     "eat_overtime": 2,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_关智": {
@@ -1174,21 +1174,21 @@
     "shift_date": "2026-06-30",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_玲玲": {
     "name": "玲玲",
     "in": "2026-06-30 08:00:47",
     "out": null,
-    "outwork_start": "2026-07-02 19:49:59",
+    "outwork_start": null,
     "outwork_total": 0,
-    "outwork_count": 1,
+    "outwork_count": 0,
     "eat_start": null,
     "eat_total": 1127,
     "eat_count": 1,
-    "handover_to": "怼怼",
-    "remark": "WC",
+    "handover_to": null,
+    "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-06-30",
     "toilet_overtime": 0,
@@ -2600,7 +2600,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1001801871581_清清": {
     "name": "清清",
