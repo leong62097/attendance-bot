@@ -3313,5 +3313,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "雪玲",
+    "shift_type": "白班",
+    "shift_date": "2026-06-30",
+    "in": "2026-06-30 08:20:51",
+    "out": "2026-07-02 20:00:45",
+    "outwork_total": 856,
+    "eat_total": 2300,
+    "net_seconds": 211638,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
