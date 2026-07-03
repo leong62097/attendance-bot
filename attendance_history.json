@@ -4993,5 +4993,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小马",
+    "shift_type": "转班",
+    "shift_date": "2026-07-03",
+    "in": "2026-07-03 08:05:19",
+    "out": "2026-07-03 20:07:06",
+    "outwork_total": 525,
+    "eat_total": 2337,
+    "net_seconds": 40445,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
