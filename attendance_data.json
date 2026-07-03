@@ -2457,17 +2457,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": null,
-    "eat_total": 2392,
+    "eat_start": "2026-07-03 18:06:17",
+    "eat_total": 1167,
     "eat_count": 2,
-    "handover_to": null,
+    "handover_to": "李顺",
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-07-03",
     "toilet_overtime": 0,
-    "eat_overtime": 1,
+    "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_阿花": {
     "name": "阿花",
