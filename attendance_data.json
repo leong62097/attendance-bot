@@ -2628,17 +2628,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-07-03 16:18:58",
-    "eat_total": 1165,
+    "eat_start": null,
+    "eat_total": 2528,
     "eat_count": 3,
-    "handover_to": "李顺",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-02",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_琪琪": {
     "name": "琪琪",
