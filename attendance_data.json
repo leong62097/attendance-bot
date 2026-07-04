@@ -2605,21 +2605,21 @@
   "-1001801871581_清清": {
     "name": "清清",
     "in": "2026-07-03 20:04:31",
-    "out": null,
+    "out": "2026-07-04 08:08:49",
     "outwork_start": null,
     "outwork_total": 7155,
     "outwork_count": 1,
-    "eat_start": "2026-07-04 07:41:06",
-    "eat_total": 981,
+    "eat_start": null,
+    "eat_total": 2644,
     "eat_count": 2,
-    "handover_to": "美林",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-03",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_小漫": {
     "name": "小漫",
