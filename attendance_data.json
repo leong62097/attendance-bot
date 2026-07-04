@@ -1165,17 +1165,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-07-04 20:20:29",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1270,
     "eat_count": 1,
-    "handover_to": "里卡",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-04",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_玲玲": {
     "name": "玲玲",
