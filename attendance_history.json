@@ -6793,5 +6793,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "萌神",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-04",
+    "in": "2026-07-04 19:59:35",
+    "out": "2026-07-05 08:00:53",
+    "outwork_total": 5409,
+    "eat_total": 0,
+    "net_seconds": 37869,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
