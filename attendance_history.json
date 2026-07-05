@@ -7213,5 +7213,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "美林",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-03",
+    "in": "2026-07-03 19:58:42",
+    "out": "2026-07-05 08:12:21",
+    "outwork_total": 7088,
+    "eat_total": 4514,
+    "net_seconds": 118817,
+    "outwork_count": 4,
+    "eat_count": 4,
+    "toilet_overtime": 2,
+    "eat_overtime": 0
   }
 ]
