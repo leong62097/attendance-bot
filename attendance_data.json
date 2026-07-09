@@ -685,8 +685,8 @@
   },
   "-5120947919_阿旺": {
     "name": "阿旺",
-    "in": "2026-07-09 08:06:04",
-    "out": null,
+    "in": "2026-07-08 08:06:04",
+    "out": "2026-07-08 20:04:02",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -696,7 +696,7 @@
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
-    "shift_date": "2026-07-09",
+    "shift_date": "2026-07-08",
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
@@ -1446,7 +1446,7 @@
   "-1001801871581_小杨": {
     "name": "小杨",
     "in": "2026-07-08 20:06:17",
-    "out": null,
+    "out": "2026-07-09 08:06:06",
     "outwork_start": null,
     "outwork_total": 6107,
     "outwork_count": 2,
