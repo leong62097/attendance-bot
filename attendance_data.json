@@ -610,21 +610,21 @@
   "-5120947919_杰伦": {
     "name": "杰伦",
     "in": "2026-07-10 08:17:45",
-    "out": null,
+    "out": "2026-07-10 20:07:35",
     "outwork_start": null,
     "outwork_total": 1654,
     "outwork_count": 2,
-    "eat_start": "2026-07-10 19:22:29",
-    "eat_total": 1206,
+    "eat_start": null,
+    "eat_total": 3912,
     "eat_count": 2,
-    "handover_to": "十三",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-07-10",
     "toilet_overtime": 0,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_欧迪": {
     "name": "欧迪",
