@@ -2590,17 +2590,17 @@
     "outwork_start": null,
     "outwork_total": 6641,
     "outwork_count": 3,
-    "eat_start": "2026-07-11 07:33:59",
-    "eat_total": 2208,
+    "eat_start": null,
+    "eat_total": 4758,
     "eat_count": 3,
-    "handover_to": "清清",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-10",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_清清": {
     "name": "清清",
