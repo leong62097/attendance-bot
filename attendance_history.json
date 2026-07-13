@@ -18328,5 +18328,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "小香",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-13",
+    "in": "2026-07-13 19:47:49",
+    "out": "2026-07-14 07:50:10",
+    "outwork_total": 5347,
+    "eat_total": 2401,
+    "net_seconds": 35593,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 1
   }
 ]
