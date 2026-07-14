@@ -18808,5 +18808,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "大球",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-13",
+    "in": "2026-07-13 20:02:05",
+    "out": "2026-07-14 08:10:28",
+    "outwork_total": 5583,
+    "eat_total": 1113,
+    "net_seconds": 37007,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
