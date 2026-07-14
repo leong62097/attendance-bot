@@ -1066,7 +1066,7 @@
   "-1001801871581_小康": {
     "name": "小康",
     "in": "2026-07-12 19:58:22",
-    "out": "2026-07-14 08:01:26",
+    "out": null,
     "outwork_start": null,
     "outwork_total": 15576,
     "outwork_count": 2,
@@ -2890,7 +2890,7 @@
   "-1001801871581_依依": {
     "name": "依依",
     "in": "2026-07-13 19:57:06",
-    "out": null,
+    "out": "2026-07-14 08:01:31",
     "outwork_start": null,
     "outwork_total": 4791,
     "outwork_count": 1,
