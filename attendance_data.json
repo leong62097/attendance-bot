@@ -2891,8 +2891,8 @@
     "name": "依依",
     "in": "2026-07-15 19:52:55",
     "out": null,
-    "outwork_start": "2026-07-16 04:34:12",
-    "outwork_total": 0,
+    "outwork_start": null,
+    "outwork_total": 5044,
     "outwork_count": 1,
     "eat_start": null,
     "eat_total": 1056,
@@ -2901,9 +2901,9 @@
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-15",
-    "toilet_overtime": 0,
+    "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001819319968_晶晶": {
