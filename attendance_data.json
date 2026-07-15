@@ -2606,8 +2606,8 @@
     "name": "清清",
     "in": "2026-07-15 20:12:29",
     "out": null,
-    "outwork_start": "2026-07-16 03:04:26",
-    "outwork_total": 0,
+    "outwork_start": null,
+    "outwork_total": 5193,
     "outwork_count": 1,
     "eat_start": null,
     "eat_total": 0,
@@ -2616,9 +2616,9 @@
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-15",
-    "toilet_overtime": 0,
+    "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001801871581_小漫": {
