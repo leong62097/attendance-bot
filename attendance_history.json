@@ -20923,5 +20923,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "玉玉",
+    "shift_type": "白班",
+    "shift_date": "2026-07-15",
+    "in": "2026-07-15 10:35:50",
+    "out": "2026-07-15 22:36:16",
+    "outwork_total": 2452,
+    "eat_total": 3392,
+    "net_seconds": 37382,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 2
   }
 ]
