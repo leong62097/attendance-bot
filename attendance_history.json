@@ -24523,5 +24523,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "杰伦",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-18",
+    "in": "2026-07-18 20:03:14",
+    "out": "2026-07-19 08:01:44",
+    "outwork_total": 6255,
+    "eat_total": 2232,
+    "net_seconds": 34623,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
