@@ -2890,21 +2890,21 @@
   "-1001801871581_依依": {
     "name": "依依",
     "in": "2026-07-20 07:56:17",
-    "out": null,
+    "out": "2026-07-20 17:58:59",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-07-20 11:08:20",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 24639,
     "eat_count": 1,
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-07-20",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_晶晶": {
     "name": "晶晶",
