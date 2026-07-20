@@ -26293,5 +26293,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "依依",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-20",
+    "in": "2026-07-20 18:01:27",
+    "out": "2026-07-20 20:01:35",
+    "outwork_total": 0,
+    "eat_total": 1083,
+    "net_seconds": 6125,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
