@@ -27193,5 +27193,20 @@
     "eat_count": 2,
     "toilet_overtime": 2,
     "eat_overtime": 2
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小漫",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-20",
+    "in": "2026-07-20 20:00:05",
+    "out": "2026-07-21 08:05:15",
+    "outwork_total": 6187,
+    "eat_total": 2550,
+    "net_seconds": 34773,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 1
   }
 ]
