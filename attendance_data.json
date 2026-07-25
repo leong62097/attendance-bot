@@ -2989,17 +2989,17 @@
     "outwork_start": null,
     "outwork_total": 1562,
     "outwork_count": 2,
-    "eat_start": "2026-07-25 15:26:24",
-    "eat_total": 2322,
+    "eat_start": null,
+    "eat_total": 4011,
     "eat_count": 3,
-    "handover_to": "清清",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-07-24",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_小蓝": {
     "name": "小蓝",
