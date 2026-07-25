@@ -32188,5 +32188,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "米儿",
+    "shift_type": "夜班",
+    "shift_date": "2026-07-24",
+    "in": "2026-07-24 20:11:04",
+    "out": "2026-07-25 08:07:43",
+    "outwork_total": 5348,
+    "eat_total": 2811,
+    "net_seconds": 34840,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 1
   }
 ]
