@@ -2910,8 +2910,8 @@
     "name": "晶晶",
     "in": "2026-07-26 20:35:07",
     "out": null,
-    "outwork_start": "2026-07-27 04:31:49",
-    "outwork_total": 0,
+    "outwork_start": null,
+    "outwork_total": 5502,
     "outwork_count": 1,
     "eat_start": null,
     "eat_total": 0,
@@ -2920,9 +2920,9 @@
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-07-26",
-    "toilet_overtime": 0,
+    "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001819319968_啊豪": {
