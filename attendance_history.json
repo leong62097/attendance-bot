@@ -41188,5 +41188,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "瑶瑶",
+    "shift_type": "白班",
+    "shift_date": "2026-07-31",
+    "in": "2026-07-31 08:24:32",
+    "out": "2026-07-31 20:26:21",
+    "outwork_total": 1515,
+    "eat_total": 2971,
+    "net_seconds": 38823,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 2
   }
 ]
