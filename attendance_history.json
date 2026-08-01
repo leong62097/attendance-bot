@@ -41728,5 +41728,20 @@
     "eat_count": 2,
     "toilet_overtime": 2,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "米儿",
+    "shift_type": "转班",
+    "shift_date": "2026-07-31",
+    "in": "2026-07-31 20:07:28",
+    "out": "2026-08-01 14:02:38",
+    "outwork_total": 6328,
+    "eat_total": 2353,
+    "net_seconds": 55829,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
