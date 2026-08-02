@@ -42868,5 +42868,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小白",
+    "shift_type": "白班",
+    "shift_date": "2026-08-02",
+    "in": "2026-08-02 08:46:59",
+    "out": "2026-08-02 19:56:56",
+    "outwork_total": 691,
+    "eat_total": 1245,
+    "net_seconds": 38261,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 1
   }
 ]
