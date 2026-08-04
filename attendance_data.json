@@ -1289,7 +1289,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1001801871581_黑狼": {
     "name": "黑狼",
@@ -2561,7 +2561,7 @@
     "shift_date": "2026-08-04",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_小依": {
@@ -2960,7 +2960,7 @@
     "shift_date": "2026-08-04",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_阿芜": {
