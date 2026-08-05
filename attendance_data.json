@@ -2837,17 +2837,17 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-08-05 18:55:28",
-    "eat_total": 1196,
+    "eat_start": null,
+    "eat_total": 2409,
     "eat_count": 2,
-    "handover_to": "小漫",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-08-05",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_以沫": {
     "name": "以沫",
