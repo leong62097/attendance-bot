@@ -1516,7 +1516,7 @@
     "shift_date": "2026-08-05",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_美鹅": {
@@ -1782,7 +1782,7 @@
     "shift_date": "2026-08-05",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_小猪": {
@@ -2371,7 +2371,7 @@
     "shift_date": "2026-08-05",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_杰森": {
