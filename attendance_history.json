@@ -7003,5 +7003,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "安妮",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-08",
+    "in": "2026-08-08 20:00:33",
+    "out": "2026-08-09 08:05:20",
+    "outwork_total": 5643,
+    "eat_total": 1083,
+    "net_seconds": 36761,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
