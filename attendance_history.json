@@ -13123,5 +13123,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小西",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-13",
+    "in": "2026-08-13 19:59:30",
+    "out": "2026-08-14 08:04:23",
+    "outwork_total": 5213,
+    "eat_total": 2275,
+    "net_seconds": 36005,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
