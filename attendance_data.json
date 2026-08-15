@@ -2163,7 +2163,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1003624527407_小草": {
     "name": "小草",
