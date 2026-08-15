@@ -14788,5 +14788,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "秀妍",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-13",
+    "in": "2026-08-13 20:22:17",
+    "out": "2026-08-15 09:08:14",
+    "outwork_total": 20197,
+    "eat_total": 5178,
+    "net_seconds": 106982,
+    "outwork_count": 4,
+    "eat_count": 5,
+    "toilet_overtime": 2,
+    "eat_overtime": 0
   }
 ]
