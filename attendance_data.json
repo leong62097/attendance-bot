@@ -1503,7 +1503,7 @@
   "-1001801871581_雪玲": {
     "name": "雪玲",
     "in": "2026-08-15 20:18:12",
-    "out": "2026-08-16 14:04:54",
+    "out": null,
     "outwork_start": null,
     "outwork_total": 6089,
     "outwork_count": 2,
@@ -2985,7 +2985,7 @@
   "-1001801871581_韩新": {
     "name": "韩新",
     "in": "2026-08-15 20:05:50",
-    "out": null,
+    "out": "2026-08-16 14:04:58",
     "outwork_start": null,
     "outwork_total": 7487,
     "outwork_count": 4,
