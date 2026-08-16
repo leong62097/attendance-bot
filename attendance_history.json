@@ -16513,5 +16513,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小婷",
+    "shift_type": "白班",
+    "shift_date": "2026-08-16",
+    "in": "2026-08-16 13:55:47",
+    "out": "2026-08-17 07:58:25",
+    "outwork_total": 5989,
+    "eat_total": 777,
+    "net_seconds": 58192,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
