@@ -3043,8 +3043,8 @@
     "name": "小婷",
     "in": "2026-08-16 13:55:47",
     "out": null,
-    "outwork_start": "2026-08-17 03:03:26",
-    "outwork_total": 891,
+    "outwork_start": null,
+    "outwork_total": 5989,
     "outwork_count": 2,
     "eat_start": null,
     "eat_total": 777,
@@ -3053,9 +3053,9 @@
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-08-16",
-    "toilet_overtime": 0,
+    "toilet_overtime": 1,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1001801871581_金金": {
