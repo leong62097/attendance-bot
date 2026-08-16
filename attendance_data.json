@@ -338,7 +338,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 1,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_丽小": {
@@ -452,7 +452,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_珠珠": {
@@ -623,7 +623,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_欧迪": {
@@ -1193,7 +1193,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_安妮": {
@@ -1953,7 +1953,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_小香": {
@@ -2257,7 +2257,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001819319968_啊宏": {
@@ -3093,7 +3093,7 @@
     "shift_date": "2026-08-16",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   }
 }
