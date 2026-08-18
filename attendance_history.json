@@ -17953,5 +17953,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "晶晶",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-17",
+    "in": "2026-08-17 19:54:34",
+    "out": "2026-08-18 08:01:22",
+    "outwork_total": 5215,
+    "eat_total": 0,
+    "net_seconds": 38393,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
