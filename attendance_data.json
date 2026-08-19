@@ -2343,17 +2343,17 @@
     "outwork_start": null,
     "outwork_total": 1745,
     "outwork_count": 2,
-    "eat_start": "2026-08-20 07:10:40",
-    "eat_total": 1165,
+    "eat_start": null,
+    "eat_total": 2392,
     "eat_count": 2,
-    "handover_to": "荆川",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-08-19",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_秀妍": {
     "name": "秀妍",
