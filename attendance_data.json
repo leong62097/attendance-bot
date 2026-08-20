@@ -3065,17 +3065,17 @@
     "outwork_start": null,
     "outwork_total": 2492,
     "outwork_count": 3,
-    "eat_start": "2026-08-20 18:37:39",
-    "eat_total": 1295,
+    "eat_start": null,
+    "eat_total": 2504,
     "eat_count": 2,
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-08-20",
     "toilet_overtime": 0,
-    "eat_overtime": 1,
+    "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_浩哲": {
     "name": "浩哲",
