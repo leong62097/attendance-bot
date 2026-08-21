@@ -22528,5 +22528,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "依依",
+    "shift_type": "白班",
+    "shift_date": "2026-08-21",
+    "in": "2026-08-21 08:09:00",
+    "out": "2026-08-21 20:05:00",
+    "outwork_total": 462,
+    "eat_total": 2265,
+    "net_seconds": 40233,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
