@@ -23878,5 +23878,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小宁",
+    "shift_type": "白班",
+    "shift_date": "2026-08-22",
+    "in": "2026-08-22 07:59:24",
+    "out": "2026-08-22 20:10:06",
+    "outwork_total": 0,
+    "eat_total": 2370,
+    "net_seconds": 41472,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 1
   }
 ]
