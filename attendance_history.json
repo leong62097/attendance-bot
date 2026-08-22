@@ -24103,5 +24103,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "知夏",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-22",
+    "in": "2026-08-22 19:54:27",
+    "out": "2026-08-23 07:55:01",
+    "outwork_total": 4165,
+    "eat_total": 0,
+    "net_seconds": 39069,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
