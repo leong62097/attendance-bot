@@ -26623,5 +26623,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "粉亿",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-24",
+    "in": "2026-08-24 19:50:47",
+    "out": "2026-08-25 07:51:11",
+    "outwork_total": 5370,
+    "eat_total": 0,
+    "net_seconds": 37854,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
