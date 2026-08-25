@@ -27148,5 +27148,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "倪倪",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-24",
+    "in": "2026-08-24 20:16:48",
+    "out": "2026-08-25 08:13:57",
+    "outwork_total": 1727,
+    "eat_total": 1085,
+    "net_seconds": 40217,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
