@@ -28108,5 +28108,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "瑞安",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-25",
+    "in": "2026-08-25 20:01:08",
+    "out": "2026-08-26 08:00:39",
+    "outwork_total": 5010,
+    "eat_total": 0,
+    "net_seconds": 38161,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
