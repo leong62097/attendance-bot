@@ -31363,5 +31363,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "里卡",
+    "shift_type": "白班",
+    "shift_date": "2026-08-28",
+    "in": "2026-08-28 07:56:48",
+    "out": "2026-08-28 19:58:09",
+    "outwork_total": 0,
+    "eat_total": 2196,
+    "net_seconds": 41085,
+    "outwork_count": 0,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
