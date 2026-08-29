@@ -33223,5 +33223,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "以沫",
+    "shift_type": "白班",
+    "shift_date": "2026-08-29",
+    "in": "2026-08-29 08:16:42",
+    "out": "2026-08-30 01:00:08",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "net_seconds": 60206,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
