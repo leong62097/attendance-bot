@@ -35728,5 +35728,20 @@
     "eat_count": 3,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "韩新",
+    "shift_type": "白班",
+    "shift_date": "2026-08-31",
+    "in": "2026-08-31 08:06:14",
+    "out": "2026-08-31 20:19:40",
+    "outwork_total": 2258,
+    "eat_total": 1176,
+    "net_seconds": 40572,
+    "outwork_count": 3,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
