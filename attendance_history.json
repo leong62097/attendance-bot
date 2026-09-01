@@ -36253,5 +36253,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "啊豪",
+    "shift_type": "夜班",
+    "shift_date": "2026-08-31",
+    "in": "2026-08-31 19:58:54",
+    "out": "2026-09-01 14:03:21",
+    "outwork_total": 4879,
+    "eat_total": 984,
+    "net_seconds": 59204,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
