@@ -1545,17 +1545,17 @@
     "outwork_start": null,
     "outwork_total": 5193,
     "outwork_count": 1,
-    "eat_start": "2026-09-02 06:15:33",
-    "eat_total": 2288,
+    "eat_start": null,
+    "eat_total": 3667,
     "eat_count": 3,
-    "handover_to": "玲玲",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-09-01",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_通邦": {
     "name": "通邦",
