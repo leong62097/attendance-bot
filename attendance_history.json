@@ -36313,5 +36313,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 2
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "丽小",
+    "shift_type": "转班",
+    "shift_date": "2026-08-31",
+    "in": "2026-08-31 20:04:30",
+    "out": "2026-09-01 14:04:21",
+    "outwork_total": 6358,
+    "eat_total": 1444,
+    "net_seconds": 56989,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
