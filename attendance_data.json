@@ -1032,17 +1032,17 @@
     "outwork_start": null,
     "outwork_total": 6350,
     "outwork_count": 2,
-    "eat_start": "2026-09-02 07:17:08",
-    "eat_total": 2423,
+    "eat_start": null,
+    "eat_total": 3662,
     "eat_count": 3,
-    "handover_to": "阿峰",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-09-01",
     "toilet_overtime": 2,
-    "eat_overtime": 2,
+    "eat_overtime": 3,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_金金": {
     "name": "金金",
