@@ -37363,5 +37363,20 @@
     "eat_count": 3,
     "toilet_overtime": 2,
     "eat_overtime": 3
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小迈",
+    "shift_type": "白班",
+    "shift_date": "2026-09-02",
+    "in": "2026-09-02 07:58:43",
+    "out": "2026-09-02 20:00:18",
+    "outwork_total": 651,
+    "eat_total": 0,
+    "net_seconds": 42644,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
