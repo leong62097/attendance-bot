@@ -1688,7 +1688,7 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_柠柠": {
     "name": "柠柠",
