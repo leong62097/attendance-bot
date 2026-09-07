@@ -43258,5 +43258,20 @@
     "eat_count": 2,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小叶",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-06",
+    "in": "2026-09-06 20:00:24",
+    "out": "2026-09-07 08:03:44",
+    "outwork_total": 5323,
+    "eat_total": 2353,
+    "net_seconds": 35724,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
