@@ -1678,5 +1678,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "官成",
+    "shift_type": "白班",
+    "shift_date": "2026-09-08",
+    "in": "2026-09-08 08:18:09",
+    "out": "2026-09-09 08:16:47",
+    "outwork_total": 1396,
+    "eat_total": 744,
+    "net_seconds": 84178,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
