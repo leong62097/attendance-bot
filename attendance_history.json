@@ -3703,5 +3703,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "宁宁",
+    "shift_type": "白班",
+    "shift_date": "2026-09-10",
+    "in": "2026-09-10 09:22:58",
+    "out": "2026-09-10 20:27:03",
+    "outwork_total": 1784,
+    "eat_total": 2179,
+    "net_seconds": 35882,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
