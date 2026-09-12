@@ -3094,7 +3094,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-5120947919_小陶": {
     "name": "小陶",
