@@ -5968,5 +5968,20 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小平",
+    "shift_type": "白班",
+    "shift_date": "2026-09-12",
+    "in": "2026-09-12 08:03:36",
+    "out": "2026-09-12 20:05:57",
+    "outwork_total": 2287,
+    "eat_total": 2317,
+    "net_seconds": 38737,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 1
   }
 ]
