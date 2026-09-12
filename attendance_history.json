@@ -6223,5 +6223,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "黄丽",
+    "shift_type": "白班",
+    "shift_date": "2026-09-12",
+    "in": "2026-09-12 08:09:46",
+    "out": "2026-09-12 20:19:13",
+    "outwork_total": 811,
+    "eat_total": 2201,
+    "net_seconds": 40755,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
