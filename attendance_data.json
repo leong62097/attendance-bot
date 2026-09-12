@@ -604,7 +604,7 @@
     "shift_date": "2026-09-12",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-5120947919_杰伦": {
@@ -2847,7 +2847,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1001819319968_以沫": {
     "name": "以沫",
