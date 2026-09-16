@@ -348,17 +348,17 @@
     "outwork_start": null,
     "outwork_total": 6364,
     "outwork_count": 3,
-    "eat_start": "2026-09-17 06:53:37",
-    "eat_total": 2225,
+    "eat_start": null,
+    "eat_total": 3661,
     "eat_count": 3,
-    "handover_to": "十三",
+    "handover_to": null,
     "remark": null,
     "shift_type": "转班",
     "shift_date": "2026-09-16",
     "toilet_overtime": 1,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001819319968_七月": {
     "name": "七月",
