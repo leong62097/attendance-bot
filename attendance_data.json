@@ -2150,8 +2150,8 @@
     "name": "小平",
     "in": "2026-09-15 08:05:18",
     "out": null,
-    "outwork_start": "2026-09-16 16:13:59",
-    "outwork_total": 4225,
+    "outwork_start": null,
+    "outwork_total": 5294,
     "outwork_count": 7,
     "eat_start": null,
     "eat_total": 2253,
@@ -2160,9 +2160,9 @@
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-09-15",
-    "toilet_overtime": 1,
+    "toilet_overtime": 2,
     "eat_overtime": 0,
-    "toilet_reminded": true,
+    "toilet_reminded": false,
     "eat_reminded": false
   },
   "-1003624527407_小草": {
