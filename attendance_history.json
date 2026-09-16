@@ -10408,5 +10408,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "月亮",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-15",
+    "in": "2026-09-15 20:03:53",
+    "out": "2026-09-16 14:03:21",
+    "outwork_total": 5469,
+    "eat_total": 3781,
+    "net_seconds": 55518,
+    "outwork_count": 1,
+    "eat_count": 3,
+    "toilet_overtime": 1,
+    "eat_overtime": 2
   }
 ]
