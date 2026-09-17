@@ -12118,5 +12118,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "雅雅",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-18",
+    "in": "2026-09-18 01:26:58",
+    "out": "2026-09-18 07:55:03",
+    "outwork_total": 5243,
+    "eat_total": 0,
+    "net_seconds": 18042,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
