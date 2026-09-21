@@ -16018,5 +16018,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小迈",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-20",
+    "in": "2026-09-20 20:00:05",
+    "out": "2026-09-21 08:00:48",
+    "outwork_total": 1477,
+    "eat_total": 0,
+    "net_seconds": 41766,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
