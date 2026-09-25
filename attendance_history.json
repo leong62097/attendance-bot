@@ -21958,5 +21958,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "琪琪",
+    "shift_type": "白班",
+    "shift_date": "2026-09-25",
+    "in": "2026-09-25 07:58:22",
+    "out": "2026-09-25 20:15:56",
+    "outwork_total": 705,
+    "eat_total": 1037,
+    "net_seconds": 42512,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
