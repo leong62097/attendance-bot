@@ -737,7 +737,7 @@
     "shift_date": "2026-09-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false
   },
   "-1001801871581_倪倪": {
@@ -1692,8 +1692,8 @@
   },
   "-5120947919_柠柠": {
     "name": "柠柠",
-    "in": "2026-09-26 07:50:05",
-    "out": null,
+    "in": "2026-09-25 07:51:49",
+    "out": "2026-09-25 19:51:31",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -1703,7 +1703,7 @@
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
-    "shift_date": "2026-09-26",
+    "shift_date": "2026-09-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
@@ -2528,8 +2528,8 @@
   },
   "-5120947919_菠萝": {
     "name": "菠萝",
-    "in": "2026-09-26 07:50:03",
-    "out": null,
+    "in": "2026-09-25 07:47:31",
+    "out": "2026-09-25 19:49:56",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
@@ -2539,7 +2539,7 @@
     "handover_to": null,
     "remark": null,
     "shift_type": "白班",
-    "shift_date": "2026-09-26",
+    "shift_date": "2026-09-25",
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
