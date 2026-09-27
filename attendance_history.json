@@ -23848,5 +23848,20 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "荆川",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-26",
+    "in": "2026-09-26 20:16:25",
+    "out": "2026-09-27 08:19:49",
+    "outwork_total": 6077,
+    "eat_total": 2260,
+    "net_seconds": 35067,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
