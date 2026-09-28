@@ -25048,5 +25048,20 @@
     "eat_count": 1,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "卢雨",
+    "shift_type": "夜班",
+    "shift_date": "2026-09-27",
+    "in": "2026-09-27 20:07:50",
+    "out": "2026-09-28 08:19:50",
+    "outwork_total": 5212,
+    "eat_total": 0,
+    "net_seconds": 38708,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
