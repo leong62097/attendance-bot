@@ -35338,5 +35338,20 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "可可",
+    "shift_type": "白班",
+    "shift_date": "2026-10-06",
+    "in": "2026-10-06 08:06:29",
+    "out": "2026-10-06 20:13:10",
+    "outwork_total": 774,
+    "eat_total": 2489,
+    "net_seconds": 40338,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 1
   }
 ]
