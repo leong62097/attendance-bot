@@ -858,10 +858,10 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"外出 {sec_to_str(outwork_seconds)}（{int(record.get('outwork_count', 0) or 0)}次）\n"
         f"吃饭 {sec_to_str(eat_seconds)}（{int(record.get('eat_count', 0) or 0)}次）\n"
         f"休息 {sec_to_str(rest_seconds)}（{int(record.get('rest_count', 0) or 0)}次）\n"
-        f"休息超时 {int(record.get('rest_overtime', 0) or 0)}次\n"
         f"净工时 {sec_to_str(net_seconds)}\n"
         f"外出超时 {int(record.get('toilet_overtime', 0) or 0)}次\n"
-        f"吃饭超时 {int(record.get('eat_overtime', 0) or 0)}次"
+        f"吃饭超时 {int(record.get('eat_overtime', 0) or 0)}次\n"
+        f"休息超时 {int(record.get('rest_overtime', 0) or 0)}次"
     )
     if rest_overtime_hit:
         msg += "\n⚠️ 警告：本休息日累计休息超过90分钟"
@@ -1210,7 +1210,7 @@ async def rest_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, outwork_msg(name, record["outwork_start"], record.get("handover_to"), record.get("remark")))
         return
     if not REST_START <= current_time.time() < REST_END:
-        await send_reply(update, "❌ 仅可在马来西亚时间每日03:00–06:00开始休息")
+        await send_reply(update, "❌ 仅可在中国时间每日03:00–06:00开始休息")
         return
     covering, reason = is_covering_for_others(chat_id, data, name)
     if covering:
@@ -1567,7 +1567,7 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "超时规则：\n"
         "外出超过15分钟 = 提醒/警告\n"
         "吃饭超过20分钟 = 提醒/警告\n"
-        "休息：马来西亚时间03:00–06:00可开始，每人每日累计90分钟，可跨06:00返回\n"
+        "休息：中国时间03:00–06:00可开始，每人每日累计90分钟，可跨06:00返回\n"
         "累计超过90分钟 = 超时提醒；06:10仍未打卡返回 = 提醒并计超时，同次不重复计次\n"
         "休息返回使用 /restback 名字，不自动结束计时\n\n"
         "示例：\n"
