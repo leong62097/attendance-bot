@@ -16,7 +16,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1003808754649_小鑫": {
     "name": "小鑫",
@@ -35,7 +44,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1003808754649_小明": {
     "rest_day_date": null,
@@ -82,7 +100,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1003808754649_小崔": {
     "name": "小崔",
@@ -101,7 +128,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_十一": {
     "name": "十一",
@@ -120,7 +156,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小鑫": {
     "name": "小鑫",
@@ -139,7 +184,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_柒柒": {
     "name": "柒柒",
@@ -158,7 +212,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小鑫": {
     "name": "小鑫",
@@ -177,7 +240,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小鑫": {
     "name": "小鑫",
@@ -196,7 +268,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_阿弟": {
     "name": "阿弟",
@@ -215,7 +296,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小水": {
     "name": "小水",
@@ -234,7 +324,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_雪美": {
     "name": "雪美",
@@ -253,7 +352,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小凡": {
     "name": "小凡",
@@ -272,7 +380,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小玫": {
     "name": "小玫",
@@ -291,7 +408,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_卢雨": {
     "name": "卢雨",
@@ -310,7 +436,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_维尼": {
     "name": "维尼",
@@ -329,7 +464,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_黄丽": {
     "name": "黄丽",
@@ -348,7 +492,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_丽小": {
     "name": "丽小",
@@ -367,7 +520,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_七月": {
     "name": "七月",
@@ -386,7 +548,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小布": {
     "name": "小布",
@@ -405,7 +576,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_唐勋": {
     "name": "唐勋",
@@ -424,7 +604,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_土豆": {
     "name": "土豆",
@@ -443,7 +632,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_阿凯": {
     "name": "阿凯",
@@ -462,7 +660,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_珠珠": {
     "name": "珠珠",
@@ -481,7 +688,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_明惠": {
     "name": "明惠",
@@ -500,7 +716,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_杨浩": {
     "name": "杨浩",
@@ -519,7 +744,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小明": {
     "name": "小明",
@@ -538,7 +772,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小马": {
     "name": "小马",
@@ -557,7 +800,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_怀宝": {
     "name": "怀宝",
@@ -576,7 +828,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_丽莎": {
     "name": "丽莎",
@@ -595,7 +856,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小媛": {
     "name": "小媛",
@@ -614,7 +884,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_杰伦": {
     "name": "杰伦",
@@ -633,7 +912,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_欧迪": {
     "name": "欧迪",
@@ -652,7 +940,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_玉玉": {
     "name": "玉玉",
@@ -671,7 +968,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_杰克": {
     "name": "杰克",
@@ -690,7 +996,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_阿旺": {
     "name": "阿旺",
@@ -709,7 +1024,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_子龙": {
     "name": "子龙",
@@ -728,7 +1052,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小迈": {
     "name": "小迈",
@@ -747,7 +1080,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_倪倪": {
     "name": "倪倪",
@@ -766,7 +1108,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_容丽": {
     "name": "容丽",
@@ -785,7 +1136,16 @@
     "toilet_overtime": 2,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_林希": {
     "name": "林希",
@@ -804,7 +1164,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小白": {
     "name": "小白",
@@ -823,7 +1192,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小鼠": {
     "name": "小鼠",
@@ -842,7 +1220,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_官成": {
     "name": "官成",
@@ -861,7 +1248,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_米儿": {
     "name": "米儿",
@@ -880,7 +1276,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_不留": {
     "name": "不留",
@@ -899,7 +1304,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_靖茹": {
     "name": "靖茹",
@@ -918,7 +1332,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_月亮": {
     "name": "月亮",
@@ -937,7 +1360,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_苏苏": {
     "name": "苏苏",
@@ -956,7 +1388,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_阿良": {
     "name": "阿良",
@@ -975,7 +1416,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_逍遥": {
     "name": "逍遥",
@@ -994,7 +1444,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_十三": {
     "name": "十三",
@@ -1013,7 +1472,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_阿伟": {
     "name": "阿伟",
@@ -1032,7 +1500,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_阿煌": {
     "name": "阿煌",
@@ -1079,7 +1556,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小康": {
     "name": "小康",
@@ -1098,7 +1584,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小西": {
     "name": "小西",
@@ -1117,7 +1612,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小成": {
     "name": "小成",
@@ -1136,7 +1640,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_关智": {
     "name": "关智",
@@ -1155,7 +1668,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_可可": {
     "name": "可可",
@@ -1174,7 +1696,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_金兰": {
     "name": "金兰",
@@ -1193,7 +1724,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_玲玲": {
     "name": "玲玲",
@@ -1212,7 +1752,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_安妮": {
     "name": "安妮",
@@ -1231,7 +1780,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_浩哲": {
     "name": "浩哲",
@@ -1250,7 +1808,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_西西": {
     "name": "西西",
@@ -1269,7 +1836,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_白鹿": {
     "name": "白鹿",
@@ -1288,7 +1864,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_胡萝卜": {
     "name": "胡萝卜",
@@ -1335,7 +1920,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_十六": {
     "name": "十六",
@@ -1354,7 +1948,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_麦子": {
     "name": "麦子",
@@ -1373,7 +1976,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小宁": {
     "name": "小宁",
@@ -1392,7 +2004,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_怼怼": {
     "name": "怼怼",
@@ -1439,7 +2060,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_里卡": {
     "name": "里卡",
@@ -1458,7 +2088,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小E": {
     "name": "小E",
@@ -1477,7 +2116,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小杨": {
     "rest_day_date": null,
@@ -1524,7 +2172,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_大风": {
     "name": "大风",
@@ -1543,7 +2200,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_雪玲": {
     "name": "雪玲",
@@ -1562,7 +2228,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_美鹅": {
     "name": "美鹅",
@@ -1581,7 +2256,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小柳": {
     "name": "小柳",
@@ -1600,7 +2284,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_通邦": {
     "name": "通邦",
@@ -1619,7 +2312,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_贵天": {
     "name": "贵天",
@@ -1638,7 +2340,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小平": {
     "name": "小平",
@@ -1657,7 +2368,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_丽丽": {
     "name": "丽丽",
@@ -1676,7 +2396,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_青柚": {
     "name": "青柚",
@@ -1695,7 +2424,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_杰邓": {
     "name": "杰邓",
@@ -1714,7 +2452,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_鸡仔": {
     "name": "鸡仔",
@@ -1733,7 +2480,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_柠柠": {
     "name": "柠柠",
@@ -1752,7 +2508,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_阿宝": {
     "name": "阿宝",
@@ -1771,7 +2536,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_沈三": {
     "name": "沈三",
@@ -1790,7 +2564,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_路路": {
     "name": "路路",
@@ -1809,7 +2592,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_瑞安": {
     "name": "瑞安",
@@ -1828,7 +2620,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小猪": {
     "name": "小猪",
@@ -1847,7 +2648,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_凯文": {
     "name": "凯文",
@@ -1866,7 +2676,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_文南": {
     "name": "文南",
@@ -1885,7 +2704,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_大和": {
     "name": "大和",
@@ -1904,7 +2732,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_M16": {
     "name": "M16",
@@ -1923,7 +2760,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小雪": {
     "name": "小雪",
@@ -1942,7 +2788,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_颖杰": {
     "name": "颖杰",
@@ -1961,7 +2816,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_梦瑶": {
     "name": "梦瑶",
@@ -1980,7 +2844,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_卢卡": {
     "name": "卢卡",
@@ -1999,7 +2872,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小香": {
     "name": "小香",
@@ -2018,7 +2900,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_佳佳": {
     "name": "佳佳",
@@ -2037,7 +2928,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小鹿": {
     "name": "小鹿",
@@ -2056,7 +2956,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_何江": {
     "name": "何江",
@@ -2075,7 +2984,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_路易斯": {
     "name": "路易斯",
@@ -2094,7 +3012,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_娜婷": {
     "name": "娜婷",
@@ -2113,7 +3040,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_月亮": {
     "name": "月亮",
@@ -2160,7 +3096,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_雪美": {
     "name": "雪美",
@@ -2179,7 +3124,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_荆川": {
     "name": "荆川",
@@ -2198,7 +3152,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小平": {
     "name": "小平",
@@ -2217,7 +3180,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1003624527407_小草": {
     "name": "小草",
@@ -2236,7 +3208,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1003808754649_十一": {
     "name": "十一",
@@ -2255,7 +3236,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小草": {
     "name": "小草",
@@ -2274,7 +3264,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_萌神": {
     "name": "萌神",
@@ -2293,7 +3292,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_胜利": {
     "name": "胜利",
@@ -2312,7 +3320,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_啊宏": {
     "name": "啊宏",
@@ -2331,7 +3348,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_淑婧": {
     "name": "淑婧",
@@ -2350,7 +3376,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_阿森": {
     "name": "阿森",
@@ -2397,7 +3432,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 2,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_宁宁": {
     "name": "宁宁",
@@ -2416,7 +3460,16 @@
     "toilet_overtime": 2,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_秀妍": {
     "name": "秀妍",
@@ -2435,7 +3488,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_杰森": {
     "name": "杰森",
@@ -2454,7 +3516,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_李顺": {
     "name": "李顺",
@@ -2473,7 +3544,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_沫沫": {
     "name": "沫沫",
@@ -2492,7 +3572,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小龙": {
     "name": "小龙",
@@ -2511,7 +3600,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_米儿": {
     "name": "米儿",
@@ -2530,7 +3628,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_阿花": {
     "name": "阿花",
@@ -2549,7 +3656,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_阿良": {
     "name": "阿良",
@@ -2568,7 +3684,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小凡": {
     "name": "小凡",
@@ -2587,7 +3712,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_菠萝": {
     "name": "菠萝",
@@ -2634,7 +3768,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小依": {
     "name": "小依",
@@ -2653,7 +3796,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_美林": {
     "name": "美林",
@@ -2672,7 +3824,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_清清": {
     "name": "清清",
@@ -2691,7 +3852,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小漫": {
     "name": "小漫",
@@ -2710,7 +3880,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_琪琪": {
     "name": "琪琪",
@@ -2728,7 +3907,7 @@
     "shift_date": "2026-10-07",
     "toilet_overtime": 0,
     "eat_overtime": 0,
-    "toilet_reminded": false,
+    "toilet_reminded": true,
     "eat_reminded": false,
     "rest_start": null,
     "rest_total": 0,
@@ -2757,7 +3936,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_燕子": {
     "name": "燕子",
@@ -2776,7 +3964,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_菲娅": {
     "name": "菲娅",
@@ -2795,7 +3992,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_知夏": {
     "name": "知夏",
@@ -2814,7 +4020,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_苏苏": {
     "name": "苏苏",
@@ -2833,7 +4048,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_粉亿": {
     "name": "粉亿",
@@ -2852,7 +4076,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小叶": {
     "name": "小叶",
@@ -2871,7 +4104,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小城": {
     "name": "小城",
@@ -2890,7 +4132,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小青": {
     "name": "小青",
@@ -2909,7 +4160,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_星财": {
     "name": "星财",
@@ -2928,7 +4188,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_以沫": {
     "name": "以沫",
@@ -2947,7 +4216,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_雅婷": {
     "name": "雅婷",
@@ -2966,7 +4244,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_依依": {
     "name": "依依",
@@ -2985,7 +4272,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_晶晶": {
     "name": "晶晶",
@@ -3004,7 +4300,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_啊豪": {
     "name": "啊豪",
@@ -3023,7 +4328,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_瑶瑶": {
     "name": "瑶瑶",
@@ -3042,7 +4356,16 @@
     "toilet_overtime": 1,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_阿芜": {
     "name": "阿芜",
@@ -3061,7 +4384,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_韩新": {
     "name": "韩新",
@@ -3080,7 +4412,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小蓝": {
     "name": "小蓝",
@@ -3127,7 +4468,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小婷": {
     "name": "小婷",
@@ -3146,7 +4496,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_金金": {
     "name": "金金",
@@ -3165,7 +4524,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_浩哲": {
     "name": "浩哲",
@@ -3212,7 +4580,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小叶": {
     "name": "小叶",
@@ -3231,7 +4608,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_琳娜": {
     "name": "琳娜",
@@ -3250,7 +4636,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_琳娜": {
     "name": "琳娜",
@@ -3269,7 +4664,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小鱼": {
     "name": "小鱼",
@@ -3288,7 +4692,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_雅雅": {
     "name": "雅雅",
@@ -3307,7 +4720,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_可可": {
     "name": "可可",
@@ -3326,7 +4748,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_小瑶": {
     "name": "小瑶",
@@ -3345,7 +4776,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001819319968_唐勋": {
     "name": "唐勋",
@@ -3364,7 +4804,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_小清": {
     "name": "小清",
@@ -3383,7 +4832,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-1001801871581_小舒": {
     "name": "小舒",
@@ -3402,7 +4860,16 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   },
   "-5120947919_发发": {
     "name": "发发",
@@ -3421,6 +4888,15 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": false,
+    "rest_start": null,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "rest_overtime_counted": false,
+    "rest_day_date": null,
+    "rest_day_total": 0,
+    "rest_reminded": false,
+    "rest_window_reminded": false
   }
 }
