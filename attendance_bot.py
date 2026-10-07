@@ -12,6 +12,7 @@ import base64
 import urllib.request
 import urllib.error
 import asyncio
+from functools import wraps
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
@@ -33,6 +34,19 @@ DAY_SHIFT_END = time(17, 59, 59)
 OUTWORK_OVERTIME_SECONDS = 15 * 60
 EAT_OVERTIME_SECONDS = 20 * 60
 REMINDER_CHECK_INTERVAL = 30
+REST_START = time(3, 0)
+REST_END = time(6, 0)
+REST_ALLOWANCE_SECONDS = 90 * 60
+# 避免提醒发送期间，命令写入的数据被旧快照覆盖。
+DATA_LOCK = asyncio.Lock()
+
+
+def serialized_command(handler):
+    @wraps(handler)
+    async def wrapped(update, context):
+        async with DATA_LOCK:
+            return await handler(update, context)
+    return wrapped
 
 STAFF_NAMES = [
     "二狗", "青柚", "小崔", "余果", "美鹅", "杰邓", "七月", "小玫",
@@ -47,7 +61,7 @@ STAFF_NAMES = [
     "秀妍", "阿花", "小漫", "燕子", "菠萝", "小依", "知夏", "琪琪",
     "小叶", "粉亿", "以沫", "星财", "依依", "晶晶", "雅婷", "韩新",
     "关智", "小蓝", "金金", "阿峰", "小婷", "琳娜", "小鱼", "小瑶",
-    "可可", "小清", "小舒", "发发"
+    "可可", "小清", "小舒", "发发", "小月"
 ]
 STAFF_SET = set(STAFF_NAMES)
 
@@ -262,6 +276,15 @@ def ensure_record(data: dict, key: str, name: str) -> dict:
     record["eat_overtime"] = int(record.get("eat_overtime", 0) or 0)
     record["toilet_reminded"] = bool(record.get("toilet_reminded", False))
     record["eat_reminded"] = bool(record.get("eat_reminded", False))
+    record["rest_start"] = record.get("rest_start")
+    record["rest_total"] = int(record.get("rest_total", 0) or 0)
+    record["rest_count"] = int(record.get("rest_count", 0) or 0)
+    record["rest_overtime"] = int(record.get("rest_overtime", 0) or 0)
+    record["rest_overtime_counted"] = bool(record.get("rest_overtime_counted", False))
+    record["rest_day_date"] = record.get("rest_day_date")
+    record["rest_day_total"] = int(record.get("rest_day_total", 0) or 0)
+    record["rest_reminded"] = bool(record.get("rest_reminded", False))
+    record["rest_window_reminded"] = bool(record.get("rest_window_reminded", False))
     return record
 
 
@@ -275,6 +298,16 @@ def reset_for_new_shift(record: dict, name: str, current: str, shift_type: str, 
     record["eat_start"] = None
     record["eat_total"] = 0
     record["eat_count"] = 0
+    record["rest_start"] = None
+    record["rest_total"] = 0
+    record["rest_count"] = 0
+    record["rest_overtime"] = 0
+    record["rest_overtime_counted"] = False
+    record["rest_reminded"] = False
+    record["rest_window_reminded"] = False
+    # 每日额度不随重新上班刷新，旧数据则从零开始。
+    record.setdefault("rest_day_date", None)
+    record.setdefault("rest_day_total", 0)
     record["handover_to"] = None
     record["remark"] = None
     record["shift_type"] = shift_type
@@ -301,6 +334,9 @@ def append_history(chat_id: int, record: dict, out_time: str, net_seconds: int):
         "out": out_time,
         "outwork_total": int(record.get("outwork_total", 0) or 0),
         "eat_total": int(record.get("eat_total", 0) or 0),
+        "rest_total": int(record.get("rest_total", 0) or 0),
+        "rest_count": int(record.get("rest_count", 0) or 0),
+        "rest_overtime": int(record.get("rest_overtime", 0) or 0),
         "net_seconds": int(net_seconds or 0),
         "outwork_count": int(record.get("outwork_count", 0) or 0),
         "eat_count": int(record.get("eat_count", 0) or 0),
@@ -312,7 +348,9 @@ def append_history(chat_id: int, record: dict, out_time: str, net_seconds: int):
 
 async def send_reply(update: Update, text: str):
     if update.message:
-        await update.message.reply_text(text)
+        # 全员休息等情况下，新增状态明细可能超过 Telegram 单条长度。
+        for offset in range(0, len(text), 3500):
+            await update.message.reply_text(text[offset:offset + 3500])
 
 
 def parse_command_args(context: ContextTypes.DEFAULT_TYPE):
@@ -346,6 +384,8 @@ def get_status(record: dict) -> str:
         return "outwork"
     if record.get("eat_start"):
         return "eat"
+    if record.get("rest_start"):
+        return "rest"
     return "working"
 
 
@@ -370,6 +410,7 @@ def calc_current_totals(record: dict, current_time: datetime):
             "total_seconds": 0,
             "outwork_seconds": 0,
             "eat_seconds": 0,
+            "rest_seconds": 0,
             "net_seconds": 0,
         }
 
@@ -388,7 +429,11 @@ def calc_current_totals(record: dict, current_time: datetime):
     if record.get("eat_start") and not record.get("out"):
         eat_seconds += diff(record["eat_start"], current_time)
 
-    net_seconds = total_seconds - outwork_seconds - eat_seconds
+    rest_seconds = int(record.get("rest_total", 0) or 0)
+    if record.get("rest_start") and not record.get("out"):
+        rest_seconds += diff(record["rest_start"], current_time)
+
+    net_seconds = total_seconds - outwork_seconds - eat_seconds - rest_seconds
     if net_seconds < 0:
         net_seconds = 0
 
@@ -396,6 +441,7 @@ def calc_current_totals(record: dict, current_time: datetime):
         "total_seconds": total_seconds,
         "outwork_seconds": outwork_seconds,
         "eat_seconds": eat_seconds,
+        "rest_seconds": rest_seconds,
         "net_seconds": net_seconds,
     }
 
@@ -469,6 +515,7 @@ def get_todayall_rows(chat_id: int):
                 "net_seconds": 0,
                 "outwork_seconds": 0,
                 "eat_seconds": 0,
+                "rest_seconds": 0,
             })
             continue
 
@@ -480,6 +527,7 @@ def get_todayall_rows(chat_id: int):
             "working": "上班中",
             "outwork": "外出中",
             "eat": "吃饭中",
+            "rest": "休息中",
             "off": "已下班",
             "none": "未打卡"
         }
@@ -488,7 +536,7 @@ def get_todayall_rows(chat_id: int):
         handover_to = record.get("handover_to") or ""
         remark = record.get("remark") or ""
 
-        if status_text not in ("外出中", "吃饭中"):
+        if status_text not in ("外出中", "吃饭中", "休息中"):
             handover_to = ""
 
         if status_text != "外出中":
@@ -505,6 +553,8 @@ def get_todayall_rows(chat_id: int):
             "net_seconds": totals["net_seconds"],
             "outwork_seconds": totals["outwork_seconds"],
             "eat_seconds": totals["eat_seconds"],
+            "rest_seconds": totals["rest_seconds"],
+            "rest_overtime": record["rest_overtime"],
         })
 
     return rows
@@ -530,6 +580,8 @@ def is_handover_target_available(chat_id: int, data: dict, handover_to: str) -> 
             return False, f"❌ 临时代接人 {handover_to} 当前正在外出中，无法交接"
         if status == "eat":
             return False, f"❌ 临时代接人 {handover_to} 当前正在吃饭中，无法交接"
+        if status == "rest":
+            return False, f"❌ 临时代接人 {handover_to} 当前正在休息中，无法交接"
         if status == "off":
             return False, f"❌ 临时代接人 {handover_to} 当前班次已结束，无法交接"
         return False, f"❌ 临时代接人 {handover_to} 当前状态异常，无法交接"
@@ -559,68 +611,91 @@ def is_covering_for_others(chat_id: int, data: dict, name: str) -> tuple[bool, s
             continue
 
         status = get_status(other_record)
-        if status not in ("outwork", "eat"):
+        if status not in ("outwork", "eat", "rest"):
             continue
 
         if other_record.get("handover_to") == name:
-            return True, f"❌ {name} 当前正在代接 {other_name} 的工作，暂时不能外出、吃饭或下班"
+            return True, f"❌ {name} 当前正在代接 {other_name} 的工作，暂时不能外出、吃饭、休息或下班"
 
     return False, ""
+
+
+async def check_reminders(application):
+    async with DATA_LOCK:
+        data = load()
+        current_time = now()
+        changed = False
+
+        for key, raw_record in list(data.items()):
+            if not isinstance(raw_record, dict):
+                continue
+
+            record = ensure_record(data, key, raw_record.get("name") or "")
+
+            if record.get("out") or not is_record_current(record, current_time):
+                continue
+
+            name = record.get("name") or ""
+
+            try:
+                chat_id = int(str(key).split("_", 1)[0])
+            except Exception:
+                continue
+
+            # 只要是外出，一律超过15分钟提醒
+            if record.get("outwork_start"):
+                passed = diff(record["outwork_start"], current_time)
+                if passed >= OUTWORK_OVERTIME_SECONDS and not record.get("toilet_reminded", False):
+                    await application.bot.send_message(
+                        chat_id=chat_id,
+                        text=f"⚠️ 提醒：{name} 外出已超过15分钟，请尽快确认"
+                    )
+                    record["toilet_reminded"] = True
+                    changed = True
+
+            if record.get("eat_start"):
+                passed = diff(record["eat_start"], current_time)
+                if passed >= EAT_OVERTIME_SECONDS and not record.get("eat_reminded", False):
+                    await application.bot.send_message(
+                        chat_id=chat_id,
+                        text=f"⚠️ 提醒：{name} 吃饭已超过20分钟，请尽快确认"
+                    )
+                    record["eat_reminded"] = True
+                    changed = True
+
+            if record.get("rest_start"):
+                used = rest_day_used(record, current_time)
+                if used > REST_ALLOWANCE_SECONDS and not record["rest_reminded"]:
+                    await application.bot.send_message(
+                        chat_id=chat_id,
+                        text=f"⚠️ 提醒：{name} 今日累计休息 {sec_to_str(used)}，已超过90分钟，请尽快返回"
+                    )
+                    mark_rest_overtime(record)
+                    record["rest_reminded"] = True
+                    changed = True
+                reminder_time = rest_return_reminder_time(record)
+                if reminder_time and current_time >= reminder_time and not record["rest_window_reminded"]:
+                    await application.bot.send_message(
+                        chat_id=chat_id,
+                        text=f"⚠️ 提醒：{name} 06:10仍未打卡返回，已记休息超时，请尽快使用 /restback {name} 返回（同次休息不重复计次）"
+                    )
+                    mark_rest_overtime(record)
+                    record["rest_window_reminded"] = True
+                    changed = True
+
+        if changed:
+            save(data)
 
 
 async def reminder_loop(application):
     while True:
         try:
-            data = load()
-            current_time = now()
-            changed = False
-
-            for key, raw_record in list(data.items()):
-                if not isinstance(raw_record, dict):
-                    continue
-
-                record = ensure_record(data, key, raw_record.get("name") or "")
-
-                if not is_record_current(record, current_time):
-                    continue
-
-                name = record.get("name") or ""
-
-                try:
-                    chat_id = int(str(key).split("_", 1)[0])
-                except Exception:
-                    continue
-
-                # 只要是外出，一律超过15分钟提醒
-                if record.get("outwork_start"):
-                    passed = diff(record["outwork_start"], current_time)
-                    if passed >= OUTWORK_OVERTIME_SECONDS and not record.get("toilet_reminded", False):
-                        await application.bot.send_message(
-                            chat_id=chat_id,
-                            text=f"⚠️ 提醒：{name} 外出已超过15分钟，请尽快确认"
-                        )
-                        record["toilet_reminded"] = True
-                        changed = True
-
-                if record.get("eat_start"):
-                    passed = diff(record["eat_start"], current_time)
-                    if passed >= EAT_OVERTIME_SECONDS and not record.get("eat_reminded", False):
-                        await application.bot.send_message(
-                            chat_id=chat_id,
-                            text=f"⚠️ 提醒：{name} 吃饭已超过20分钟，请尽快确认"
-                        )
-                        record["eat_reminded"] = True
-                        changed = True
-
-            if changed:
-                save(data)
-
+            await check_reminders(application)
         except asyncio.CancelledError:
             break
         except Exception:
             print("自动提醒循环异常：")
             traceback.print_exc()
-
         await asyncio.sleep(REMINDER_CHECK_INTERVAL)
 
 
@@ -639,6 +714,7 @@ async def post_shutdown(application):
             pass
 
 
+@serialized_command
 async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     args = context.args
     if not args:
@@ -676,6 +752,9 @@ async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if record.get("eat_start"):
                 await send_reply(update, eat_msg(name, record["eat_start"], record.get("handover_to"), record.get("remark")))
                 return
+            if record.get("rest_start"):
+                await send_reply(update, rest_msg(name, record))
+                return
             if record.get("in") and not record.get("out"):
                 await send_reply(update, working_msg(name, record["in"]))
                 return
@@ -685,13 +764,18 @@ async def in_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     shift_type = determine_shift_type(current_dt, shift_override)
     shift_date = get_shift_date(current_dt)
 
-    data[key] = {}
+    previous = record if isinstance(record, dict) else {}
+    data[key] = {
+        "rest_day_date": previous.get("rest_day_date"),
+        "rest_day_total": int(previous.get("rest_day_total", 0) or 0),
+    }
     reset_for_new_shift(data[key], name, current, shift_type, shift_date)
     save(data)
 
     await send_reply(update, f"{name} 上班 {current}\n班次：{shift_type}")
 
 
+@serialized_command
 async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
     valid, msg = validate_name(name)
@@ -752,7 +836,11 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         record["eat_start"] = None
         record["eat_reminded"] = False
 
-    net_seconds = total_seconds - outwork_seconds - eat_seconds
+    rest_overtime_hit = rest_unreturned = False
+    if record.get("rest_start"):
+        _, rest_overtime_hit, rest_unreturned = close_rest(record, current_time)
+    rest_seconds = int(record.get("rest_total", 0) or 0)
+    net_seconds = total_seconds - outwork_seconds - eat_seconds - rest_seconds
     if net_seconds < 0:
         net_seconds = 0
 
@@ -769,13 +857,20 @@ async def out_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"总工时 {sec_to_str(total_seconds)}\n"
         f"外出 {sec_to_str(outwork_seconds)}（{int(record.get('outwork_count', 0) or 0)}次）\n"
         f"吃饭 {sec_to_str(eat_seconds)}（{int(record.get('eat_count', 0) or 0)}次）\n"
+        f"休息 {sec_to_str(rest_seconds)}（{int(record.get('rest_count', 0) or 0)}次）\n"
+        f"休息超时 {int(record.get('rest_overtime', 0) or 0)}次\n"
         f"净工时 {sec_to_str(net_seconds)}\n"
         f"外出超时 {int(record.get('toilet_overtime', 0) or 0)}次\n"
         f"吃饭超时 {int(record.get('eat_overtime', 0) or 0)}次"
     )
+    if rest_overtime_hit:
+        msg += "\n⚠️ 警告：本休息日累计休息超过90分钟"
+    if rest_unreturned:
+        msg += "\n⚠️ 警告：06:10仍未打卡返回，已记休息超时（同次不重复计次）"
     await send_reply(update, msg)
 
 
+@serialized_command
 async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, handover_to, remark = parse_command_args(context)
 
@@ -816,6 +911,10 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, eat_msg(name, record["eat_start"], record.get("handover_to"), record.get("remark")))
         return
 
+    if record.get("rest_start"):
+        await send_reply(update, rest_msg(name, record))
+        return
+
     covering, covering_msg = is_covering_for_others(chat_id, data, name)
     if covering:
         await send_reply(update, covering_msg)
@@ -843,6 +942,7 @@ async def outwork_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, reply)
 
 
+@serialized_command
 async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
 
@@ -888,6 +988,7 @@ async def back_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, reply)
 
 
+@serialized_command
 async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     args = context.args
 
@@ -951,6 +1052,10 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_reply(update, outwork_msg(name, record["outwork_start"], record.get("handover_to"), record.get("remark")))
         return
 
+    if record.get("rest_start"):
+        await send_reply(update, rest_msg(name, record))
+        return
+
     covering, covering_msg = is_covering_for_others(chat_id, data, name)
     if covering:
         await send_reply(update, covering_msg)
@@ -976,6 +1081,7 @@ async def eat_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, reply)
 
 
+@serialized_command
 async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
 
@@ -1020,6 +1126,162 @@ async def eatback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_reply(update, reply)
 
 
+def rest_return_reminder_time(record: dict):
+    start = parse_dt(record.get("rest_start"))
+    return start.replace(hour=6, minute=10, second=0, microsecond=0) if start else None
+
+
+def rest_day_used(record: dict, current_time: datetime) -> int:
+    # 仍在休息时保留原日期的计时，避免漏打返回跨日后被刷新。
+    if record.get("rest_start"):
+        return int(record.get("rest_day_total", 0) or 0) + diff(record["rest_start"], current_time)
+    if record.get("rest_day_date") == current_time.strftime("%Y-%m-%d"):
+        return int(record.get("rest_day_total", 0) or 0)
+    return 0
+
+
+def rest_msg(name: str, record: dict) -> str:
+    msg = f"{name}已在休息中\n休息时间：{record['rest_start']}\n"
+    if record.get("handover_to"):
+        msg += f"当前工作已临时交接给：{record['handover_to']}\n"
+    return msg + f"如需返回，请使用 /restback {name}；下班使用 /out {name}"
+
+
+def mark_rest_overtime(record: dict):
+    # 90分钟超时与06:10未归属于同一次休息，只累计一次。
+    if not record.get("rest_overtime_counted", False):
+        record["rest_overtime"] = int(record.get("rest_overtime", 0) or 0) + 1
+        record["rest_overtime_counted"] = True
+
+
+def close_rest(record: dict, current_time: datetime) -> tuple[int, bool, bool]:
+    seconds = diff(record["rest_start"], current_time)
+    used = rest_day_used(record, current_time)
+    overtime = used > REST_ALLOWANCE_SECONDS
+    reminder_time = rest_return_reminder_time(record)
+    unreturned = bool(reminder_time and current_time >= reminder_time)
+    record["rest_total"] = int(record.get("rest_total", 0) or 0) + seconds
+    record["rest_day_total"] = used
+    if overtime or unreturned:
+        mark_rest_overtime(record)
+    record["rest_start"] = None
+    record["rest_reminded"] = False
+    record["rest_window_reminded"] = False
+    clear_temp_fields(record)
+    return seconds, overtime, unreturned
+
+
+@serialized_command
+async def rest_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    args = context.args
+    if len(args) not in (1, 2):
+        await send_reply(update, "❌ 格式：/rest 名字 或 /rest 名字 临时代接人")
+        return
+    name = args[0].strip()
+    handover_to = args[1].strip() if len(args) == 2 else None
+    valid, msg = validate_name(name)
+    if not valid:
+        await send_reply(update, msg)
+        return
+    if handover_to == name:
+        await send_reply(update, "❌ 临时代接人不能与本人相同")
+        return
+
+    current_time = now()
+    data = load()
+    chat_id = update.effective_chat.id
+    key = key_by_name(chat_id, name)
+    record = data.get(key)
+    if not isinstance(record, dict) or not record.get("in") or not is_record_current(record, current_time):
+        await send_reply(update, f"{name}当前未在上班中，请先使用 /in {name}")
+        return
+    record = ensure_record(data, key, name)
+    status = get_status(record)
+    if status == "off":
+        await send_reply(update, off_msg(name, record["out"]))
+        return
+    if status == "rest":
+        await send_reply(update, rest_msg(name, record))
+        return
+    if status == "eat":
+        await send_reply(update, eat_msg(name, record["eat_start"], record.get("handover_to")))
+        return
+    if status == "outwork":
+        await send_reply(update, outwork_msg(name, record["outwork_start"], record.get("handover_to"), record.get("remark")))
+        return
+    if not REST_START <= current_time.time() < REST_END:
+        await send_reply(update, "❌ 仅可在马来西亚时间每日03:00–06:00开始休息")
+        return
+    covering, reason = is_covering_for_others(chat_id, data, name)
+    if covering:
+        await send_reply(update, reason)
+        return
+    if handover_to:
+        ok, reason = is_handover_target_available(chat_id, data, handover_to)
+        if not ok:
+            await send_reply(update, reason)
+            return
+    used = rest_day_used(record, current_time)
+    if used >= REST_ALLOWANCE_SECONDS:
+        await send_reply(update, f"❌ {name} 今日90分钟休息额度已用完")
+        return
+    record["rest_day_date"] = current_time.strftime("%Y-%m-%d")
+    record["rest_day_total"] = used
+    record["rest_start"] = full(current_time)
+    record["rest_overtime_counted"] = False
+    record["rest_count"] += 1
+    record["rest_reminded"] = False
+    record["rest_window_reminded"] = False
+    record["handover_to"] = handover_to
+    record["remark"] = None
+    save(data)
+    available = REST_ALLOWANCE_SECONDS - used
+    reply = (
+        f"{name} 休息 {record['rest_start']}\n"
+        f"今日剩余额度：{sec_to_str(REST_ALLOWANCE_SECONDS - used)}\n"
+        f"本次最多可休息：{sec_to_str(available)}，可跨过06:00\n"
+        f"返回命令：/restback {name}"
+    )
+    if handover_to:
+        reply += f"\n当前工作已临时交接给：{handover_to}"
+    await send_reply(update, reply)
+
+
+@serialized_command
+async def restback_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if len(context.args) != 1:
+        await send_reply(update, "❌ 格式：/restback 名字")
+        return
+    name = context.args[0].strip()
+    valid, msg = validate_name(name)
+    if not valid:
+        await send_reply(update, msg)
+        return
+    data = load()
+    key = key_by_name(update.effective_chat.id, name)
+    record = data.get(key)
+    if not isinstance(record, dict) or get_status(record) != "rest":
+        await send_reply(update, f"{name}当前不在休息中")
+        return
+    record = ensure_record(data, key, name)
+    current_time = now()
+    handover_to = record.get("handover_to")
+    seconds, overtime, unreturned = close_rest(record, current_time)
+    save(data)
+    reply = (
+        f"{name} 休息返回 {full(current_time)}\n"
+        f"本次休息：{sec_to_str(seconds)}\n"
+        f"本休息日累计：{sec_to_str(record['rest_day_total'])}"
+    )
+    if handover_to:
+        reply += f"\n已结束 {handover_to} 的临时代接"
+    if overtime:
+        reply += "\n⚠️ 警告：本休息日累计休息超过90分钟"
+    if unreturned:
+        reply += "\n⚠️ 警告：06:10仍未打卡返回，已记休息超时（同次不重复计次）"
+    await send_reply(update, reply)
+
+
 async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name, _, _ = parse_command_args(context)
     valid, msg = validate_name(name)
@@ -1050,6 +1312,8 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         status = "外出中"
     elif record.get("eat_start"):
         status = "吃饭中"
+    elif record.get("rest_start"):
+        status = "休息中"
     else:
         status = "上班中"
 
@@ -1062,7 +1326,7 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"下班时间：{record.get('out') or '未下班'}\n"
     )
 
-    if status in ("外出中", "吃饭中") and record.get("handover_to"):
+    if status in ("外出中", "吃饭中", "休息中") and record.get("handover_to"):
         reply += f"临时代接：{record.get('handover_to')}\n"
 
     if status == "外出中" and record.get("remark"):
@@ -1073,6 +1337,9 @@ async def today_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"累计吃饭：{sec_to_str(totals['eat_seconds'])}（{int(record.get('eat_count', 0) or 0)}次）\n"
         f"外出超时：{int(record.get('toilet_overtime', 0) or 0)}次\n"
         f"吃饭超时：{int(record.get('eat_overtime', 0) or 0)}次\n"
+        f"累计休息：{sec_to_str(totals['rest_seconds'])}（{int(record.get('rest_count', 0) or 0)}次）\n"
+        f"休息超时：{int(record.get('rest_overtime', 0) or 0)}次\n"
+        f"今日剩余休息：{sec_to_str(max(0, REST_ALLOWANCE_SECONDS - rest_day_used(record, current_time)))}\n"
         f"当前净工时：{sec_to_str(totals['net_seconds'])}"
     )
     await send_reply(update, reply)
@@ -1092,8 +1359,10 @@ async def todayall_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             line += f"（{row['shift_type']}）"
         if row["status"] != "未打卡":
             line += f" | 净工时：{sec_to_short(row['net_seconds'])}"
-        if row["status"] in ("外出中", "吃饭中") and row["handover_to"]:
+        if row["status"] in ("外出中", "吃饭中", "休息中") and row["handover_to"]:
             line += f" | 临时代接：{row['handover_to']}"
+        if row["status"] == "休息中":
+            line += f" | 累计休息：{sec_to_short(row['rest_seconds'])}"
         if row["status"] == "外出中" and row["remark"]:
             line += f" | 备注：{row['remark']}"
         lines.append(line)
@@ -1132,6 +1401,9 @@ def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[s
     total_net = sum(int(r.get("net_seconds", 0) or 0) for r in rows)
     total_outwork = sum(int(r.get("outwork_total", 0) or 0) for r in rows)
     total_eat = sum(int(r.get("eat_total", 0) or 0) for r in rows)
+    total_rest = sum(int(r.get("rest_total", 0) or 0) for r in rows)
+    total_rest_count = sum(int(r.get("rest_count", 0) or 0) for r in rows)
+    total_rest_overtime = sum(int(r.get("rest_overtime", 0) or 0) for r in rows)
     total_outwork_count = sum(int(r.get("outwork_count", 0) or 0) for r in rows)
     total_eat_count = sum(int(r.get("eat_count", 0) or 0) for r in rows)
     total_outwork_overtime = sum(int(r.get("toilet_overtime", 0) or 0) for r in rows)
@@ -1143,6 +1415,8 @@ def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[s
         f"吃饭合计：{sec_to_str(total_eat)}（{total_eat_count}次）",
         f"外出超时：{total_outwork_overtime}次",
         f"吃饭超时：{total_eat_overtime}次",
+        f"休息合计：{sec_to_str(total_rest)}（{total_rest_count}次）",
+        f"休息超时：{total_rest_overtime}次",
         "",
         "人员明细："
     ])
@@ -1156,7 +1430,9 @@ def build_report_lines(chat_id: int, shift_date: str, shift_type: str) -> list[s
             f"| 外出{int(r.get('outwork_count', 0) or 0)}次 "
             f"| 吃饭{int(r.get('eat_count', 0) or 0)}次 "
             f"| 外出超时{int(r.get('toilet_overtime', 0) or 0)}次 "
-            f"| 吃饭超时{int(r.get('eat_overtime', 0) or 0)}次"
+            f"| 吃饭超时{int(r.get('eat_overtime', 0) or 0)}次 "
+            f"| 休息{sec_to_short(int(r.get('rest_total', 0) or 0))} "
+            f"| 休息超时{int(r.get('rest_overtime', 0) or 0)}次"
         )
 
     return lines
@@ -1213,7 +1489,7 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ws = wb.active
     ws.title = "考勤状态"
 
-    headers = ["姓名", "班次", "状态", "上班时间", "下班时间", "临时代接", "备注", "净工时", "累计外出", "累计吃饭"]
+    headers = ["姓名", "班次", "状态", "上班时间", "下班时间", "临时代接", "备注", "净工时", "累计外出", "累计吃饭", "累计休息", "休息超时次数"]
     ws.append(headers)
 
     for col in range(1, len(headers) + 1):
@@ -1233,11 +1509,13 @@ async def export_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
             sec_to_str(row["net_seconds"]),
             sec_to_str(row["outwork_seconds"]),
             sec_to_str(row["eat_seconds"]),
+            sec_to_str(row["rest_seconds"]),
+            row.get("rest_overtime", 0),
         ])
 
     widths = {
         "A": 12, "B": 10, "C": 12, "D": 22, "E": 22, "F": 14,
-        "G": 20, "H": 16, "I": 16, "J": 16
+        "G": 20, "H": 16, "I": 16, "J": 16, "K": 16, "L": 16
     }
     for col, width in widths.items():
         ws.column_dimensions[col].width = width
@@ -1272,6 +1550,9 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/eat 名字  吃饭\n"
         "/eat 名字 临时代接人  吃饭并临时交接\n"
         "/eatback 名字  吃饭回\n"
+        "/rest 名字  休息\n"
+        "/rest 名字 临时代接人  交接后休息\n"
+        "/restback 名字  休息返回\n"
         "/today 名字  查看当前班次\n"
         "/todayall  查看全部人员状态\n"
         "/report 白班  查看当天白班日报\n"
@@ -1285,7 +1566,10 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "转班必须手动写：/in 名字 转\n\n"
         "超时规则：\n"
         "外出超过15分钟 = 提醒/警告\n"
-        "吃饭超过20分钟 = 提醒/警告\n\n"
+        "吃饭超过20分钟 = 提醒/警告\n"
+        "休息：马来西亚时间03:00–06:00可开始，每人每日累计90分钟，可跨06:00返回\n"
+        "累计超过90分钟 = 超时提醒；06:10仍未打卡返回 = 提醒并计超时，同次不重复计次\n"
+        "休息返回使用 /restback 名字，不自动结束计时\n\n"
         "示例：\n"
         "/in 小鑫\n"
         "/in 小鑫 转\n"
@@ -1328,6 +1612,8 @@ def main():
     app.add_handler(CommandHandler("back", back_cmd))
     app.add_handler(CommandHandler("eat", eat_cmd))
     app.add_handler(CommandHandler("eatback", eatback_cmd))
+    app.add_handler(CommandHandler("rest", rest_cmd))
+    app.add_handler(CommandHandler("restback", restback_cmd))
     app.add_handler(CommandHandler("today", today_cmd))
     app.add_handler(CommandHandler("todayall", todayall_cmd))
     app.add_handler(CommandHandler("report", report_cmd))
