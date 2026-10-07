@@ -36523,5 +36523,20 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小舒",
+    "shift_type": "白班",
+    "shift_date": "2026-10-07",
+    "in": "2026-10-07 08:06:50",
+    "out": "2026-10-07 20:10:27",
+    "outwork_total": 732,
+    "eat_total": 1943,
+    "net_seconds": 40742,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
