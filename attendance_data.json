@@ -4256,8 +4256,8 @@
     "eat_reminded": false
   },
   "-1001801871581_依依": {
-    "rest_day_date": "2026-10-08",
-    "rest_day_total": 5256,
+    "rest_day_date": "2026-10-09",
+    "rest_day_total": 0,
     "name": "依依",
     "in": "2026-10-08 20:02:31",
     "out": null,
@@ -4267,9 +4267,9 @@
     "eat_start": null,
     "eat_total": 1144,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-09 04:31:58",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
