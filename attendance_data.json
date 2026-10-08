@@ -1212,8 +1212,8 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-10-08 12:44:36",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1300,
     "eat_count": 1,
     "rest_start": null,
     "rest_total": 0,
@@ -1227,9 +1227,9 @@
     "shift_type": "白班",
     "shift_date": "2026-10-08",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_官成": {
     "rest_day_date": null,
