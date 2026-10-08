@@ -2464,8 +2464,8 @@
     "eat_reminded": false
   },
   "-5120947919_鸡仔": {
-    "rest_day_date": "2026-10-08",
-    "rest_day_total": 5339,
+    "rest_day_date": "2026-10-09",
+    "rest_day_total": 0,
     "name": "鸡仔",
     "in": "2026-10-08 19:39:12",
     "out": null,
@@ -2475,9 +2475,9 @@
     "eat_start": null,
     "eat_total": 920,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-09 03:00:45",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
