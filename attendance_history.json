@@ -37381,5 +37381,23 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "美鹅",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-07",
+    "in": "2026-10-07 20:04:38",
+    "out": "2026-10-08 08:12:14",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "rest_total": 5105,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 38551,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
