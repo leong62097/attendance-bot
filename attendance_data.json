@@ -3276,8 +3276,8 @@
     "eat_reminded": false
   },
   "-1001819319968_萌神": {
-    "rest_day_date": "2026-10-09",
-    "rest_day_total": 5098,
+    "rest_day_date": "2026-10-10",
+    "rest_day_total": 0,
     "name": "萌神",
     "in": "2026-10-09 19:57:59",
     "out": null,
@@ -3287,9 +3287,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-10 04:39:19",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
