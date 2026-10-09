@@ -38515,5 +38515,23 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "胡萝卜",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-08",
+    "in": "2026-10-08 20:02:16",
+    "out": "2026-10-09 08:02:03",
+    "outwork_total": 1235,
+    "eat_total": 2555,
+    "rest_total": 5211,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 34186,
+    "outwork_count": 3,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 1
   }
 ]
