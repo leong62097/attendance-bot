@@ -3024,8 +3024,8 @@
     "eat_reminded": false
   },
   "-5120947919_娜婷": {
-    "rest_day_date": "2026-10-09",
-    "rest_day_total": 5017,
+    "rest_day_date": "2026-10-10",
+    "rest_day_total": 0,
     "name": "娜婷",
     "in": "2026-10-09 20:00:45",
     "out": null,
@@ -3035,9 +3035,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-10 04:32:46",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
