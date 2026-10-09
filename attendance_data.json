@@ -2576,8 +2576,8 @@
     "eat_reminded": false
   },
   "-5120947919_路路": {
-    "rest_day_date": "2026-10-09",
-    "rest_day_total": 5338,
+    "rest_day_date": "2026-10-10",
+    "rest_day_total": 0,
     "name": "路路",
     "in": "2026-10-09 19:40:40",
     "out": null,
@@ -2587,9 +2587,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-10 03:00:03",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
