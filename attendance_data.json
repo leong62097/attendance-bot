@@ -4592,8 +4592,8 @@
     "eat_reminded": false
   },
   "-1001819319968_小叶": {
-    "rest_day_date": "2026-10-09",
-    "rest_day_total": 5167,
+    "rest_day_date": "2026-10-10",
+    "rest_day_total": 0,
     "name": "小叶",
     "in": "2026-10-09 20:00:12",
     "out": null,
@@ -4603,9 +4603,9 @@
     "eat_start": null,
     "eat_total": 1157,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-10 04:32:03",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
