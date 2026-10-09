@@ -38749,5 +38749,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "金兰",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-08",
+    "in": "2026-10-08 20:06:03",
+    "out": "2026-10-09 08:09:00",
+    "outwork_total": 0,
+    "eat_total": 917,
+    "rest_total": 5173,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 37287,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
