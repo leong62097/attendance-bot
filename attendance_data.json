@@ -3724,8 +3724,8 @@
     "rest_window_reminded": false
   },
   "-5120947919_菠萝": {
-    "rest_day_date": "2026-10-10",
-    "rest_day_total": 5345,
+    "rest_day_date": "2026-10-11",
+    "rest_day_total": 0,
     "name": "菠萝",
     "in": "2026-10-10 19:40:16",
     "out": null,
@@ -3735,9 +3735,9 @@
     "eat_start": null,
     "eat_total": 1020,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-11 03:02:32",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
