@@ -2072,8 +2072,8 @@
     "rest_window_reminded": false
   },
   "-1001819319968_里卡": {
-    "rest_day_date": "2026-10-10",
-    "rest_day_total": 4259,
+    "rest_day_date": "2026-10-11",
+    "rest_day_total": 0,
     "name": "里卡",
     "in": "2026-10-10 19:51:27",
     "out": null,
@@ -2083,9 +2083,9 @@
     "eat_start": null,
     "eat_total": 920,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-11 04:45:01",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
