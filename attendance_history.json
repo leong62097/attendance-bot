@@ -40621,5 +40621,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "粉亿",
+    "shift_type": "白班",
+    "shift_date": "2026-10-10",
+    "in": "2026-10-10 07:43:52",
+    "out": "2026-10-10 19:40:47",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 43015,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
