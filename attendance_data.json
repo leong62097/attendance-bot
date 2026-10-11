@@ -3041,7 +3041,7 @@
     "rest_overtime": 1,
     "rest_overtime_counted": true,
     "rest_reminded": true,
-    "rest_window_reminded": false,
+    "rest_window_reminded": true,
     "handover_to": "小鱼",
     "remark": null,
     "shift_type": "夜班",
