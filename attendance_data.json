@@ -1764,8 +1764,8 @@
     "eat_reminded": false
   },
   "-1001819319968_安妮": {
-    "rest_day_date": "2026-10-12",
-    "rest_day_total": 5266,
+    "rest_day_date": "2026-10-13",
+    "rest_day_total": 0,
     "name": "安妮",
     "in": "2026-10-12 19:56:18",
     "out": null,
@@ -1775,9 +1775,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-13 03:09:26",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
