@@ -4396,8 +4396,8 @@
     "rest_window_reminded": false
   },
   "-1001801871581_韩新": {
-    "rest_day_date": "2026-10-12",
-    "rest_day_total": 4757,
+    "rest_day_date": "2026-10-13",
+    "rest_day_total": 0,
     "name": "韩新",
     "in": "2026-10-12 20:04:59",
     "out": null,
@@ -4407,9 +4407,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-13 03:52:16",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
