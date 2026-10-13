@@ -4564,8 +4564,8 @@
     "eat_reminded": false
   },
   "-5120947919_小陶": {
-    "rest_day_date": "2026-10-13",
-    "rest_day_total": 5266,
+    "rest_day_date": "2026-10-14",
+    "rest_day_total": 0,
     "name": "小陶",
     "in": "2026-10-13 20:00:29",
     "out": null,
@@ -4575,9 +4575,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-14 04:46:05",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
