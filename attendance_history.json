@@ -3634,5 +3634,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "十三",
+    "shift_type": "白班",
+    "shift_date": "2026-10-15",
+    "in": "2026-10-15 07:54:03",
+    "out": "2026-10-15 20:11:24",
+    "outwork_total": 1290,
+    "eat_total": 0,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 42951,
+    "outwork_count": 2,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
