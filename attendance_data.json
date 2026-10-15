@@ -1568,8 +1568,8 @@
     "rest_window_reminded": false
   },
   "-1001801871581_小康": {
-    "rest_day_date": "2026-10-15",
-    "rest_day_total": 5976,
+    "rest_day_date": "2026-10-16",
+    "rest_day_total": 0,
     "name": "小康",
     "in": "2026-10-15 20:05:53",
     "out": null,
@@ -1579,9 +1579,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-16 03:01:20",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
