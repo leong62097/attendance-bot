@@ -4480,5 +4480,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "韩新",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-15",
+    "in": "2026-10-15 20:02:57",
+    "out": "2026-10-16 14:08:45",
+    "outwork_total": 606,
+    "eat_total": 1873,
+    "rest_total": 3170,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 59499,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
