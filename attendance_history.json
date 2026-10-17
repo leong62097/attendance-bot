@@ -5920,5 +5920,23 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "燕子",
+    "shift_type": "白班",
+    "shift_date": "2026-10-17",
+    "in": "2026-10-17 08:17:42",
+    "out": "2026-10-17 20:15:36",
+    "outwork_total": 0,
+    "eat_total": 1138,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 41936,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
