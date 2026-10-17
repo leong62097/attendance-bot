@@ -5128,5 +5128,23 @@
     "eat_count": 0,
     "toilet_overtime": 1,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小漫",
+    "shift_type": "白班",
+    "shift_date": "2026-10-16",
+    "in": "2026-10-16 13:54:35",
+    "out": "2026-10-17 08:08:43",
+    "outwork_total": 6110,
+    "eat_total": 2036,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 57502,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 1,
+    "eat_overtime": 0
   }
 ]
