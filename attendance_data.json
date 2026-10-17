@@ -3164,8 +3164,8 @@
     "eat_reminded": false
   },
   "-1001819319968_小平": {
-    "rest_day_date": "2026-10-17",
-    "rest_day_total": 4776,
+    "rest_day_date": "2026-10-18",
+    "rest_day_total": 0,
     "name": "小平",
     "in": "2026-10-17 20:02:59",
     "out": null,
@@ -3175,9 +3175,9 @@
     "eat_start": null,
     "eat_total": 1006,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-18 03:00:38",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
