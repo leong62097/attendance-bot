@@ -4172,8 +4172,8 @@
     "rest_window_reminded": false
   },
   "-1001801871581_星财": {
-    "rest_day_date": "2026-10-19",
-    "rest_day_total": 5308,
+    "rest_day_date": "2026-10-20",
+    "rest_day_total": 0,
     "name": "星财",
     "in": "2026-10-19 20:37:15",
     "out": null,
@@ -4183,9 +4183,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-20 03:03:22",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
