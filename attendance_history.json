@@ -8404,5 +8404,23 @@
     "eat_count": 1,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "小陶",
+    "shift_type": "白班",
+    "shift_date": "2026-10-19",
+    "in": "2026-10-19 08:00:19",
+    "out": "2026-10-19 20:02:55",
+    "outwork_total": 0,
+    "eat_total": 1024,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 42332,
+    "outwork_count": 0,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
