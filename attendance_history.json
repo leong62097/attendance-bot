@@ -8854,5 +8854,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "孔明",
+    "shift_type": "白班",
+    "shift_date": "2026-10-19",
+    "in": "2026-10-19 07:56:54",
+    "out": "2026-10-19 20:38:35",
+    "outwork_total": 1487,
+    "eat_total": 1129,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 43085,
+    "outwork_count": 2,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
