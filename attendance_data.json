@@ -868,8 +868,8 @@
     "rest_window_reminded": false
   },
   "-1001801871581_小媛": {
-    "rest_day_date": "2026-10-20",
-    "rest_day_total": 4916,
+    "rest_day_date": "2026-10-21",
+    "rest_day_total": 0,
     "name": "小媛",
     "in": "2026-10-20 21:30:45",
     "out": null,
@@ -879,9 +879,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-21 04:39:29",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
