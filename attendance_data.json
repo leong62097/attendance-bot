@@ -1761,7 +1761,7 @@
     "toilet_overtime": 0,
     "eat_overtime": 0,
     "toilet_reminded": false,
-    "eat_reminded": false
+    "eat_reminded": true
   },
   "-1001819319968_安妮": {
     "rest_day_date": "2026-10-16",
