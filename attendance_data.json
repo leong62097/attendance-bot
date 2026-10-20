@@ -2856,8 +2856,8 @@
     "eat_reminded": false
   },
   "-5120947919_卢卡": {
-    "rest_day_date": "2026-10-20",
-    "rest_day_total": 5374,
+    "rest_day_date": "2026-10-21",
+    "rest_day_total": 0,
     "name": "卢卡",
     "in": "2026-10-20 20:00:22",
     "out": null,
@@ -2867,9 +2867,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-21 03:00:11",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
