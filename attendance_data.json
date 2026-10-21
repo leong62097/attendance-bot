@@ -3004,8 +3004,8 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-10-22 02:43:54",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 1221,
     "eat_count": 1,
     "rest_start": null,
     "rest_total": 0,
@@ -3019,9 +3019,9 @@
     "shift_type": "夜班",
     "shift_date": "2026-10-21",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-5120947919_娜婷": {
     "rest_day_date": "2026-10-16",
