@@ -10780,5 +10780,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "小瑶",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-20",
+    "in": "2026-10-20 20:12:18",
+    "out": "2026-10-21 08:07:40",
+    "outwork_total": 591,
+    "eat_total": 2220,
+    "rest_total": 5317,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 34794,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
