@@ -4844,8 +4844,8 @@
     "eat_reminded": false
   },
   "-1001801871581_小舒": {
-    "rest_day_date": "2026-10-21",
-    "rest_day_total": 5209,
+    "rest_day_date": "2026-10-22",
+    "rest_day_total": 0,
     "name": "小舒",
     "in": "2026-10-21 20:10:23",
     "out": null,
@@ -4855,9 +4855,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-22 03:06:34",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
