@@ -12976,5 +12976,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "小玲",
+    "shift_type": "白班",
+    "shift_date": "2026-10-22",
+    "in": "2026-10-22 08:00:52",
+    "out": "2026-10-22 20:05:02",
+    "outwork_total": 541,
+    "eat_total": 1816,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 41093,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
