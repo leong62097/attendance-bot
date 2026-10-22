@@ -4872,8 +4872,8 @@
     "eat_reminded": false
   },
   "-5120947919_发发": {
-    "rest_day_date": "2026-10-22",
-    "rest_day_total": 5153,
+    "rest_day_date": "2026-10-23",
+    "rest_day_total": 0,
     "name": "发发",
     "in": "2026-10-22 19:40:10",
     "out": null,
@@ -4883,9 +4883,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-23 03:01:25",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
