@@ -4760,8 +4760,8 @@
     "eat_reminded": false
   },
   "-1001819319968_小瑶": {
-    "rest_day_date": "2026-10-22",
-    "rest_day_total": 5147,
+    "rest_day_date": "2026-10-23",
+    "rest_day_total": 0,
     "name": "小瑶",
     "in": "2026-10-22 20:01:46",
     "out": null,
@@ -4771,9 +4771,9 @@
     "eat_start": null,
     "eat_total": 1098,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-23 03:02:55",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
