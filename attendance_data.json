@@ -420,8 +420,8 @@
     "eat_reminded": false
   },
   "-1001819319968_卢雨": {
-    "rest_day_date": "2026-10-21",
-    "rest_day_total": 5287,
+    "rest_day_date": "2026-10-23",
+    "rest_day_total": 0,
     "name": "卢雨",
     "in": "2026-10-22 20:00:10",
     "out": null,
@@ -431,9 +431,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-23 04:33:23",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
