@@ -12490,5 +12490,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "星财",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-21",
+    "in": "2026-10-21 20:13:06",
+    "out": "2026-10-22 08:15:48",
+    "outwork_total": 1645,
+    "eat_total": 2335,
+    "rest_total": 5469,
+    "rest_count": 1,
+    "rest_overtime": 1,
+    "net_seconds": 33913,
+    "outwork_count": 2,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
