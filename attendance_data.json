@@ -2996,8 +2996,8 @@
     "rest_window_reminded": false
   },
   "-1001819319968_路易斯": {
-    "rest_day_date": "2026-10-23",
-    "rest_day_total": 5294,
+    "rest_day_date": "2026-10-24",
+    "rest_day_total": 0,
     "name": "路易斯",
     "in": "2026-10-23 20:01:10",
     "out": null,
@@ -3007,9 +3007,9 @@
     "eat_start": null,
     "eat_total": 1023,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-24 04:33:28",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
