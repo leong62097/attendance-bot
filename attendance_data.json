@@ -2800,8 +2800,8 @@
     "eat_reminded": false
   },
   "-5120947919_颖杰": {
-    "rest_day_date": "2026-10-23",
-    "rest_day_total": 4940,
+    "rest_day_date": "2026-10-24",
+    "rest_day_total": 0,
     "name": "颖杰",
     "in": "2026-10-23 19:38:31",
     "out": null,
@@ -2811,9 +2811,9 @@
     "eat_start": null,
     "eat_total": 1030,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-24 03:04:04",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
