@@ -17926,5 +17926,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "形尔",
+    "shift_type": "白班",
+    "shift_date": "2026-10-25",
+    "in": "2026-10-25 08:12:43",
+    "out": "2026-10-25 20:22:10",
+    "outwork_total": 470,
+    "eat_total": 0,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 43297,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
