@@ -1632,8 +1632,8 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-10-26 19:25:23",
-    "eat_total": 1141,
+    "eat_start": null,
+    "eat_total": 2367,
     "eat_count": 2,
     "rest_start": null,
     "rest_total": 0,
@@ -1642,14 +1642,14 @@
     "rest_overtime_counted": false,
     "rest_reminded": false,
     "rest_window_reminded": false,
-    "handover_to": "小鱼",
+    "handover_to": null,
     "remark": null,
     "shift_type": "白班",
     "shift_date": "2026-10-26",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_关智": {
     "rest_day_date": "2026-10-16",
