@@ -21076,5 +21076,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "发发",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-27",
+    "in": "2026-10-27 19:34:21",
+    "out": "2026-10-28 07:35:15",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "rest_total": 4830,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 38424,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
