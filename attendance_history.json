@@ -19996,5 +19996,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 1
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "雅婷",
+    "shift_type": "夜班",
+    "shift_date": "2026-10-26",
+    "in": "2026-10-26 20:02:41",
+    "out": "2026-10-27 08:08:21",
+    "outwork_total": 0,
+    "eat_total": 0,
+    "rest_total": 5275,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 38265,
+    "outwork_count": 0,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
