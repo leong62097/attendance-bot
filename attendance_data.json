@@ -4508,8 +4508,8 @@
     "eat_reminded": false
   },
   "-1001801871581_金金": {
-    "rest_day_date": "2026-10-29",
-    "rest_day_total": 5255,
+    "rest_day_date": "2026-10-30",
+    "rest_day_total": 0,
     "name": "金金",
     "in": "2026-10-29 20:06:41",
     "out": null,
@@ -4519,9 +4519,9 @@
     "eat_start": null,
     "eat_total": 1137,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-10-30 05:08:01",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
