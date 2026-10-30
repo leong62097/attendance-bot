@@ -1064,8 +1064,8 @@
     "eat_reminded": false
   },
   "-1001801871581_小迈": {
-    "rest_day_date": "2026-10-30",
-    "rest_day_total": 4955,
+    "rest_day_date": "2026-10-31",
+    "rest_day_total": 0,
     "name": "小迈",
     "in": "2026-10-30 20:02:14",
     "out": null,
@@ -1075,9 +1075,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-10-31 04:33:00",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
