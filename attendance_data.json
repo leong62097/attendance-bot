@@ -592,12 +592,12 @@
     "rest_day_total": 5234,
     "name": "唐勋",
     "in": "2026-10-29 20:15:13",
-    "out": null,
+    "out": "2026-10-30 08:17:44",
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-10-30 04:39:39",
-    "eat_total": 0,
+    "eat_start": null,
+    "eat_total": 13085,
     "eat_count": 1,
     "rest_start": null,
     "rest_total": 0,
@@ -611,9 +611,9 @@
     "shift_type": "夜班",
     "shift_date": "2026-10-29",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_土豆": {
     "name": "土豆",
