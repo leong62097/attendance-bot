@@ -3388,8 +3388,8 @@
     "rest_window_reminded": false
   },
   "-1001801871581_阿森": {
-    "rest_day_date": "2026-10-16",
-    "rest_day_total": 4758,
+    "rest_day_date": "2026-11-02",
+    "rest_day_total": 0,
     "name": "阿森",
     "in": "2026-11-01 14:06:49",
     "out": null,
@@ -3399,9 +3399,9 @@
     "eat_start": null,
     "eat_total": 983,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-11-02 03:09:13",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
