@@ -29212,5 +29212,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -5120947919,
+    "name": "怀宝",
+    "shift_type": "白班",
+    "shift_date": "2026-11-02",
+    "in": "2026-11-02 07:56:23",
+    "out": "2026-11-02 20:02:40",
+    "outwork_total": 800,
+    "eat_total": 1126,
+    "rest_total": 0,
+    "rest_count": 0,
+    "rest_overtime": 0,
+    "net_seconds": 41651,
+    "outwork_count": 1,
+    "eat_count": 1,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
