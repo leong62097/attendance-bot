@@ -4536,8 +4536,8 @@
     "eat_reminded": false
   },
   "-1001801871581_浩哲": {
-    "rest_day_date": "2026-11-02",
-    "rest_day_total": 5236,
+    "rest_day_date": "2026-11-03",
+    "rest_day_total": 0,
     "name": "浩哲",
     "in": "2026-11-02 19:55:00",
     "out": null,
@@ -4547,9 +4547,9 @@
     "eat_start": null,
     "eat_total": 928,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-11-03 03:00:31",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
