@@ -4452,8 +4452,8 @@
     "eat_reminded": false
   },
   "-1001819319968_阿峰": {
-    "rest_day_date": "2026-11-04",
-    "rest_day_total": 5182,
+    "rest_day_date": "2026-11-05",
+    "rest_day_total": 0,
     "name": "阿峰",
     "in": "2026-11-04 19:53:46",
     "out": null,
@@ -4463,9 +4463,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-11-05 04:31:39",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
