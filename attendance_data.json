@@ -3956,8 +3956,8 @@
     "outwork_start": null,
     "outwork_total": 0,
     "outwork_count": 0,
-    "eat_start": "2026-11-06 07:04:03",
-    "eat_total": 723,
+    "eat_start": null,
+    "eat_total": 2117,
     "eat_count": 2,
     "rest_start": null,
     "rest_total": 5259,
@@ -3966,14 +3966,14 @@
     "rest_overtime_counted": false,
     "rest_reminded": false,
     "rest_window_reminded": false,
-    "handover_to": "怼怼",
+    "handover_to": null,
     "remark": null,
     "shift_type": "夜班",
     "shift_date": "2026-11-05",
     "toilet_overtime": 0,
-    "eat_overtime": 0,
+    "eat_overtime": 1,
     "toilet_reminded": false,
-    "eat_reminded": true
+    "eat_reminded": false
   },
   "-1001801871581_菲娅": {
     "name": "菲娅",
