@@ -2268,8 +2268,8 @@
     "eat_reminded": false
   },
   "-1001801871581_小柳": {
-    "rest_day_date": "2026-11-05",
-    "rest_day_total": 5459,
+    "rest_day_date": "2026-11-06",
+    "rest_day_total": 0,
     "name": "小柳",
     "in": "2026-11-05 20:04:05",
     "out": null,
@@ -2279,9 +2279,9 @@
     "eat_start": null,
     "eat_total": 1157,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-11-06 04:31:15",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
