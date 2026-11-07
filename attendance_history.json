@@ -36412,5 +36412,23 @@
     "eat_count": 0,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001819319968,
+    "name": "琳娜",
+    "shift_type": "夜班",
+    "shift_date": "2026-11-06",
+    "in": "2026-11-06 20:01:20",
+    "out": "2026-11-07 08:05:50",
+    "outwork_total": 792,
+    "eat_total": 2253,
+    "rest_total": 5027,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 35398,
+    "outwork_count": 1,
+    "eat_count": 2,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
