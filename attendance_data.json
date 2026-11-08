@@ -2548,8 +2548,8 @@
     "eat_reminded": false
   },
   "-5120947919_沈三": {
-    "rest_day_date": "2026-11-08",
-    "rest_day_total": 5197,
+    "rest_day_date": "2026-11-09",
+    "rest_day_total": 0,
     "name": "沈三",
     "in": "2026-11-08 19:41:15",
     "out": null,
@@ -2559,9 +2559,9 @@
     "eat_start": null,
     "eat_total": 0,
     "eat_count": 0,
-    "rest_start": null,
+    "rest_start": "2026-11-09 04:31:46",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
