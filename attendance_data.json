@@ -4928,8 +4928,8 @@
     "eat_reminded": false
   },
   "-1001819319968_孔明": {
-    "rest_day_date": "2026-11-12",
-    "rest_day_total": 5243,
+    "rest_day_date": "2026-11-13",
+    "rest_day_total": 0,
     "name": "孔明",
     "in": "2026-11-12 19:59:16",
     "out": null,
@@ -4939,9 +4939,9 @@
     "eat_start": null,
     "eat_total": 1108,
     "eat_count": 1,
-    "rest_start": null,
+    "rest_start": "2026-11-13 04:32:39",
     "rest_total": 0,
-    "rest_count": 0,
+    "rest_count": 1,
     "rest_overtime": 0,
     "rest_overtime_counted": false,
     "rest_reminded": false,
