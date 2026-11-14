@@ -2284,5 +2284,23 @@
     "eat_count": 2,
     "toilet_overtime": 0,
     "eat_overtime": 0
+  },
+  {
+    "chat_id": -1001801871581,
+    "name": "雪玲",
+    "shift_type": "夜班",
+    "shift_date": "2026-11-13",
+    "in": "2026-11-13 20:19:19",
+    "out": "2026-11-14 08:23:09",
+    "outwork_total": 815,
+    "eat_total": 0,
+    "rest_total": 5370,
+    "rest_count": 1,
+    "rest_overtime": 0,
+    "net_seconds": 37245,
+    "outwork_count": 1,
+    "eat_count": 0,
+    "toilet_overtime": 0,
+    "eat_overtime": 0
   }
 ]
